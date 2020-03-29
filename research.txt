@@ -1,8 +1,13 @@
 put the links here:
 
 Florian
+https://www.statista.com/statistics/469779/turnover-football-betting-in-great-britain-offf-course-uk/ 
 
+All the data about the matches and players from 2008 to 2016
+https://www.kaggle.com/hugomathien/soccer
 
+A xlsx file that provide an analyse about the Premier league 
+https://www.betgps.com/blog/betting-data/Betting-Data-2018-19_ver-5.01.xlsx
 #####################################################################################################################
 Georges
 
