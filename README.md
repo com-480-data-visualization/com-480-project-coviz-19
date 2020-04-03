@@ -52,8 +52,13 @@ It’s original because we couldn’t find any other previous work providing ext
 What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
 #### Source of inspiration:
 By looking at [this website](https://www.ruedesjoueurs.com/), it could be great to make tables with the difference between division, use the logo of each team, use a flat design, make some tab to select which championship we want to have information about, ...
-We found some good visualization as well that we really want to use as models for ours.
-
+We found some good visualizations as well that we really want to use as models for our website (please look below).
+<img src="images/inspi_1.png" alt="inspi_1"
+title="First source of inspiration" width="500" height="500" />
+<img src="images/inspi_2.png" alt="inspi_2"
+title="Second source of inspiration" width="500" height="500" />
+<img src="images/inspi_3.png" alt="inspi_3"
+title="Third source of inspiration" width="500" height="500" />
 
 **10% of the final grade**
 
