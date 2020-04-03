@@ -38,8 +38,8 @@ In this project we will focus on two things: first we will create visualizations
   3. The structure of the data from one league to another is very consistent, which will make our jobs to merge the datasets much easier
   4. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
 
-<p><img src="images/precision_mil_1.png" alt="Precision_mil_1"
-title="Precision of the bookeh" width="300" height="500" vspace="20" /><\p>
+<img src="images/precision_mil_1.png" alt="Precision_mil_1"
+title="Precision of the bookeh" width="300" height="500" />
 <img src="images/heatmap_mil_1.png" alt="heatmap_mil_1"
 title="correlation between the labels" width="500" height="500" />
 
@@ -60,8 +60,8 @@ We found some good visualizations as well that we really want to use as models f
 title="First source of inspiration" width="450" height="450" />
 <img src="images/inspi_2.png" alt="inspi_2"
 title="Second source of inspiration" width="450" height="450" />
-<p><img src="images/inspi_3.png" alt="inspi_3" 
-title="Third source of inspiration" width="500" height="500" align= 'middle'/><\p>
+<img src="images/inspi_3.png" alt="inspi_3" 
+title="Third source of inspiration" width="500" height="500">
 
 **10% of the final grade**
 
