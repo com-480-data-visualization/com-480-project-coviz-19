@@ -37,7 +37,7 @@ In this project we will focus on two things: first we will create visualizations
   3. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
   4. For more information you can look at the betting.ipynb notebook on the repository
 <img src="images/precision_mil_1.png" alt="Precision_mil_1"
-title="Precision of the bookeh" width="300" height="300" />
+title="Precision of the bookeh" width="300" height="500" />
 <img src="images/heatmap_mil_1.png" alt="heatmap_mil_1"
 title="correlation between the labels" width="500" height="500" />
 
