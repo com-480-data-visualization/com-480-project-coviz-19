@@ -35,11 +35,25 @@ In this project we will focus on two things: first we will create visualizations
   1. Also here there data seems very clean and there’s no missing data 
   2. The structure of the data from one league to another is very consistent, which will make our jobs to merge the datasets much easier
   3. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
-  4. For more information you can look at the betting.ipynb notebook on the repository
+
 <img src="images/precision_mil_1.png" alt="Precision_mil_1"
 title="Precision of the bookeh" width="300" height="500" />
 <img src="images/heatmap_mil_1.png" alt="heatmap_mil_1"
 title="correlation between the labels" width="500" height="500" />
+  4. For more information you can look at the betting.ipynb notebook on the repository
+### Related work:
+
+#### What others have already done with the data?
+- Regarding the first dataset: [ this excel file](https://www.betgps.com/blog/betting-data/Betting-Data-2018-19_ver-5.01.xlsx) has sheets providing statistics based on the dataset.
+- Regarding the second dataset: in kaggle it has almost 1.5K kernels varying from machine learning to simple data analysis but none of them seems to make great use of the betting data.
+- Regarding the third dataset: there are less than 100 kernels using this dataset on Kaggle and none has any similarities to what we are trying to do.
+#### Why is your approach original?
+It’s original because we couldn’t find any other previous work providing extensive analytics on how bookies themselves perform. In general analyzing football data is not something new but nobody has done it as thoroughly as we intend to.
+What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
+#### Source of inspiration:
+By looking at [this website](https://www.ruedesjoueurs.com/), it could be great to make tables with the difference between division, use the logo of each team, use a flat design, make some tab to select which championship we want to have information about, ...
+We found some good visualization as well that we really want to use as models for ours.
+
 
 **10% of the final grade**
 
