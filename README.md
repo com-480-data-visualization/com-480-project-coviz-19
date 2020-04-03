@@ -11,9 +11,10 @@
 ## Milestone 1 (Friday 3rd April, 5pm)
 ### Datasets
 
-1. [First dataset](https://www.football-data.co.uk/data.php)
-2. [Second dataset](https://www.kaggle.com/hugomathien/soccer)
-3. [Third dataset](https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017)
+1. [First dataset](https://www.kaggle.com/martj42/international-football-results-from-1872-to-2017)
+2. [Second dataset](https://www.football-data.co.uk/data.php)
+3. [Third dataset](https://www.kaggle.com/hugomathien/soccer)
+
 
 The datasets seem very clean and contain complementary information for one another. The two datasets from Kaggle have a very high usability score and manual data exploratory analysis in the first data sets yields similar results concerning its cleanliness and usability. After looking at them more deeply, they seem to have all we need to have some relevant statistics. In addition, It could be great to find a last one about match scorers and the exact time of the goal.
 
@@ -26,15 +27,16 @@ In this project we will focus on two things: first we will create visualizations
 
 ### Exploratory data analysis
 
-- For the third dataset:
+- For the first dataset:
   1. This dataset contains the general statistics of the major football teams in Europe, together with the FIFA statistics of each player.
   2. There don’t seem to be any data missing
   3. We have data from 1872 until 2017, mostly 
   4. For more info you can check our ExploratoryAnalysis notebook
-- For the first (which contains information about the primary football leagues per country together with data from some of the main bookies):
-  1. Also here there data seems very clean and there’s no missing data 
-  2. The structure of the data from one league to another is very consistent, which will make our jobs to merge the datasets much easier
-  3. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
+- For the second dataset:
+  1. This dataset contains information about the primary football leagues per country together with data from some of the main bookies
+  2. Also here there data seems very clean and there’s no missing data 
+  3. The structure of the data from one league to another is very consistent, which will make our jobs to merge the datasets much easier
+  4. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
 
 <img src="images/precision_mil_1.png" alt="Precision_mil_1"
 title="Precision of the bookeh" width="300" height="500" />
