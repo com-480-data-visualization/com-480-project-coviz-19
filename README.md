@@ -26,7 +26,7 @@ In this project we will focus on two things: first we will create visualizations
 
 ### Exploratory data analysis
 
--For the third dataset:
+- For the third dataset:
   1. This dataset contains the general statistics of the major football teams in Europe, together with the FIFA statistics of each player.
   2. There don’t seem to be any data missing
   3. We have data from 1872 until 2017, mostly 
