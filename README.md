@@ -40,6 +40,7 @@ In this project we will focus on two things: first we will create visualizations
 title="Precision of the bookeh" width="300" height="500" />
 <img src="images/heatmap_mil_1.png" alt="heatmap_mil_1"
 title="correlation between the labels" width="500" height="500" />
+
   4. For more information you can look at the betting.ipynb notebook on the repository
 ### Related work:
 
@@ -57,7 +58,7 @@ We found some good visualizations as well that we really want to use as models f
 title="First source of inspiration" width="450" height="450" />
 <img src="images/inspi_2.png" alt="inspi_2"
 title="Second source of inspiration" width="450" height="450" />
-<img src="images/inspi_3.png" alt="inspi_3"
+<img src="images/inspi_3.png" alt="inspi_3" align="middle"
 title="Third source of inspiration" width="500" height="500" />
 
 **10% of the final grade**
