@@ -52,7 +52,7 @@ In this project we will focus on two things: first we will create visualizations
 - Regarding the third dataset: there are less than 100 kernels using this dataset on Kaggle and none has any similarities to what we are trying to do.
 #### Why is your approach original?
 It’s original because we couldn’t find any other previous work providing extensive analytics on how bookies themselves perform. In general analyzing football data is not something new but nobody has done it as thoroughly as we intend to.
-What source of inspiration do you take? Visualizations that you found on other websites or magazines (might be unrelated to your data).
+
 #### Source of inspiration:
 By looking at [this website](https://www.ruedesjoueurs.com/), it could be great to make tables with the difference between division, use the logo of each team, use a flat design, make some tab to select which championship we want to have information about, ...
 We found some good visualizations as well that we really want to use as models for our website (please look below).
