@@ -1,4 +1,7 @@
 name,pred,wrong_pred
+Spal,15,23
+Sassuolo,15,23
+Sampdoria,16,22
 Cagliari,8,30
 Parma,11,27
 Fiorentina,11,27
@@ -11,9 +14,6 @@ Udinese,13,25
 Torino,13,25
 Atalanta,13,25
 Roma,14,24
-Spal,15,23
-Sassuolo,15,23
-Sampdoria,16,22
 Inter,17,21
 Milan,17,21
 Brescia,18,20
