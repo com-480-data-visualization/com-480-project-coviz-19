@@ -72,7 +72,7 @@ d3.csv(data_csv, function(data) {
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(['#e41a1c','#377eb8'])
+    .range(['#008000','#e41a1c'])
 
   // Normalize the data -> sum of each group must be 100!
   console.log(data)
@@ -112,5 +112,5 @@ d3.csv(data_csv, function(data) {
         .attr("width",x.bandwidth())
 })
 }
-update("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/junk/barchart.csv")
+update(data1)
 </script>
