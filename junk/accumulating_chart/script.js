@@ -15,7 +15,7 @@ var svg = d3.select("#my_dataviz")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/data.csv",
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/junk/accumulating_chart/data.csv",
 
   // When reading the csv, I must format variables:
   function(d){
