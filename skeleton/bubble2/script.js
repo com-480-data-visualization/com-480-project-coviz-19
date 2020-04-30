@@ -10,7 +10,7 @@ var svg = d3.select("#my_dataviz")
     .attr("height", height)
 
 // Read data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/junk/bubble2/F1.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble2/F1.csv", function(data) {
 
   // Filter a bit the data -> more than 1 game win
   data = data.filter(function(d){ return d.value>1 })
