@@ -34,9 +34,9 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
-      svg.append("text")             
+      svg.append("text")
       .attr("transform",
-            "translate(" + (width/2) + " ," + 
+            "translate(" + (width/2) + " ," +
                            (height + margin.top + 20) + ")")
       .style("text-anchor", "middle")
       .text("Match Day");
@@ -54,7 +54,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Amount of money");  
+      .text("Amount of money");
 
     // Add the line
     svg.append("path")
@@ -156,7 +156,7 @@ d3.csv(data_csv, function(data) {
       .attr("fill", function(d) { return color(d.key); })
       .selectAll("rect")
       // enter a second time = loop subgroup per subgroup to add all rectangles
-      .data(function(d) { 
+      .data(function(d) {
         console.log(d)
         return d; })
       .enter().append("rect")
@@ -197,7 +197,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     .range([7,200])  // circle will be between 7 and 200 px wide
 
   // create a tooltip
-  var Tooltip = d3.select("#my_dataviz")
+  var Tooltip = d3.select("#bubble")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -206,34 +206,50 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     .style("border-width", "2px")
     .style("border-radius", "5px")
     .style("padding", "5px")
+    .style("position",'relative')
+    .style("width",'150px')
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
     Tooltip
       .transition()
       .style("opacity", 1)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
   }
   var mousemove = function(d) {
     Tooltip
       .html('<u>' + d.div +' '+ '</u> '+'<u>' + d.key + '</u>' + "<br>" + d.value + " wins")
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("left", (d3.mouse(this)[0] -200) + "px")
+      .style("top", (d3.mouse(this)[1]-600) + "px")
   }
   var mouseleave = function(d) {
     Tooltip
+      .transition()
       .style("opacity", 0)
   }
 
   var highlight = function(d){
     // reduce opacity of all groups
-    d3.selectAll(".node").style("opacity", .05)
+    d3.selectAll(".node")
+      .transition()
+      .style("opacity", .05)
     // expect the one that is hovered
-    d3.selectAll("."+d).style("opacity", 1)
+    d3.selectAll("."+d)
+      .transition()
+      .style("opacity", 1)
+    Tooltip
+      .style("opacity", 0)
   }
 
   // And when it is not hovered anymore
   var noHighlight = function(d){
-    d3.selectAll(".node").style("opacity", 1)
+    d3.selectAll(".node")
+      .transition()
+      .style("opacity", 1)
+    Tooltip
+      .style("opacity", 0)
   }
 
   // Initialize the circle: all located at the center of the svg area
@@ -312,6 +328,9 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   function dragged(d) {
     d.fx = d3.event.x;
     d.fy = d3.event.y;
+    Tooltip
+      .style("left", (d3.mouse(this)[0] -200) + "px")
+      .style("top", (d3.mouse(this)[1]-600) + "px")
   }
   function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(.03);
@@ -320,5 +339,3 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   }
 
 })
-
-
