@@ -126,7 +126,7 @@ d3.csv(data_csv, function(data) {
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(['#008000','#e41a1c'])
+    .range(['#66cc00','#ff9999'])
 
   // Normalize the data -> sum of each group must be 100!
   console.log(data)
