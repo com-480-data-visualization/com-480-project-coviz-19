@@ -40,6 +40,9 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     Tooltip
       .transition()
       .style("opacity", 1)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
   }
   var mousemove = function(d) {
     Tooltip
@@ -49,19 +52,29 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   }
   var mouseleave = function(d) {
     Tooltip
+      .transition()
       .style("opacity", 0)
+
   }
 
   var highlight = function(d){
     // reduce opacity of all groups
-    d3.selectAll(".node").style("opacity", .05)
+    d3.selectAll(".node")
+      .transition()
+      .style("opacity", .05)
+
     // expect the one that is hovered
-    d3.selectAll("."+d).style("opacity", 1)
+    d3.selectAll("."+d)
+      .transition()
+      .style("opacity", 1)
+
   }
 
   // And when it is not hovered anymore
   var noHighlight = function(d){
-    d3.selectAll(".node").style("opacity", 1)
+    d3.selectAll(".node")
+    .transition()
+    .style("opacity", 1)
   }
 
   // Initialize the circle: all located at the center of the svg area
@@ -87,7 +100,6 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
            .on("end", dragended));
 
 
-
      // Add one dot in the legend for each name.
    var size = 20
    var allgroups = ["F1", "I1", "E0", "D1"]
@@ -95,7 +107,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
      .data(allgroups)
      .enter()
      .append("circle")
-       .attr("cx", 550)
+       .attr("cx", 500)
        .attr("cy", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
        .attr("r", 7)
        .style("fill", function(d){ return color(d)})
@@ -103,11 +115,12 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
        .on("mouseleave", noHighlight)
 
      // Add labels beside legend dots
+
    svg.selectAll("mylabels")
      .data(allgroups)
      .enter()
      .append("text")
-       .attr("x", 550 + size*.8)
+       .attr("x", 500 + size*.8)
        .attr("y", function(d,i){ return i * (size + 5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
        .style("fill", function(d){ return color(d)})
        .text(function(d){ return d})
