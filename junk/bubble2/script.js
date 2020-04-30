@@ -10,18 +10,20 @@ var svg = d3.select("#my_dataviz")
     .attr("height", height)
 
 // Read data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/junk/bubble/F1.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/junk/bubble2/F1.csv", function(data) {
 
   // Filter a bit the data -> more than 1 game win
   data = data.filter(function(d){ return d.value>1 })
 
   // Color palette
-  var color = d3.scaleOrdinal(d3.schemeCategory20);
+  var color = d3.scaleOrdinal()
+    .domain(["F1", "I1", "E0", "D1"])
+    .range(d3.schemeSet1);
 
   // Size scale for countries
   var size = d3.scaleLinear()
-    .domain([0, 50])
-    .range([7,55])  // circle will be between 7 and 55 px wide
+    .domain([0, 100])
+    .range([7,200])  // circle will be between 7 and 200 px wide
 
   // create a tooltip
   var Tooltip = d3.select("#my_dataviz")
@@ -60,12 +62,14 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .attr("r", function(d){ return size(d.value)})
       .attr("cx", width / 2)
       .attr("cy", height / 2)
+      .style("fill", function(d){ return color(d.div)})
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
       .style("stroke-width", 1)
       .on("mouseover", mouseover) // What to do when hovered
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
+
       .call(d3.drag() // call specific function when circle is dragged
            .on("start", dragstarted)
            .on("drag", dragged)
