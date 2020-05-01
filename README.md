@@ -70,7 +70,7 @@ title="Third source of inspiration" width="500" height="500">
 
 **10% of the final grade**
 
-
+#### Link to website skeleton: https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/skeleton/skeleton_demo/index.html
 
 
 ## Milestone 3 (Thursday 28th May, 5pm)
