@@ -72,6 +72,7 @@ title="Third source of inspiration" width="500" height="500">
 
 #### Link to website skeleton: https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/skeleton/skeleton_demo/index.html
 
+#### For more information regarding Milestone 2, please refer to Milestone2.pdf
 
 ## Milestone 3 (Thursday 28th May, 5pm)
 
