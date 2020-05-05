@@ -50,6 +50,29 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .call(d3.axisLeft(y));
 
 
+ var bisect = d3.bisector(function(d) { return d.Week; }).left;
+ console.log(bisect)
+
+  // Create the circle that travels along the curve of chart
+  var focus = svg
+    .append('g')
+    .append('circle')
+      .style("fill", "none")
+      .attr("stroke", "black")
+      .attr('r', 4)
+      .style("opacity", 0)
+
+  // Create the text that travels along the curve of chart
+  var focusText = svg
+    .append('g')
+    .append('text')
+      .style("opacity", 0)
+      .attr("text-anchor", "left")
+      .attr("alignment-baseline", "middle")
+
+
+
+ 
 
 var zero_line = svg.append("line")
                      .attr("x1", 0)
@@ -62,15 +85,11 @@ var zero_line = svg.append("line")
     // Initialize line with group a
     var line = svg
       .append('g')
-      .append("path")
-        .datum(data)
-        .attr("d", d3.line()
-          .x(function(d) { return x(+d.Week) })
-          .y(function(d) { return y(+d.ReturnSP1_2018_1_risky) })
-        )
-        .attr("stroke", function(d){ return myColor("ReturnSP1_2018_1_risky") })
+      .append("path") 
         .style("stroke-width", 4)
         .style("fill", "none")
+
+
 
     // A function that update the chart
     function update(selectedGroup) {
@@ -88,7 +107,46 @@ var zero_line = svg.append("line")
             .y(function(d) { return y(+d.value) })
           )
           .attr("stroke", function(d){ return myColor(selectedGroup) })
+
+          svg
+    .append('rect')
+    .style("fill", "none")
+    .style("pointer-events", "all")
+    .attr('width', width)
+    .attr('height', height)
+    .on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseout', mouseout);
+               function mouseover() {
+    focus.style("opacity", 1)
+    focusText.style("opacity",1)
+  }
+
+  function mousemove() {
+    // recover coordinate we need
+    var x0 = x.invert(d3.mouse(this)[0]);
+    var i = bisect(data, x0, 1);
+
+    selectedData = data[i]
+
+console.log(selectedData.Week)
+    focus
+      .attr("cx", x(selectedData.Week))
+      .attr("cy", y(selectedData[selectedGroup]))
+    focusText
+      .html("Return:" + Math.round(selectedData[selectedGroup] * 100) / 100 )
+      .attr("x", x(selectedData.Week)+15)
+      .attr("y", y(selectedData[selectedGroup])+20)
     }
+  function mouseout() {
+    focus.style("opacity", 0)
+    focusText.style("opacity", 0)
+  }
+    }
+
+
+    //INITIALIZE
+    update("ReturnSP1_2018_1_risky")
 
     // When the button is changed, run the updateChart function
     d3.select("#selectButton").on("change", function(d) {
