@@ -72,12 +72,13 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
 // ------------------------------ Barchart
 
  var dataIT="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartI1.csv";
-  var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
+ var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
 
   var margin2 = {top: 10, right: 30, bottom: 20, left: 50},
     width = 1000 - margin.left - margin.right,
     height = 400 - margin.top - margin.bottom;
 // append the svg object to the body of the page
+
 var svg2 = d3.select("#barchart")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
@@ -87,6 +88,7 @@ var svg2 = d3.select("#barchart")
           "translate(" + margin.left + "," + margin.top + ")");
 
       // Add X axis
+
   var x = d3.scaleBand()
       // .domain(groups)
       .range([0, width])
@@ -109,7 +111,7 @@ d3.csv(data_csv, function(data) {
 
   // Update the X axis
   x.domain(data.map(function(d) { return d.name; }))
-  xAxis.call(d3.axisBottom(x))
+  xAxis.transition().duration(1000).call(d3.axisBottom(x))
 
   // Update the Y axis
   y.domain([0, 100])
@@ -146,24 +148,25 @@ d3.csv(data_csv, function(data) {
     (data)
 
     console.log(stackedData)
-
+  stackedData = stackedData()
   // Show the bars
   svg2.append("g")
     .selectAll("g")
     // Enter in the stack data = loop key per key = group per group
     .data(stackedData)
     .enter().append("g")
-      .attr("fill", function(d) { return color(d.key); })
-      .selectAll("rect")
-      // enter a second time = loop subgroup per subgroup to add all rectangles
-      .data(function(d) {
-        console.log(d)
-        return d; })
-      .enter().append("rect")
-        .attr("x", function(d) { return x(d.data.name); })
-        .attr("y", function(d) { return y(d[1]); })
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-        .attr("width",x.bandwidth())
+    .attr("fill", function(d) { return color(d.key); })
+    .selectAll("rect")
+
+    // enter a second time = loop subgroup per subgroup to add all rectangles
+    .data(function(d) {
+      console.log(d)
+      return d; })
+    .enter().append("rect").transition().duration(1000)
+      .attr("x", function(d) { return x(d.data.name); })
+      .attr("y", function(d) { return y(d[1]); })
+      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
+      .attr("width",x.bandwidth())
 })
 }
 update(dataIT)
