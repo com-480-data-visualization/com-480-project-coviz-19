@@ -148,7 +148,6 @@ d3.csv(data_csv, function(data) {
     (data)
 
     console.log(stackedData)
-  stackedData = stackedData()
   // Show the bars
   svg2.append("g")
     .selectAll("g")
