@@ -108,16 +108,17 @@ var zero_line = svg.append("line")
           )
           .attr("stroke", function(d){ return myColor(selectedGroup) })
 
-          svg
+    svg
     .append('rect')
     .style("fill", "none")
     .style("pointer-events", "all")
     .attr('width', width)
-    .attr('height', height)
+    .attr('height', height+1000)
     .on('mouseover', mouseover)
     .on('mousemove', mousemove)
     .on('mouseout', mouseout);
-               function mouseover() {
+
+  function mouseover() {
     focus.style("opacity", 1)
     focusText.style("opacity",1)
   }
