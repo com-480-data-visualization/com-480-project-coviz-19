@@ -1,48 +1,48 @@
- var data1="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartI1.csv";
-  var data2="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
+ var dataIT="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartI1.csv";
+  var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
 
-// set the dimensions and margins of the graph
-var margin = {top: 10, right: 30, bottom: 20, left: 50},
-    width = 1000 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+// set the dimensions and marginBarcharts of the graph
+var marginBarchart = {top: 10, right: 30, bottom: 20, left: 50},
+    widthBarchart = 1000 - marginBarchart.left - marginBarchart.right,
+    heightBarchart = 400 - marginBarchart.top - marginBarchart.bottom;
 
-// append the svg object to the body of the page
-var svg = d3.select("#barchart")
+// append the svgBarchart object to the body of the page
+var svgBarchart = d3.select("#barchart")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", widthBarchart + marginBarchart.left + marginBarchart.right)
+    .attr("height", heightBarchart + marginBarchart.top + marginBarchart.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + marginBarchart.left + "," + marginBarchart.top + ")");
 
       // Add X axis
-  var x = d3.scaleBand()
+  var xBarchart = d3.scaleBand()
       // .domain(groups)
-      .range([0, width])
+      .range([0, widthBarchart])
       .padding([0.2])
-  var xAxis = svg.append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSizeOuter(0));
+  var xAxis = svgBarchart.append("g")
+    .attr("transform", "translate(0," + heightBarchart + ")")
+    .call(d3.axisBottom(xBarchart).tickSizeOuter(0));
 
 
   // Add Y axis
-  var y = d3.scaleLinear()
+  var yBarchart = d3.scaleLinear()
     // .domain([0, 100])
-    .range([ height, 0 ]);
- var yAxis =  svg.append("g")
-    .call(d3.axisLeft(y));
+    .range([ heightBarchart, 0 ]);
+ var yAxis =  svgBarchart.append("g")
+    .call(d3.axisLeft(yBarchart));
 
 function update(data_csv) {
 // Parse the Data
 d3.csv(data_csv, function(data) {
 
   // Update the X axis
-  x.domain(data.map(function(d) { return d.name; }))
-  xAxis.call(d3.axisBottom(x))
+  xBarchart.domain(data.map(function(d) { return d.name; }))
+  xAxis.call(d3.axisBottom(xBarchart))
 
   // Update the Y axis
-  y.domain([0, 100])
-  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+  yBarchart.domain([0, 100])
+  yAxis.transition().duration(1000).call(d3.axisLeft(yBarchart));
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
@@ -80,7 +80,7 @@ d3.csv(data_csv, function(data) {
     console.log(stackedData)
 
   // Show the bars
-  svg.append("g")
+  svgBarchart.append("g")
     .selectAll("g")
     // Enter in the stack data = loop key per key = group per group
     .data(stackedData)
@@ -92,10 +92,10 @@ d3.csv(data_csv, function(data) {
         console.log(d)
         return d; })
       .enter().append("rect")
-        .attr("x", function(d) { return x(d.data.name); })
-        .attr("y", function(d) { return y(d[1]); })
-        .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-        .attr("width",x.bandwidth())
+        .attr("x", function(d) { return xBarchart(d.data.name); })
+        .attr("y", function(d) { return yBarchart(d[1]); })
+        .attr("height", function(d) { return yBarchart(d[0]) - yBarchart(d[1]); })
+        .attr("width",xBarchart.bandwidth())
 })
 }
-update(data1)
+update(dataIT)
