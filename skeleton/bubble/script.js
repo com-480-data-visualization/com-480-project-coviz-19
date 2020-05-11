@@ -1,3 +1,6 @@
+var data_bubble1="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble1.csv"
+var data_bubble2="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble2.csv"
+
 // set the dimensions and margins of the graph
 var width_bubble = 600
 var height_bubble = 600
@@ -7,8 +10,9 @@ var svg3 = d3.select("#bubble")
     .attr("width", width_bubble)
     .attr("height", height_bubble)
 
+function update(data_csv) {
 // Read data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble.csv", function(data) {
+d3.csv(data_csv, function(data) {
 
   // Filter a bit the data -> more than 1 game win
   data = data.filter(function(d){ return d.value>1 })
@@ -137,3 +141,5 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   }
 
 })
+}
+update(data_bubble1)
