@@ -72,50 +72,50 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
 // ------------------------------ Barchart
 
  var dataIT="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartI1.csv";
- var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
+  var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
 
-  var margin2 = {top: 10, right: 30, bottom: 20, left: 50},
-    width = 1000 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
-// append the svg object to the body of the page
+// set the dimensions and marginBarcharts of the graph
+var marginBarchart = {top: 10, right: 30, bottom: 20, left: 50},
+    widthBarchart = 1000 - marginBarchart.left - marginBarchart.right,
+    heightBarchart = 400 - marginBarchart.top - marginBarchart.bottom;
 
-var svg2 = d3.select("#barchart")
+// append the svgBarchart object to the body of the page
+var svgBarchart = d3.select("#barchart")
   .append("svg")
-    .attr("width", width + margin.left + margin.right)
-    .attr("height", height + margin.top + margin.bottom)
+    .attr("width", widthBarchart + marginBarchart.left + marginBarchart.right)
+    .attr("height", heightBarchart + marginBarchart.top + marginBarchart.bottom)
   .append("g")
     .attr("transform",
-          "translate(" + margin.left + "," + margin.top + ")");
+          "translate(" + marginBarchart.left + "," + marginBarchart.top + ")");
 
       // Add X axis
-
-  var x = d3.scaleBand()
+  var xBarchart = d3.scaleBand()
       // .domain(groups)
-      .range([0, width])
+      .range([0, widthBarchart])
       .padding([0.2])
-  var xAxis = svg2.append("g")
-    .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x).tickSizeOuter(0));
+  var xAxis = svgBarchart.append("g")
+    .attr("transform", "translate(0," + heightBarchart + ")")
+    .call(d3.axisBottom(xBarchart).tickSizeOuter(0));
 
 
   // Add Y axis
-  var y = d3.scaleLinear()
+  var yBarchart = d3.scaleLinear()
     // .domain([0, 100])
-    .range([ height, 0 ]);
- var yAxis =  svg2.append("g")
-    .call(d3.axisLeft(y));
+    .range([ heightBarchart, 0 ]);
+ var yAxis =  svgBarchart.append("g")
+    .call(d3.axisLeft(yBarchart));
 
 function update(data_csv) {
 // Parse the Data
 d3.csv(data_csv, function(data) {
 
   // Update the X axis
-  x.domain(data.map(function(d) { return d.name; }))
-  xAxis.transition().duration(1000).call(d3.axisBottom(x))
+  xBarchart.domain(data.map(function(d) { return d.name; }))
+  xAxis.call(d3.axisBottom(xBarchart))
 
   // Update the Y axis
-  y.domain([0, 100])
-  yAxis.transition().duration(1000).call(d3.axisLeft(y));
+  yBarchart.domain([0, 100])
+  yAxis.transition().duration(1000).call(d3.axisLeft(yBarchart));
 
   // List of subgroups = header of the csv files = soil condition here
   var subgroups = data.columns.slice(1)
@@ -125,10 +125,13 @@ d3.csv(data_csv, function(data) {
   var groups = d3.map(data, function(d){return(d.name)}).keys()
 
 
+
+
+
   // color palette = one color per subgroup
   var color = d3.scaleOrdinal()
     .domain(subgroups)
-    .range(['#66cc00','#ff9999'])
+    .range(['#008000','#e41a1c'])
 
   // Normalize the data -> sum of each group must be 100!
   console.log(data)
@@ -149,23 +152,22 @@ d3.csv(data_csv, function(data) {
 
     console.log(stackedData)
   // Show the bars
-  svg2.append("g")
+  svgBarchart.append("g")
     .selectAll("g")
     // Enter in the stack data = loop key per key = group per group
     .data(stackedData)
     .enter().append("g")
-    .attr("fill", function(d) { return color(d.key); })
-    .selectAll("rect")
-
-    // enter a second time = loop subgroup per subgroup to add all rectangles
-    .data(function(d) {
-      console.log(d)
-      return d; })
-    .enter().append("rect").transition().duration(1000)
-      .attr("x", function(d) { return x(d.data.name); })
-      .attr("y", function(d) { return y(d[1]); })
-      .attr("height", function(d) { return y(d[0]) - y(d[1]); })
-      .attr("width",x.bandwidth())
+      .attr("fill", function(d) { return color(d.key); })
+      .selectAll("rect")
+      // enter a second time = loop subgroup per subgroup to add all rectangles
+      .data(function(d) {
+        console.log(d)
+        return d; })
+      .enter().append("rect")
+        .attr("x", function(d) { return xBarchart(d.data.name); })
+        .attr("y", function(d) { return yBarchart(d[1]); })
+        .attr("height", function(d) { return yBarchart(d[0]) - yBarchart(d[1]); })
+        .attr("width",xBarchart.bandwidth())
 })
 }
 update(dataIT)
