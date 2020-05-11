@@ -151,7 +151,6 @@ d3.csv(data_csv, function(data) {
     (data)
 
     console.log(stackedData)
-
   // Show the bars
   svgBarchart.append("g")
     .selectAll("g")
@@ -161,7 +160,7 @@ d3.csv(data_csv, function(data) {
       .attr("fill", function(d) { return color(d.key); })
       .selectAll("rect")
       // enter a second time = loop subgroup per subgroup to add all rectangles
-      .data(function(d) { 
+      .data(function(d) {
         console.log(d)
         return d; })
       .enter().append("rect")
