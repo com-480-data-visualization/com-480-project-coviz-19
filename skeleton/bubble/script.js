@@ -14,22 +14,15 @@ function update(data_csv) {
 
 //Clear all previous elements in the canvas
   svg3.selectAll("*").remove();
-  
+
 // Read data
 d3.csv(data_csv, function(data) {
 
-  // Filter a bit the data -> more than 1 game win
-  data = data.filter(function(d){ return d.value>1 })
-
-  // Color palette
-  var color = d3.scaleOrdinal()
-    .domain(["F1", "I1", "E0", "D1"])
-    .range(d3.schemeSet1);
 
   // Size scale for countries
   var z = d3.scaleLinear()
-    .domain([0, 200])
-    .range([0,300])  // circle will be between 7 and 200 px wide
+    .domain([0, 600])
+    .range([20,600]) 
 
   // create a tooltip
   var Tooltip = d3.select("#bubble")
