@@ -1,12 +1,11 @@
-
 // set the dimensions and margins of the graph
-var width = 600
-var height = 600
+var width_bubble = 600
+var height_bubble = 600
 // append the svg object to the body of the page
-var svg = d3.select("#my_dataviz")
+var svg3 = d3.select("#bubble")
   .append("svg")
-    .attr("width", width)
-    .attr("height", height)
+    .attr("width", width_bubble)
+    .attr("height", height_bubble)
 
 // Read data
 d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/test.csv", function(data) {
@@ -25,7 +24,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     .range([7,200])  // circle will be between 7 and 200 px wide
 
   // create a tooltip
-  var Tooltip = d3.select("#my_dataviz")
+  var Tooltip = d3.select("#bubble")
     .append("div")
     .style("opacity", 0)
     .attr("class", "tooltip")
@@ -34,6 +33,8 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     .style("border-width", "2px")
     .style("border-radius", "5px")
     .style("padding", "5px")
+    .style("position",'relative')
+    .style("width",'150px')
 
   // Three function that change the tooltip when user hover / move / leave a cell
   var mouseover = function(d) {
@@ -47,14 +48,13 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   var mousemove = function(d) {
     Tooltip
       .html('<u>' + d.div +' '+ '</u> '+'<u>' + d.key + '</u>' + "<br>" + d.value + " wins")
-      .style("left", (d3.mouse(this)[0]+70) + "px")
-      .style("top", (d3.mouse(this)[1]) + "px")
+      .style("left", (d3.mouse(this)[0] -200) + "px")
+      .style("top", (d3.mouse(this)[1]-600) + "px")
   }
   var mouseleave = function(d) {
     Tooltip
       .transition()
       .style("opacity", 0)
-
   }
 
   var highlight = function(d){
@@ -62,31 +62,33 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     d3.selectAll(".node")
       .transition()
       .style("opacity", .05)
-
     // expect the one that is hovered
     d3.selectAll("."+d)
       .transition()
       .style("opacity", 1)
-
+    Tooltip
+      .style("opacity", 0)
   }
 
   // And when it is not hovered anymore
   var noHighlight = function(d){
     d3.selectAll(".node")
-    .transition()
-    .style("opacity", 1)
+      .transition()
+      .style("opacity", 1)
+    Tooltip
+      .style("opacity", 0)
   }
 
   // Initialize the circle: all located at the center of the svg area
-  var node = svg.append("g")
+  var node = svg3.append("g")
     .selectAll("circle")
     .data(data)
     .enter()
     .append("circle")
       .attr("class", function(d) { return "node " + d.div })
       .attr("r", function(d){ return z(d.value)})
-      .attr("cx", width / 2)
-      .attr("cy", height / 2)
+      .attr("cx", width_bubble / 2)
+      .attr("cy", height_bubble / 2)
       .style("fill", function(d){ return color(d.div)})
       .style("fill-opacity", 0.8)
       .attr("stroke", "black")
@@ -100,14 +102,15 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
            .on("end", dragended));
 
 
+
      // Add one dot in the legend for each name.
    var size = 20
    var allgroups = ["F1", "I1", "E0", "D1"]
-   svg.selectAll("myrect")
+   svg3.selectAll("myrect")
      .data(allgroups)
      .enter()
      .append("circle")
-       .attr("cx", 500)
+       .attr("cx", 550)
        .attr("cy", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
        .attr("r", 7)
        .style("fill", function(d){ return color(d)})
@@ -115,12 +118,11 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
        .on("mouseleave", noHighlight)
 
      // Add labels beside legend dots
-
-   svg.selectAll("mylabels")
+   svg3.selectAll("mylabels")
      .data(allgroups)
      .enter()
      .append("text")
-       .attr("x", 500 + size*.8)
+       .attr("x", 550 + size*.8)
        .attr("y", function(d,i){ return i * (size + 5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
        .style("fill", function(d){ return color(d)})
        .text(function(d){ return d})
@@ -130,7 +132,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
        .on("mouseleave", noHighlight)
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width / 2).y(height / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(width_bubble / 2).y(height_bubble / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (z(d.value)+3) }).iterations(1)) // Force that avoids circle overlapping
 
@@ -153,6 +155,9 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   function dragged(d) {
     d.fx = d3.event.x;
     d.fy = d3.event.y;
+    Tooltip
+      .style("left", (d3.mouse(this)[0] -200) + "px")
+      .style("top", (d3.mouse(this)[1]-600) + "px")
   }
   function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(.03);
