@@ -11,6 +11,10 @@ var svg3 = d3.select("#bubble")
     .attr("height", height_bubble)
 
 function update(data_csv) {
+
+//Clear all previous elements in the canvas
+  svg3.selectAll("*").remove();
+  
 // Read data
 d3.csv(data_csv, function(data) {
 
