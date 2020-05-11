@@ -8,7 +8,7 @@ var svg3 = d3.select("#bubble")
     .attr("height", height_bubble)
 
 // Read data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/test.csv", function(data) {
+d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble.csv", function(data) {
 
   // Filter a bit the data -> more than 1 game win
   data = data.filter(function(d){ return d.value>1 })
@@ -20,8 +20,8 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
 
   // Size scale for countries
   var z = d3.scaleLinear()
-    .domain([0, 75])
-    .range([7,200])  // circle will be between 7 and 200 px wide
+    .domain([0, 200])
+    .range([0,300])  // circle will be between 7 and 200 px wide
 
   // create a tooltip
   var Tooltip = d3.select("#bubble")
@@ -47,7 +47,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   }
   var mousemove = function(d) {
     Tooltip
-      .html('<u>' + d.div +' '+ '</u> '+'<u>' + d.key + '</u>' + "<br>" + d.value + " wins")
+      .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
       .style("left", (d3.mouse(this)[0] -200) + "px")
       .style("top", (d3.mouse(this)[1]-600) + "px")
   }
@@ -79,20 +79,17 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .style("opacity", 0)
   }
 
-  // Initialize the circle: all located at the center of the svg area
+  // Initialize the images: all located at the center of the svg area
   var node = svg3.append("g")
-    .selectAll("circle")
+    .selectAll("image")
     .data(data)
     .enter()
-    .append("circle")
-      .attr("class", function(d) { return "node " + d.div })
-      .attr("r", function(d){ return z(d.value)})
-      .attr("cx", width_bubble / 2)
-      .attr("cy", height_bubble / 2)
-      .style("fill", function(d){ return color(d.div)})
-      .style("fill-opacity", 0.8)
-      .attr("stroke", "black")
-      .style("stroke-width", 1)
+    .append('image')
+    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} )
+    .attr('x', width_bubble / 2)
+    .attr('y', height_bubble / 2)
+    .attr('width', function(d){ return z(d.value)})
+    .attr('height', function(d){ return z(d.value)})
       .on("mouseover", mouseover) // What to do when hovered
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
@@ -103,38 +100,12 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
 
 
 
-     // Add one dot in the legend for each name.
-   var size = 20
-   var allgroups = ["F1", "I1", "E0", "D1"]
-   svg3.selectAll("myrect")
-     .data(allgroups)
-     .enter()
-     .append("circle")
-       .attr("cx", 550)
-       .attr("cy", function(d,i){ return 10 + i*(size+5)}) // 100 is where the first dot appears. 25 is the distance between dots
-       .attr("r", 7)
-       .style("fill", function(d){ return color(d)})
-       .on("mouseover", highlight)
-       .on("mouseleave", noHighlight)
 
-     // Add labels beside legend dots
-   svg3.selectAll("mylabels")
-     .data(allgroups)
-     .enter()
-     .append("text")
-       .attr("x", 550 + size*.8)
-       .attr("y", function(d,i){ return i * (size + 5) + (size/2)}) // 100 is where the first dot appears. 25 is the distance between dots
-       .style("fill", function(d){ return color(d)})
-       .text(function(d){ return d})
-       .attr("text-anchor", "left")
-       .style("alignment-baseline", "middle")
-       .on("mouseover", highlight)
-       .on("mouseleave", noHighlight)
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
       .force("center", d3.forceCenter().x(width_bubble / 2).y(height_bubble / 2)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
-      .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (z(d.value)+3) }).iterations(1)) // Force that avoids circle overlapping
+      .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (z(d.value)) }).iterations(1)) // Force that avoids circle overlapping
 
   // Apply these forces to the nodes and update their positions.
   // Once the force algorithm is happy with positions ('alpha' value is low enough), simulations will stop.
@@ -142,8 +113,8 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
       .nodes(data)
       .on("tick", function(d){
         node
-            .attr("cx", function(d){ return d.x; })
-            .attr("cy", function(d){ return d.y; })
+            .attr("x", function(d){ return d.x; })
+            .attr("y", function(d){ return d.y; })
       });
 
   // What happens when a circle is dragged?
