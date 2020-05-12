@@ -22,7 +22,7 @@ d3.csv(data_csv, function(data) {
   // Size scale for countries
   var z = d3.scaleLinear()
     .domain([0, 600])
-    .range([20,600]) 
+    .range([20,600])
 
   // create a tooltip
   var Tooltip = d3.select("#bubble")

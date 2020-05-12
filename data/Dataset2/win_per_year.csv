@@ -1,0 +1,868 @@
+Div,HomeTeam,year,win
+SP1,Barcelona,2020,5
+SP1,Valencia,2020,4
+SP1,Sociedad,2020,4
+SP1,Ath Madrid,2020,3
+SP1,Granada,2020,3
+SP1,Real Madrid,2020,3
+SP1,Sevilla,2020,2
+SP1,Alaves,2020,2
+SP1,Celta,2020,2
+SP1,Betis,2020,2
+SP1,Eibar,2020,2
+SP1,Getafe,2020,2
+SP1,Levante,2020,2
+SP1,Osasuna,2020,2
+SP1,Espanol,2020,1
+SP1,Mallorca,2020,2
+SP1,Villarreal,2020,2
+SP1,Leganes,2020,1
+SP1,Valladolid,2020,1
+SP1,Ath Bilbao,2020,1
+SP1,Barcelona,2019,17
+SP1,Ath Bilbao,2019,13
+SP1,Ath Madrid,2019,13
+SP1,Real Madrid,2019,13
+SP1,Getafe,2019,12
+SP1,Valencia,2019,9
+SP1,Sociedad,2019,10
+SP1,Sevilla,2019,10
+SP1,Villarreal,2019,8
+SP1,Levante,2019,8
+SP1,Betis,2019,9
+SP1,Eibar,2019,9
+SP1,Alaves,2019,7
+SP1,Leganes,2019,7
+SP1,Celta,2019,7
+SP1,Espanol,2019,6
+SP1,Valladolid,2019,5
+SP1,Huesca,2019,5
+SP1,Granada,2019,5
+SP1,Mallorca,2019,4
+SP1,Osasuna,2019,3
+SP1,Vallecano,2019,3
+SP1,Girona,2019,1
+SP1,Ath Madrid,2018,15
+SP1,Barcelona,2018,15
+SP1,Real Madrid,2018,13
+SP1,Sevilla,2018,11
+SP1,Alaves,2018,10
+SP1,Betis,2018,10
+SP1,Celta,2018,8
+SP1,Valencia,2018,9
+SP1,Leganes,2018,9
+SP1,Espanol,2018,8
+SP1,Villarreal,2018,8
+SP1,Getafe,2018,8
+SP1,Ath Bilbao,2018,6
+SP1,Levante,2018,8
+SP1,Sociedad,2018,8
+SP1,Eibar,2018,7
+SP1,Girona,2018,7
+SP1,Vallecano,2018,2
+SP1,La Coruna,2018,1
+SP1,Valladolid,2018,2
+SP1,Las Palmas,2018,2
+SP1,Malaga,2018,2
+SP1,Huesca,2018,0
+SP1,Barcelona,2017,18
+SP1,Sevilla,2017,13
+SP1,Real Madrid,2017,13
+SP1,Valencia,2017,13
+SP1,Ath Madrid,2017,13
+SP1,Espanol,2017,11
+SP1,Ath Bilbao,2017,9
+SP1,Eibar,2017,10
+SP1,Villarreal,2017,9
+SP1,Sociedad,2017,8
+SP1,Alaves,2017,8
+SP1,Betis,2017,7
+SP1,Leganes,2017,7
+SP1,Celta,2017,7
+SP1,Las Palmas,2017,7
+SP1,La Coruna,2017,6
+SP1,Malaga,2017,7
+SP1,Getafe,2017,5
+SP1,Girona,2017,3
+SP1,Osasuna,2017,2
+SP1,Granada,2017,3
+SP1,Levante,2017,2
+SP1,Sp Gijon,2017,2
+SP1,Real Madrid,2016,15
+SP1,Ath Madrid,2016,14
+SP1,Sevilla,2016,14
+SP1,Ath Bilbao,2016,12
+SP1,Barcelona,2016,12
+SP1,Villarreal,2016,11
+SP1,Malaga,2016,10
+SP1,Sociedad,2016,10
+SP1,Celta,2016,10
+SP1,Eibar,2016,9
+SP1,Las Palmas,2016,8
+SP1,Betis,2016,8
+SP1,Espanol,2016,7
+SP1,Sp Gijon,2016,8
+SP1,Granada,2016,6
+SP1,La Coruna,2016,5
+SP1,Levante,2016,6
+SP1,Vallecano,2016,5
+SP1,Valencia,2016,4
+SP1,Alaves,2016,2
+SP1,Getafe,2016,2
+SP1,Leganes,2016,1
+SP1,Osasuna,2016,0
+SP1,Real Madrid,2015,17
+SP1,Barcelona,2015,17
+SP1,Sevilla,2015,15
+SP1,Ath Madrid,2015,14
+SP1,Villarreal,2015,14
+SP1,Valencia,2015,12
+SP1,Ath Bilbao,2015,10
+SP1,Celta,2015,9
+SP1,Espanol,2015,8
+SP1,Getafe,2015,8
+SP1,Sociedad,2015,8
+SP1,Vallecano,2015,9
+SP1,La Coruna,2015,6
+SP1,Malaga,2015,6
+SP1,Eibar,2015,7
+SP1,Levante,2015,5
+SP1,Granada,2015,4
+SP1,Elche,2015,5
+SP1,Las Palmas,2015,4
+SP1,Almeria,2015,3
+SP1,Sp Gijon,2015,2
+SP1,Betis,2015,1
+SP1,Cordoba,2015,1
+SP1,Barcelona,2014,15
+SP1,Real Madrid,2014,15
+SP1,Ath Madrid,2014,12
+SP1,Sevilla,2014,12
+SP1,Valencia,2014,12
+SP1,Villarreal,2014,10
+SP1,Ath Bilbao,2014,9
+SP1,Malaga,2014,9
+SP1,Sociedad,2014,9
+SP1,Celta,2014,8
+SP1,Espanol,2014,7
+SP1,Levante,2014,7
+SP1,Vallecano,2014,8
+SP1,Elche,2014,5
+SP1,Granada,2014,6
+SP1,Almeria,2014,5
+SP1,Getafe,2014,4
+SP1,Valladolid,2014,4
+SP1,Osasuna,2014,4
+SP1,Betis,2014,3
+SP1,Eibar,2014,2
+SP1,La Coruna,2014,2
+SP1,Cordoba,2014,0
+SP1,Ath Madrid,2013,9
+SP1,Barcelona,2013,8
+SP1,Ath Bilbao,2013,7
+SP1,Real Madrid,2013,7
+SP1,Sociedad,2013,5
+SP1,Villarreal,2013,4
+SP1,Espanol,2013,4
+SP1,Getafe,2013,4
+SP1,Sevilla,2013,4
+SP1,Valencia,2013,4
+SP1,Malaga,2013,4
+SP1,Betis,2013,2
+SP1,Levante,2013,2
+SP1,Valladolid,2013,2
+SP1,Elche,2013,2
+SP1,Osasuna,2013,2
+SP1,Celta,2013,1
+SP1,Almeria,2013,1
+SP1,Granada,2013,2
+SP1,Vallecano,2013,2
+I1,Lazio,2020,5
+I1,Juventus,2020,5
+I1,Sassuolo,2020,3
+I1,Verona,2020,3
+I1,Milan,2020,2
+I1,Atalanta,2020,2
+I1,Lecce,2020,2
+I1,Sampdoria,2020,2
+I1,Bologna,2020,1
+I1,Genoa,2020,2
+I1,Napoli,2020,2
+I1,Parma,2020,2
+I1,Fiorentina,2020,1
+I1,Inter,2020,1
+I1,Udinese,2020,1
+I1,Roma,2020,1
+I1,Torino,2020,1
+I1,Brescia,2020,0
+I1,Cagliari,2020,0
+I1,Spal,2020,0
+I1,Juventus,2019,13
+I1,Roma,2019,12
+I1,Inter,2019,10
+I1,Torino,2019,11
+I1,Atalanta,2019,10
+I1,Lazio,2019,10
+I1,Bologna,2019,10
+I1,Cagliari,2019,10
+I1,Udinese,2019,9
+I1,Milan,2019,8
+I1,Napoli,2019,8
+I1,Sampdoria,2019,7
+I1,Parma,2019,6
+I1,Sassuolo,2019,5
+I1,Spal,2019,5
+I1,Empoli,2019,5
+I1,Genoa,2019,4
+I1,Fiorentina,2019,2
+I1,Verona,2019,3
+I1,Brescia,2019,1
+I1,Frosinone,2019,1
+I1,Lecce,2019,0
+I1,Chievo,2019,0
+I1,Juventus,2018,17
+I1,Napoli,2018,16
+I1,Milan,2018,12
+I1,Inter,2018,11
+I1,Lazio,2018,10
+I1,Sampdoria,2018,10
+I1,Genoa,2018,9
+I1,Torino,2018,10
+I1,Fiorentina,2018,9
+I1,Roma,2018,9
+I1,Atalanta,2018,8
+I1,Cagliari,2018,6
+I1,Sassuolo,2018,5
+I1,Spal,2018,5
+I1,Bologna,2018,6
+I1,Chievo,2018,5
+I1,Udinese,2018,4
+I1,Benevento,2018,4
+I1,Crotone,2018,3
+I1,Empoli,2018,4
+I1,Parma,2018,3
+I1,Verona,2018,3
+I1,Frosinone,2018,0
+I1,Juventus,2017,17
+I1,Roma,2017,14
+I1,Napoli,2017,13
+I1,Atalanta,2017,11
+I1,Inter,2017,12
+I1,Fiorentina,2017,10
+I1,Sampdoria,2017,10
+I1,Lazio,2017,10
+I1,Milan,2017,10
+I1,Udinese,2017,9
+I1,Cagliari,2017,8
+I1,Torino,2017,5
+I1,Crotone,2017,7
+I1,Bologna,2017,6
+I1,Chievo,2017,5
+I1,Sassuolo,2017,5
+I1,Genoa,2017,3
+I1,Palermo,2017,4
+I1,Empoli,2017,3
+I1,Spal,2017,2
+I1,Pescara,2017,2
+I1,Verona,2017,2
+I1,Benevento,2017,1
+I1,Juventus,2016,20
+I1,Roma,2016,16
+I1,Napoli,2016,16
+I1,Inter,2016,13
+I1,Genoa,2016,10
+I1,Milan,2016,10
+I1,Lazio,2016,11
+I1,Chievo,2016,8
+I1,Fiorentina,2016,8
+I1,Atalanta,2016,9
+I1,Sassuolo,2016,8
+I1,Torino,2016,8
+I1,Sampdoria,2016,8
+I1,Udinese,2016,8
+I1,Bologna,2016,6
+I1,Empoli,2016,5
+I1,Cagliari,2016,6
+I1,Carpi,2016,5
+I1,Verona,2016,4
+I1,Palermo,2016,3
+I1,Frosinone,2016,2
+I1,Crotone,2016,2
+I1,Pescara,2016,0
+I1,Juventus,2015,15
+I1,Fiorentina,2015,14
+I1,Napoli,2015,13
+I1,Lazio,2015,12
+I1,Genoa,2015,10
+I1,Inter,2015,10
+I1,Milan,2015,10
+I1,Roma,2015,9
+I1,Sassuolo,2015,9
+I1,Torino,2015,9
+I1,Sampdoria,2015,8
+I1,Empoli,2015,8
+I1,Atalanta,2015,7
+I1,Chievo,2015,6
+I1,Palermo,2015,7
+I1,Verona,2015,5
+I1,Udinese,2015,4
+I1,Parma,2015,4
+I1,Cagliari,2015,4
+I1,Frosinone,2015,4
+I1,Bologna,2015,3
+I1,Cesena,2015,2
+I1,Carpi,2015,1
+I1,Juventus,2014,17
+I1,Roma,2014,15
+I1,Milan,2014,12
+I1,Napoli,2014,11
+I1,Lazio,2014,10
+I1,Sampdoria,2014,9
+I1,Udinese,2014,9
+I1,Atalanta,2014,9
+I1,Torino,2014,8
+I1,Genoa,2014,8
+I1,Inter,2014,6
+I1,Parma,2014,7
+I1,Fiorentina,2014,6
+I1,Sassuolo,2014,5
+I1,Chievo,2014,5
+I1,Catania,2014,5
+I1,Verona,2014,4
+I1,Cagliari,2014,4
+I1,Palermo,2014,4
+I1,Empoli,2014,2
+I1,Livorno,2014,2
+I1,Bologna,2014,1
+I1,Cesena,2014,1
+I1,Juventus,2013,8
+I1,Verona,2013,8
+I1,Roma,2013,7
+I1,Napoli,2013,6
+I1,Inter,2013,5
+I1,Fiorentina,2013,5
+I1,Cagliari,2013,4
+I1,Lazio,2013,5
+I1,Torino,2013,4
+I1,Atalanta,2013,4
+I1,Parma,2013,3
+I1,Udinese,2013,4
+I1,Genoa,2013,3
+I1,Milan,2013,3
+I1,Bologna,2013,2
+I1,Catania,2013,2
+I1,Livorno,2013,2
+I1,Sampdoria,2013,2
+I1,Chievo,2013,2
+I1,Sassuolo,2013,2
+F1,Paris SG,2020,4
+F1,Nimes,2020,4
+F1,Dijon,2020,3
+F1,Montpellier,2020,3
+F1,Rennes,2020,3
+F1,Lille,2020,3
+F1,Metz,2020,3
+F1,Lyon,2020,2
+F1,Nice,2020,2
+F1,Angers,2020,2
+F1,Brest,2020,2
+F1,Monaco,2020,2
+F1,Reims,2020,2
+F1,Marseille,2020,1
+F1,St Etienne,2020,1
+F1,Strasbourg,2020,1
+F1,Amiens,2020,0
+F1,Bordeaux,2020,0
+F1,Nantes,2020,0
+F1,Toulouse,2020,0
+F1,Paris SG,2019,16
+F1,Lille,2019,15
+F1,Marseille,2019,13
+F1,Nice,2019,13
+F1,Montpellier,2019,11
+F1,Nantes,2019,12
+F1,Rennes,2019,10
+F1,Angers,2019,9
+F1,Monaco,2019,10
+F1,Lyon,2019,9
+F1,Nimes,2019,9
+F1,St Etienne,2019,9
+F1,Reims,2019,7
+F1,Strasbourg,2019,8
+F1,Amiens,2019,7
+F1,Dijon,2019,7
+F1,Bordeaux,2019,7
+F1,Toulouse,2019,5
+F1,Brest,2019,4
+F1,Guingamp,2019,3
+F1,Metz,2019,2
+F1,Caen,2019,2
+F1,Paris SG,2018,16
+F1,Lyon,2018,13
+F1,St Etienne,2018,12
+F1,Marseille,2018,11
+F1,Bordeaux,2018,9
+F1,Lille,2018,9
+F1,Rennes,2018,8
+F1,Nice,2018,8
+F1,Strasbourg,2018,7
+F1,Montpellier,2018,6
+F1,Monaco,2018,7
+F1,Amiens,2018,7
+F1,Angers,2018,6
+F1,Dijon,2018,7
+F1,Nantes,2018,5
+F1,Toulouse,2018,5
+F1,Caen,2018,4
+F1,Reims,2018,4
+F1,Guingamp,2018,3
+F1,Troyes,2018,3
+F1,Metz,2018,2
+F1,Nimes,2018,2
+F1,Monaco,2017,17
+F1,Paris SG,2017,16
+F1,Marseille,2017,13
+F1,Guingamp,2017,11
+F1,Nantes,2017,12
+F1,Lyon,2017,11
+F1,Nice,2017,11
+F1,Bordeaux,2017,9
+F1,Dijon,2017,9
+F1,Rennes,2017,7
+F1,St Etienne,2017,6
+F1,Toulouse,2017,6
+F1,Angers,2017,6
+F1,Montpellier,2017,6
+F1,Caen,2017,7
+F1,Metz,2017,6
+F1,Lille,2017,5
+F1,Strasbourg,2017,4
+F1,Troyes,2017,4
+F1,Amiens,2017,4
+F1,Lorient,2017,3
+F1,Bastia,2017,2
+F1,Nancy,2017,3
+F1,Nice,2016,16
+F1,Paris SG,2016,15
+F1,Monaco,2016,15
+F1,Lyon,2016,14
+F1,Rennes,2016,11
+F1,Lille,2016,10
+F1,Guingamp,2016,9
+F1,Toulouse,2016,10
+F1,Caen,2016,9
+F1,St Etienne,2016,8
+F1,Bastia,2016,8
+F1,Marseille,2016,7
+F1,Montpellier,2016,9
+F1,Bordeaux,2016,7
+F1,Nantes,2016,7
+F1,Lorient,2016,7
+F1,Angers,2016,6
+F1,Dijon,2016,4
+F1,Nancy,2016,4
+F1,Reims,2016,4
+F1,Ajaccio GFCO,2016,2
+F1,Metz,2016,2
+F1,Troyes,2016,1
+F1,Paris SG,2015,16
+F1,St Etienne,2015,12
+F1,Bordeaux,2015,11
+F1,Bastia,2015,11
+F1,Lille,2015,11
+F1,Caen,2015,11
+F1,Montpellier,2015,11
+F1,Lyon,2015,9
+F1,Monaco,2015,7
+F1,Toulouse,2015,7
+F1,Guingamp,2015,8
+F1,Lorient,2015,7
+F1,Marseille,2015,6
+F1,Nice,2015,7
+F1,Nantes,2015,6
+F1,Rennes,2015,5
+F1,Reims,2015,5
+F1,Angers,2015,3
+F1,Ajaccio GFCO,2015,3
+F1,Evian Thonon Gaillard,2015,3
+F1,Lens,2015,2
+F1,Metz,2015,2
+F1,Troyes,2015,0
+F1,Marseille,2014,15
+F1,Paris SG,2014,14
+F1,St Etienne,2014,13
+F1,Lyon,2014,14
+F1,Bordeaux,2014,10
+F1,Lille,2014,9
+F1,Monaco,2014,9
+F1,Reims,2014,9
+F1,Montpellier,2014,8
+F1,Nantes,2014,7
+F1,Bastia,2014,7
+F1,Evian Thonon Gaillard,2014,8
+F1,Rennes,2014,7
+F1,Nice,2014,7
+F1,Lorient,2014,6
+F1,Guingamp,2014,7
+F1,Toulouse,2014,5
+F1,Sochaux,2014,6
+F1,Metz,2014,4
+F1,Lens,2014,3
+F1,Valenciennes,2014,3
+F1,Ajaccio,2014,2
+F1,Caen,2014,1
+F1,Lille,2013,8
+F1,Paris SG,2013,7
+F1,Monaco,2013,7
+F1,Bastia,2013,6
+F1,Bordeaux,2013,6
+F1,Nice,2013,6
+F1,Lorient,2013,5
+F1,Guingamp,2013,5
+F1,St Etienne,2013,5
+F1,Lyon,2013,3
+F1,Nantes,2013,5
+F1,Reims,2013,4
+F1,Toulouse,2013,3
+F1,Evian Thonon Gaillard,2013,3
+F1,Marseille,2013,4
+F1,Rennes,2013,3
+F1,Montpellier,2013,2
+F1,Sochaux,2013,2
+F1,Ajaccio,2013,1
+F1,Valenciennes,2013,1
+E0,Liverpool,2020,5
+E0,Arsenal,2020,4
+E0,Chelsea,2020,3
+E0,Man United,2020,3
+E0,Sheffield United,2020,3
+E0,Burnley,2020,2
+E0,Everton,2020,2
+E0,West Ham,2020,2
+E0,Bournemouth,2020,2
+E0,Crystal Palace,2020,2
+E0,Leicester,2020,2
+E0,Man City,2020,2
+E0,Norwich,2020,2
+E0,Watford,2020,2
+E0,Southampton,2020,2
+E0,Tottenham,2020,2
+E0,Wolves,2020,1
+E0,Newcastle,2020,1
+E0,Aston Villa,2020,1
+E0,Brighton,2020,0
+E0,Liverpool,2019,18
+E0,Man City,2019,16
+E0,Tottenham,2019,12
+E0,Leicester,2019,11
+E0,Wolves,2019,10
+E0,Arsenal,2019,10
+E0,Chelsea,2019,10
+E0,Man United,2019,9
+E0,Newcastle,2019,10
+E0,Everton,2019,10
+E0,Burnley,2019,9
+E0,Crystal Palace,2019,7
+E0,West Ham,2019,7
+E0,Southampton,2019,6
+E0,Bournemouth,2019,5
+E0,Watford,2019,5
+E0,Brighton,2019,5
+E0,Aston Villa,2019,4
+E0,Sheffield United,2019,4
+E0,Fulham,2019,3
+E0,Norwich,2019,2
+E0,Cardiff,2019,2
+E0,Huddersfield,2019,1
+E0,Man City,2018,16
+E0,Liverpool,2018,15
+E0,Arsenal,2018,14
+E0,Man United,2018,13
+E0,Tottenham,2018,13
+E0,Brighton,2018,9
+E0,Chelsea,2018,9
+E0,Everton,2018,9
+E0,Bournemouth,2018,9
+E0,Watford,2018,9
+E0,West Ham,2018,8
+E0,Leicester,2018,7
+E0,Newcastle,2018,7
+E0,Crystal Palace,2018,6
+E0,Burnley,2018,5
+E0,Southampton,2018,2
+E0,Wolves,2018,4
+E0,Cardiff,2018,4
+E0,Swansea,2018,4
+E0,Fulham,2018,3
+E0,Huddersfield,2018,3
+E0,West Brom,2018,2
+E0,Stoke,2018,1
+E0,Tottenham,2017,16
+E0,Arsenal,2017,16
+E0,Man City,2017,15
+E0,Chelsea,2017,16
+E0,Everton,2017,15
+E0,Liverpool,2017,11
+E0,Man United,2017,11
+E0,Leicester,2017,9
+E0,Stoke,2017,8
+E0,Burnley,2017,8
+E0,Bournemouth,2017,7
+E0,Swansea,2017,8
+E0,Crystal Palace,2017,7
+E0,Watford,2017,7
+E0,West Brom,2017,6
+E0,Southampton,2017,5
+E0,West Ham,2017,6
+E0,Hull,2017,6
+E0,Huddersfield,2017,4
+E0,Brighton,2017,3
+E0,Newcastle,2017,3
+E0,Middlesbrough,2017,1
+E0,Sunderland,2017,0
+E0,Man United,2016,13
+E0,Leicester,2016,12
+E0,Arsenal,2016,12
+E0,Liverpool,2016,11
+E0,Tottenham,2016,12
+E0,Chelsea,2016,10
+E0,Southampton,2016,11
+E0,West Ham,2016,10
+E0,Man City,2016,9
+E0,Everton,2016,7
+E0,Stoke,2016,7
+E0,Bournemouth,2016,8
+E0,Sunderland,2016,7
+E0,West Brom,2016,7
+E0,Swansea,2016,7
+E0,Watford,2016,6
+E0,Burnley,2016,7
+E0,Newcastle,2016,5
+E0,Crystal Palace,2016,4
+E0,Norwich,2016,3
+E0,Middlesbrough,2016,3
+E0,Hull,2016,2
+E0,Aston Villa,2016,2
+E0,Man City,2015,16
+E0,Arsenal,2015,13
+E0,Tottenham,2015,11
+E0,Leicester,2015,11
+E0,Chelsea,2015,10
+E0,Man United,2015,10
+E0,Liverpool,2015,10
+E0,Stoke,2015,10
+E0,Southampton,2015,9
+E0,Everton,2015,7
+E0,Crystal Palace,2015,8
+E0,West Brom,2015,8
+E0,Swansea,2015,6
+E0,West Ham,2015,6
+E0,Newcastle,2015,4
+E0,Sunderland,2015,5
+E0,Aston Villa,2015,3
+E0,Hull,2015,4
+E0,Watford,2015,4
+E0,Norwich,2015,3
+E0,Bournemouth,2015,2
+E0,Burnley,2015,2
+E0,QPR,2015,1
+E0,Chelsea,2014,15
+E0,Arsenal,2014,12
+E0,Man City,2014,13
+E0,Liverpool,2014,12
+E0,Man United,2014,13
+E0,Southampton,2014,10
+E0,Tottenham,2014,11
+E0,West Ham,2014,11
+E0,Everton,2014,10
+E0,Stoke,2014,10
+E0,Swansea,2014,10
+E0,Newcastle,2014,8
+E0,Crystal Palace,2014,7
+E0,Aston Villa,2014,6
+E0,West Brom,2014,4
+E0,Sunderland,2014,4
+E0,QPR,2014,5
+E0,Hull,2014,3
+E0,Norwich,2014,3
+E0,Fulham,2014,3
+E0,Burnley,2014,2
+E0,Cardiff,2014,2
+E0,Leicester,2014,1
+E0,Man City,2013,10
+E0,Chelsea,2013,9
+E0,Liverpool,2013,8
+E0,Everton,2013,6
+E0,Arsenal,2013,6
+E0,Hull,2013,5
+E0,Newcastle,2013,5
+E0,Stoke,2013,4
+E0,Southampton,2013,4
+E0,Tottenham,2013,4
+E0,Man United,2013,4
+E0,Cardiff,2013,3
+E0,Norwich,2013,3
+E0,Crystal Palace,2013,3
+E0,Swansea,2013,2
+E0,West Brom,2013,2
+E0,West Ham,2013,2
+E0,Aston Villa,2013,2
+E0,Fulham,2013,2
+E0,Sunderland,2013,2
+D1,Dortmund,2020,4
+D1,Leverkusen,2020,4
+D1,Bayern Munich,2020,3
+D1,FC Koln,2020,3
+D1,RB Leipzig,2020,2
+D1,M'gladbach,2020,2
+D1,Ein Frankfurt,2020,2
+D1,Freiburg,2020,2
+D1,Mainz,2020,1
+D1,Schalke 04,2020,1
+D1,Wolfsburg,2020,1
+D1,Augsburg,2020,1
+D1,Union Berlin,2020,1
+D1,Hoffenheim,2020,1
+D1,Fortuna Dusseldorf,2020,0
+D1,Hertha,2020,0
+D1,Paderborn,2020,0
+D1,Werder Bremen,2020,0
+D1,Bayern Munich,2019,15
+D1,Dortmund,2019,11
+D1,Ein Frankfurt,2019,8
+D1,RB Leipzig,2019,8
+D1,Wolfsburg,2019,8
+D1,Leverkusen,2019,8
+D1,M'gladbach,2019,8
+D1,Augsburg,2019,8
+D1,Freiburg,2019,7
+D1,Hoffenheim,2019,8
+D1,Fortuna Dusseldorf,2019,8
+D1,Mainz,2019,8
+D1,Werder Bremen,2019,6
+D1,Schalke 04,2019,5
+D1,Hertha,2019,5
+D1,Union Berlin,2019,5
+D1,Stuttgart,2019,3
+D1,FC Koln,2019,3
+D1,Hannover,2019,3
+D1,Nurnberg,2019,1
+D1,Paderborn,2019,2
+D1,Dortmund,2018,13
+D1,M'gladbach,2018,12
+D1,Bayern Munich,2018,11
+D1,RB Leipzig,2018,11
+D1,Ein Frankfurt,2018,10
+D1,Hoffenheim,2018,9
+D1,Werder Bremen,2018,7
+D1,Stuttgart,2018,8
+D1,Freiburg,2018,7
+D1,Leverkusen,2018,8
+D1,Schalke 04,2018,8
+D1,Mainz,2018,6
+D1,Hertha,2018,5
+D1,Hannover,2018,6
+D1,Wolfsburg,2018,4
+D1,Augsburg,2018,4
+D1,Fortuna Dusseldorf,2018,4
+D1,Hamburg,2018,3
+D1,FC Koln,2018,2
+D1,Nurnberg,2018,2
+D1,Bayern Munich,2017,13
+D1,Hoffenheim,2017,12
+D1,Dortmund,2017,12
+D1,RB Leipzig,2017,11
+D1,Schalke 04,2017,9
+D1,Freiburg,2017,8
+D1,Hamburg,2017,9
+D1,Hertha,2017,9
+D1,M'gladbach,2017,8
+D1,Leverkusen,2017,6
+D1,Augsburg,2017,6
+D1,Mainz,2017,7
+D1,Wolfsburg,2017,6
+D1,Werder Bremen,2017,7
+D1,FC Koln,2017,6
+D1,Ein Frankfurt,2017,4
+D1,Stuttgart,2017,5
+D1,Hannover,2017,4
+D1,Darmstadt,2017,4
+D1,Ingolstadt,2017,3
+D1,Bayern Munich,2016,13
+D1,Dortmund,2016,12
+D1,M'gladbach,2016,11
+D1,Hertha,2016,10
+D1,Hoffenheim,2016,9
+D1,Ein Frankfurt,2016,9
+D1,Leverkusen,2016,9
+D1,Mainz,2016,8
+D1,Werder Bremen,2016,7
+D1,Schalke 04,2016,7
+D1,FC Koln,2016,6
+D1,Ingolstadt,2016,6
+D1,Hamburg,2016,5
+D1,RB Leipzig,2016,6
+D1,Wolfsburg,2016,4
+D1,Augsburg,2016,3
+D1,Freiburg,2016,5
+D1,Darmstadt,2016,3
+D1,Stuttgart,2016,3
+D1,Hannover,2016,2
+D1,Bayern Munich,2015,14
+D1,Dortmund,2015,13
+D1,M'gladbach,2015,13
+D1,Wolfsburg,2015,12
+D1,Schalke 04,2015,10
+D1,Leverkusen,2015,10
+D1,FC Koln,2015,6
+D1,Hertha,2015,8
+D1,Ein Frankfurt,2015,7
+D1,Mainz,2015,8
+D1,Stuttgart,2015,7
+D1,Augsburg,2015,5
+D1,Hamburg,2015,5
+D1,Hoffenheim,2015,5
+D1,Werder Bremen,2015,6
+D1,Freiburg,2015,4
+D1,Hannover,2015,3
+D1,Ingolstadt,2015,2
+D1,Darmstadt,2015,1
+D1,Paderborn,2015,1
+D1,Bayern Munich,2014,15
+D1,Schalke 04,2014,12
+D1,Wolfsburg,2014,12
+D1,Hoffenheim,2014,11
+D1,Augsburg,2014,10
+D1,Ein Frankfurt,2014,9
+D1,M'gladbach,2014,8
+D1,Mainz,2014,8
+D1,Dortmund,2014,8
+D1,Leverkusen,2014,7
+D1,Hannover,2014,8
+D1,Werder Bremen,2014,6
+D1,Freiburg,2014,6
+D1,Hamburg,2014,6
+D1,Hertha,2014,5
+D1,Stuttgart,2014,4
+D1,Paderborn,2014,3
+D1,Braunschweig,2014,3
+D1,Nurnberg,2014,3
+D1,FC Koln,2014,1
+D1,Bayern Munich,2013,9
+D1,M'gladbach,2013,8
+D1,Leverkusen,2013,7
+D1,Wolfsburg,2013,6
+D1,Dortmund,2013,6
+D1,Hannover,2013,5
+D1,Augsburg,2013,5
+D1,Hertha,2013,5
+D1,Schalke 04,2013,5
+D1,Mainz,2013,4
+D1,Werder Bremen,2013,3
+D1,Stuttgart,2013,2
+D1,Hoffenheim,2013,1
+D1,Braunschweig,2013,2
+D1,Hamburg,2013,2
+D1,Freiburg,2013,1
+D1,Nurnberg,2013,0
+D1,Ein Frankfurt,2013,0

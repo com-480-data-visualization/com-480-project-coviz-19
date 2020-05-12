@@ -1,0 +1,85 @@
+Div,HomeTeam,win,loose
+D1,Augsburg,35,37
+D1,Bayern Munich,80,8
+D1,Dortmund,67,13
+D1,Ein Frankfurt,41,28
+D1,FC Koln,15,19
+D1,Freiburg,27,21
+D1,Hamburg,22,26
+D1,Hannover,21,34
+D1,Hertha,39,32
+D1,Hoffenheim,46,25
+D1,Leverkusen,49,22
+D1,M'gladbach,61,20
+D1,Mainz,41,35
+D1,Schalke 04,49,24
+D1,Stuttgart,24,33
+D1,Werder Bremen,35,34
+D1,Wolfsburg,45,26
+E0,Arsenal,66,12
+E0,Bournemouth,10,20
+E0,Burnley,16,30
+E0,Chelsea,58,17
+E0,Crystal Palace,28,49
+E0,Everton,42,26
+E0,Leicester,34,26
+E0,Liverpool,66,10
+E0,Man City,68,12
+E0,Man United,54,17
+E0,Newcastle,24,28
+E0,Southampton,36,40
+E0,Stoke,22,23
+E0,Swansea,17,28
+E0,Tottenham,57,22
+E0,Watford,13,18
+E0,West Brom,15,25
+E0,West Ham,31,40
+F1,Angers,12,12
+F1,Bordeaux,37,23
+F1,Caen,16,37
+F1,Guingamp,24,33
+F1,Lille,44,25
+F1,Lyon,50,19
+F1,Marseille,42,24
+F1,Monaco,51,16
+F1,Montpellier,37,30
+F1,Nantes,35,38
+F1,Nice,47,27
+F1,Paris SG,73,4
+F1,Reims,17,11
+F1,Rennes,36,29
+F1,St Etienne,41,23
+F1,Toulouse,27,34
+I1,Atalanta,43,30
+I1,Bologna,20,37
+I1,Cagliari,25,40
+I1,Chievo,17,41
+I1,Fiorentina,41,24
+I1,Genoa,34,41
+I1,Inter,52,22
+I1,Juventus,89,3
+I1,Lazio,51,30
+I1,Milan,50,25
+I1,Napoli,66,14
+I1,Roma,59,16
+I1,Sampdoria,43,34
+I1,Sassuolo,28,40
+I1,Torino,42,27
+I1,Udinese,35,42
+I1,Verona,13,19
+SP1,Ath Bilbao,48,19
+SP1,Ath Madrid,63,9
+SP1,Barcelona,77,6
+SP1,Betis,25,30
+SP1,Celta,34,32
+SP1,Eibar,27,29
+SP1,Espanol,34,33
+SP1,Getafe,25,30
+SP1,Granada,5,18
+SP1,Levante,20,25
+SP1,Malaga,16,25
+SP1,Real Madrid,65,13
+SP1,Sevilla,52,18
+SP1,Sociedad,40,28
+SP1,Valencia,45,21
+SP1,Villarreal,45,22
