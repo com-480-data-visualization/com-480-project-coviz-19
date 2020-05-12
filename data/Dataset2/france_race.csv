@@ -1,0 +1,177 @@
+date,name,value
+2013-01-01,Valenciennes,1
+2013-01-01,Lille,8
+2013-01-01,Paris SG,7
+2013-01-01,Monaco,7
+2013-01-01,Bastia,6
+2013-01-01,Bordeaux,6
+2013-01-01,Nice,6
+2013-01-01,Lorient,5
+2013-01-01,Guingamp,5
+2013-01-01,St Etienne,5
+2013-01-01,Ajaccio,1
+2013-01-01,Nantes,5
+2013-01-01,Reims,4
+2013-01-01,Toulouse,3
+2013-01-01,Evian Thonon Gaillard,3
+2013-01-01,Marseille,4
+2013-01-01,Rennes,3
+2013-01-01,Montpellier,2
+2013-01-01,Sochaux,2
+2013-01-01,Lyon,3
+2014-01-01,Reims,9
+2014-01-01,Monaco,9
+2014-01-01,Lille,9
+2014-01-01,Bordeaux,10
+2014-01-01,Marseille,15
+2014-01-01,St Etienne,13
+2014-01-01,Paris SG,14
+2014-01-01,Montpellier,8
+2014-01-01,Lyon,14
+2014-01-01,Bastia,7
+2014-01-01,Nantes,7
+2014-01-01,Rennes,7
+2014-01-01,Nice,7
+2014-01-01,Lorient,6
+2014-01-01,Guingamp,7
+2014-01-01,Toulouse,5
+2014-01-01,Sochaux,6
+2014-01-01,Metz,4
+2014-01-01,Lens,3
+2014-01-01,Valenciennes,3
+2014-01-01,Ajaccio,2
+2014-01-01,Evian Thonon Gaillard,8
+2014-01-01,Caen,1
+2015-01-01,Monaco,7
+2015-01-01,Lyon,9
+2015-01-01,Montpellier,11
+2015-01-01,Caen,11
+2015-01-01,Paris SG,16
+2015-01-01,Bastia,11
+2015-01-01,Bordeaux,11
+2015-01-01,St Etienne,12
+2015-01-01,Toulouse,7
+2015-01-01,Lille,11
+2015-01-01,Guingamp,8
+2015-01-01,Rennes,5
+2015-01-01,Marseille,6
+2015-01-01,Lorient,7
+2015-01-01,Troyes,0
+2015-01-01,Lens,2
+2015-01-01,Evian Thonon Gaillard,3
+2015-01-01,Metz,2
+2015-01-01,Angers,3
+2015-01-01,Reims,5
+2015-01-01,Nantes,6
+2015-01-01,Nice,7
+2015-01-01,Ajaccio GFCO,3
+2016-01-01,Monaco,15
+2016-01-01,Lyon,14
+2016-01-01,Rennes,11
+2016-01-01,Lille,10
+2016-01-01,Guingamp,9
+2016-01-01,Toulouse,10
+2016-01-01,Caen,9
+2016-01-01,St Etienne,8
+2016-01-01,Bastia,8
+2016-01-01,Marseille,7
+2016-01-01,Bordeaux,7
+2016-01-01,Nantes,7
+2016-01-01,Lorient,7
+2016-01-01,Dijon,4
+2016-01-01,Nancy,4
+2016-01-01,Reims,4
+2016-01-01,Ajaccio GFCO,2
+2016-01-01,Metz,2
+2016-01-01,Troyes,1
+2016-01-01,Paris SG,15
+2016-01-01,Montpellier,9
+2016-01-01,Angers,6
+2016-01-01,Nice,16
+2017-01-01,Bastia,2
+2017-01-01,Nancy,3
+2017-01-01,Monaco,17
+2017-01-01,Paris SG,16
+2017-01-01,Marseille,13
+2017-01-01,Guingamp,11
+2017-01-01,Nantes,12
+2017-01-01,Nice,11
+2017-01-01,Bordeaux,9
+2017-01-01,Dijon,9
+2017-01-01,Rennes,7
+2017-01-01,Lyon,11
+2017-01-01,Toulouse,6
+2017-01-01,St Etienne,6
+2017-01-01,Amiens,4
+2017-01-01,Troyes,4
+2017-01-01,Strasbourg,4
+2017-01-01,Lille,5
+2017-01-01,Lorient,3
+2017-01-01,Caen,7
+2017-01-01,Montpellier,6
+2017-01-01,Angers,6
+2017-01-01,Metz,6
+2018-01-01,Montpellier,6
+2018-01-01,Lyon,13
+2018-01-01,St Etienne,12
+2018-01-01,Marseille,11
+2018-01-01,Bordeaux,9
+2018-01-01,Lille,9
+2018-01-01,Rennes,8
+2018-01-01,Nice,8
+2018-01-01,Strasbourg,7
+2018-01-01,Monaco,7
+2018-01-01,Paris SG,16
+2018-01-01,Angers,6
+2018-01-01,Dijon,7
+2018-01-01,Nantes,5
+2018-01-01,Toulouse,5
+2018-01-01,Caen,4
+2018-01-01,Reims,4
+2018-01-01,Guingamp,3
+2018-01-01,Troyes,3
+2018-01-01,Metz,2
+2018-01-01,Nimes,2
+2018-01-01,Amiens,7
+2019-01-01,Monaco,10
+2019-01-01,Angers,9
+2019-01-01,Rennes,10
+2019-01-01,Paris SG,16
+2019-01-01,Nice,13
+2019-01-01,Marseille,13
+2019-01-01,Lille,15
+2019-01-01,Lyon,9
+2019-01-01,Montpellier,11
+2019-01-01,Nimes,9
+2019-01-01,Nantes,12
+2019-01-01,Reims,7
+2019-01-01,St Etienne,9
+2019-01-01,Metz,2
+2019-01-01,Guingamp,3
+2019-01-01,Brest,4
+2019-01-01,Caen,2
+2019-01-01,Bordeaux,7
+2019-01-01,Dijon,7
+2019-01-01,Amiens,7
+2019-01-01,Strasbourg,8
+2019-01-01,Toulouse,5
+2020-01-01,Nice,2
+2020-01-01,Nimes,4
+2020-01-01,Dijon,3
+2020-01-01,Montpellier,3
+2020-01-01,Rennes,3
+2020-01-01,Lille,3
+2020-01-01,Metz,3
+2020-01-01,Lyon,2
+2020-01-01,Angers,2
+2020-01-01,St Etienne,1
+2020-01-01,Monaco,2
+2020-01-01,Reims,2
+2020-01-01,Marseille,1
+2020-01-01,Strasbourg,1
+2020-01-01,Amiens,0
+2020-01-01,Bordeaux,0
+2020-01-01,Nantes,0
+2020-01-01,Toulouse,0
+2020-01-01,Brest,2
+2020-01-01,Paris SG,4
