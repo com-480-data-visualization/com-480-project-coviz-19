@@ -42,15 +42,13 @@ d3.csv(data_csv, function(data) {
     Tooltip
       .transition()
       .style("opacity", 1)
-    d3.select(this)
-      .style("stroke", "black")
-      .style("opacity", 1)
+
   }
   var mousemove = function(d) {
     Tooltip
       .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
-      .style("left", (d3.mouse(this)[0] -200) + "px")
-      .style("top", (d3.mouse(this)[1]-600) + "px")
+      .style("left", d3.mouse(this)[0]  + "px")
+      .style("top", d3.mouse(this)[1] + "px")
   }
   var mouseleave = function(d) {
     Tooltip
@@ -58,39 +56,44 @@ d3.csv(data_csv, function(data) {
       .style("opacity", 0)
   }
 
-  var highlight = function(d){
-    // reduce opacity of all groups
-    d3.selectAll(".node")
-      .transition()
-      .style("opacity", .05)
-    // expect the one that is hovered
-    d3.selectAll("."+d)
-      .transition()
-      .style("opacity", 1)
-    Tooltip
-      .style("opacity", 0)
-  }
+
 
   // And when it is not hovered anymore
-  var noHighlight = function(d){
-    d3.selectAll(".node")
-      .transition()
-      .style("opacity", 1)
-    Tooltip
-      .style("opacity", 0)
-  }
+
+var defs = svg3.append('svg:defs');
+
+  defs.selectAll(".patterns")
+        .data(data)
+    .enter()
+  .append("pattern")
+    .attr('id', function(d){ return d.team.replace(" ","_")} )
+        .attr("width", 1)
+    .attr("height", 1)
+
+.append("svg:image")
+    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} ) 
+
+    .attr("width", function(d){ return 2*z(d.value)})
+    .attr("height", function(d){ return 2*z(d.value)})
+  .attr("y", 0)
+  .attr("x", 0)
 
   // Initialize the images: all located at the center of the svg area
   var node = svg3.append("g")
-    .selectAll("image")
+    .selectAll("circle")
     .data(data)
     .enter()
-    .append('image')
-    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} )
-    .attr('x', width_bubble / 2)
-    .attr('y', height_bubble / 2)
-    .attr('width', function(d){ return z(d.value)})
-    .attr('height', function(d){ return z(d.value)})
+    .append('circle')
+    // .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} )
+    .attr('cx', width_bubble / 2)
+    .attr('cy', height_bubble / 2)
+    .attr("r", function(d){ return z(d.value)})
+    .style('fill', function(d){ return 'url(#'+d.team.replace(" ","_")+')'} )
+
+
+
+    // .attr('width', function(d){ return z(d.value)*1.5})
+    // .attr('height', function(d){ return z(d.value)*1.5})
       .on("mouseover", mouseover) // What to do when hovered
       .on("mousemove", mousemove)
       .on("mouseleave", mouseleave)
@@ -104,7 +107,7 @@ d3.csv(data_csv, function(data) {
 
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
-      .force("center", d3.forceCenter().x(width_bubble / 2).y(height_bubble / 2)) // Attraction to the center of the svg area
+      .force("center", d3.forceCenter().x(0).y(0)) // Attraction to the center of the svg area
       .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (z(d.value)) }).iterations(1)) // Force that avoids circle overlapping
 
@@ -113,9 +116,10 @@ d3.csv(data_csv, function(data) {
   simulation
       .nodes(data)
       .on("tick", function(d){
+
         node
-            .attr("x", function(d){ return d.x; })
-            .attr("y", function(d){ return d.y; })
+
+            .attr("transform", (d) => "translate(" + d.x + "," + d.y + ")")
       });
 
   // What happens when a circle is dragged?
@@ -139,4 +143,4 @@ d3.csv(data_csv, function(data) {
 
 })
 }
-update(data_bubble1)
+update(data_bubble2)
