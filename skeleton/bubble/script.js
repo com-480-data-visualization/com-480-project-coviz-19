@@ -3,7 +3,7 @@ var data_bubble2="https://raw.githubusercontent.com/com-480-data-visualization/c
 
 // set the dimensions and margins of the graph
 var width_bubble = 600
-var height_bubble = 600
+var height_bubble = 650
 // append the svg object to the body of the page
 var svg3 = d3.select("#bubble")
   .append("svg")
@@ -34,25 +34,29 @@ d3.csv(data_csv, function(data) {
     .style("border-width", "2px")
     .style("border-radius", "5px")
     .style("padding", "5px")
-    .style("position",'relative')
+      .attr("y", 0)
+  .attr("x", 0)
     .style("width",'150px')
 
   // Three function that change the tooltip when user hover / move / leave a cell
-  var mouseover = function(d) {
+ var mouseover = function(d) {
     Tooltip
-      .transition()
-      .style("opacity", 1)
 
+      .style("opacity", 1)
+    d3.select(this)
+      .style("stroke", "black")
+      .style("opacity", 1)
   }
   var mousemove = function(d) {
+    console.log( d3.mouse(this))
     Tooltip
       .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
       .style("left", d3.mouse(this)[0]  + "px")
-      .style("top", d3.mouse(this)[1] + "px")
+      .style("top", d3.mouse(this)[1] -600+ "px")
   }
   var mouseleave = function(d) {
     Tooltip
-      .transition()
+
       .style("opacity", 0)
   }
 
@@ -89,6 +93,8 @@ var defs = svg3.append('svg:defs');
     .attr('cy', height_bubble / 2)
     .attr("r", function(d){ return z(d.value)})
     .style('fill', function(d){ return 'url(#'+d.team.replace(" ","_")+')'} )
+      .style("stroke", "black")
+      .style("opacity", 1)
 
 
 
@@ -132,8 +138,8 @@ var defs = svg3.append('svg:defs');
     d.fx = d3.event.x;
     d.fy = d3.event.y;
     Tooltip
-      .style("left", (d3.mouse(this)[0] -200) + "px")
-      .style("top", (d3.mouse(this)[1]-600) + "px")
+      .style("left", d3.mouse(this)[0] + "px")
+      .style("top", d3.mouse(this)[1]-600+ "px")
   }
   function dragended(d) {
     if (!d3.event.active) simulation.alphaTarget(.03);
