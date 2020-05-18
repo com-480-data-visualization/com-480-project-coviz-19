@@ -11,10 +11,6 @@
       font-size: 24px;
       font-weight: 500;
     }
-      text.subTitle{
-        font-weight: 500;
-        fill: #777777;
-      }
       text.caption{
         font-weight: 400;
         font-size: 14px;
@@ -79,23 +75,20 @@
     let title = svg.append('text')
      .attr('class', 'title')
      .attr('y', 24)
-     .html('18 years of Interbrand’s Top Global Brands');
+     .html('7 years of match points ');
 
-    let subTitle = svg.append("text")
-     .attr("class", "subTitle")
-     .attr("y", 55)
-     .html("Brand value, $m");
+
 
     let caption = svg.append('text')
      .attr('class', 'caption')
      .attr('x', width)
      .attr('y', height-5)
      .style('text-anchor', 'end')
-     .html('Source: Interbrand');
+     .html('Source: https://www.football-data.co.uk/');
 
      let year = 2013;
 
-  d3.csv('spain.csv').then(function(data) {
+  d3.csv('https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/race/test/spain.csv').then(function(data) {
     //if (error) throw error;
 
       console.log(data);
