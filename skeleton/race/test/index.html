@@ -95,7 +95,7 @@
 
      let year = 2013;
 
-  d3.csv('brand_values.csv').then(function(data) {
+  d3.csv('spain.csv').then(function(data) {
     //if (error) throw error;
 
       console.log(data);
@@ -301,7 +301,7 @@
 
       yearText.html(~~year);
 
-     if(year == 2018) ticker.stop();
+     if(year == 2020) ticker.stop();
      year = d3.format('.1f')((+year) + 0.1);
    },tickDuration);
 
