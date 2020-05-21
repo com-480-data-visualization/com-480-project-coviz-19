@@ -1,4 +1,4 @@
-,country_name,season,accuracy_percentage
+country_code,country_name,season,accuracy_percentage
 2,Belgium,2010/2011,53.75
 9,England,2010/2011,50.78947368421053
 17,France,2010/2011,44.854881266490764
