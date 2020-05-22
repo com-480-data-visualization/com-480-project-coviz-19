@@ -1,5 +1,8 @@
-var data_bubble1="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble1.csv"
-var data_bubble2="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data_bubble2.csv"
+var data_bubble1="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_I1_2018.csv"
+var data_bubble2="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_E0_2018.csv"
+var data_bubble3="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_D1_2018.csv"
+var data_bubble4="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_SP1_2018.csv"
+var data_bubble5="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_F1_2018.csv"
 
 // set the dimensions and margins of the graph
 var width_bubble = 600
@@ -22,7 +25,7 @@ d3.csv(data_csv, function(data) {
   // Size scale for countries
   var z = d3.scaleLinear()
     .domain([0, 600])
-    .range([20,600])
+    .range([20,100])
 
   // create a tooltip
   var Tooltip = d3.select("#bubble")
