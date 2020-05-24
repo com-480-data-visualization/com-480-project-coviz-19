@@ -68,7 +68,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
      return d3.scaleLinear()
     .domain([min_value, max_value])
     .range([20,100])
-  
+
 
   }
 
@@ -113,7 +113,7 @@ var defs = svg3.append('svg:defs');
     .attr("height", 1)
 
 .append("svg:image")
-    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} ) 
+    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} )
 
     .attr("width", function(d){ return 2*z()(d.value)})
     .attr("height", function(d){ return 2*z()(d.value)})
@@ -213,9 +213,7 @@ var defs = svg3.append('svg:defs');
 
         function concatenate_options_bubble(){
               return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/"+selectedCategory+selectedCountry+".csv"
-            
+
             }
 
        update(concatenate_options_bubble())
-
-
