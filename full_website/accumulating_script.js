@@ -139,20 +139,17 @@ var zero_line = svg.append("line")
 
         y.domain([Math.min(0,d3.min(dataFilter.map(x=>parseInt(x.value)))),Math.max(0, d3.max(dataFilter.map(x=>parseInt(x.value))))]);
         svg.selectAll(".myYaxis").transition()
-          .duration(3000)
+          .duration(1000)
           .call(yAxis);
 
           svg.selectAll(".myYaxis").transition()
-          .duration(3000)
+          .duration(1000)
           .call(yAxis);
 
           zero_line
           .attr("y1", y(0))
                      .attr("x2", width)
-                     .attr("y2", y(0))
-                     .transition()
-          .duration(3000)
-          .call(yAxis);
+                     .attr("y2", y(0));
 
       // Give these new data to update line
       line
