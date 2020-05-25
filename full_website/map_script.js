@@ -84,7 +84,7 @@ function update(data_csv) {
     
       }
       let mousemove = function(d) {
-        console.log(d)
+
         Tooltip_fixed_map
         .html('<u>' + d.properties.name + '</u>' + "<br>" + d.total + "% accuracy")
         .style("left", d3.mouse(this)[0]  + "px")
@@ -151,7 +151,7 @@ d3.select("#selectButtonYear").on("change", function(d) {
 
 
 function concatenate_options_map(){
-  console.log("Called")
+
   return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/" + selectedProvider + "/" + selectedYear + ".csv"
 
 }

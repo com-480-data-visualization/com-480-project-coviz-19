@@ -32,7 +32,7 @@ var svgBarchart = d3.select("#barchart")
  var yAxis =  svgBarchart.append("g")
     .call(d3.axisLeft(yBarchart));
 
-function update(data_csv) {
+function update_barchart(data_csv) {
 // Parse the Data
 d3.csv(data_csv, function(data) {
 
@@ -61,7 +61,6 @@ d3.csv(data_csv, function(data) {
     .range(['#008000','#e41a1c'])
 
   // Normalize the data -> sum of each group must be 100!
-  console.log(data)
   dataNormalized = []
   data.forEach(function(d){
     // Compute the total
@@ -77,7 +76,6 @@ d3.csv(data_csv, function(data) {
     .keys(subgroups)
     (data)
 
-    console.log(stackedData)
 
   // Show the bars
   svgBarchart.append("g")
@@ -89,7 +87,6 @@ d3.csv(data_csv, function(data) {
       .selectAll("rect")
       // enter a second time = loop subgroup per subgroup to add all rectangles
       .data(function(d) { 
-        console.log(d)
         return d; })
       .enter().append("rect")
         .attr("x", function(d) { return xBarchart(d.data.name); })
@@ -98,4 +95,4 @@ d3.csv(data_csv, function(data) {
         .attr("width",xBarchart.bandwidth())
 })
 }
-update(dataIT)
+update_barchart(dataIT)

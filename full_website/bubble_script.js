@@ -1,8 +1,3 @@
-var data_bubble1="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_I1_2018.csv"
-var data_bubble2="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_E0_2018.csv"
-var data_bubble3="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_D1_2018.csv"
-var data_bubble4="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_SP1_2018.csv"
-var data_bubble5="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/corners_F1_2018.csv"
 
 // set the dimensions and margins of the graph
 var width_bubble = 600
@@ -212,7 +207,7 @@ var defs = svg3.append('svg:defs');
 
 
         function concatenate_options_bubble(){
-              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/bubble/data/"+selectedCategory+selectedCountry+".csv"
+              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/bubble/"+selectedCategory+selectedCountry+".csv"
 
             }
 

@@ -8,8 +8,8 @@
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 <!-- BarChart -->
-<button onclick="update(dataIT)">Variable 1</button>
-<button onclick="update(dataFR)">Variable 2</button>
+<button onclick="update_barchart(dataIT)">Variable 1</button>
+<button onclick="update_barchart(dataFR)">Variable 2</button>
 <div id="barchart"></div>
 
 <hr>
@@ -34,6 +34,27 @@ Click here to change countries:
 
 <div id="bubble"></div>
 
+<hr>
+
+<!-- Accumulating chart -->
+
+<!-- Initialize a select button -->
+<select id="selectButtonCountry_accumulating"></select>
+
+<select id="selectButtonRisky_accumulating"></select>
+
+<!-- Create a div where the graph will take place -->
+<div id="accumulating"></div>
+
+
+
+
+
+
+
+
+
+
 <style>
 .node:hover{
   stroke-width: 7px !important;
@@ -46,3 +67,5 @@ Click here to change countries:
 <script src="map_script.js"></script>
 <script src="barchart_script.js"></script>
 <script src="bubble_script.js"></script>
+<script src="accumulating_script.js"></script>
+
