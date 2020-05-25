@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<style>
+  text{
+    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+  }
+  text.title{
+    font-size: 24px;
+    font-weight: 500;
+  }
+    text.caption{
+      font-weight: 400;
+      font-size: 14px;
+      fill: #777777;
+    }
+    text.label{
+      font-weight: 600;
+    }
+
+    text.valueLabel{
+     font-weight: 300;
+    }
+
+    text.yearText{
+      font-size: 64px;
+      font-weight: 700;
+      opacity: 0.25;
+    }
+    .tick text {
+      fill: #777777;
+    }
+    .xAxis .tick:nth-child(2) text {
+      text-anchor: start;
+    }
+    .tick line {
+      shape-rendering: CrispEdges;
+      stroke: #dddddd;
+    }
+    .tick line.origin{
+      stroke: #aaaaaa;
+    }
+    path.domain{
+      display: none;
+    }
+</style>
+Click here to change countries(please wait the end of the run before switching the championship):
+<select id="selectButtonCountry_race"></select>
+<div id = "race"> </div>
+<script src="script.js"></script>

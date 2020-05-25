@@ -28,7 +28,7 @@ var svg3 = d3.select("#bubble")
     var optionsSelectButtonCountry=[["Italy 2018","I1_2018"],["Spain 2018","SP1_2018"],["France 2018","F1_2018"],["Spain 2018","E0_2018"],["Germany 2018", "D1_2018"]]
     var optionsSelectButtonCategory=[["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
     // add the options to the button
-    d3.select("#selectButtonCountry")
+    d3.select("#selectButtonCountry_bubble")
       .selectAll('myOptions')
       .data(optionsSelectButtonCountry)
       .enter()
@@ -36,7 +36,7 @@ var svg3 = d3.select("#bubble")
       .text(function (d) { return d[0]; }) // text showed in the menu
       .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
 
-      d3.select("#selectButtonCategory")
+      d3.select("#selectButtonCategory_bubble")
       .selectAll('myOptions')
       .data(optionsSelectButtonCategory)
       .enter()
@@ -44,7 +44,7 @@ var svg3 = d3.select("#bubble")
       .text(function (d) { return d[0]; }) // text showed in the menu
       .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
 
-function update(data_csv) {
+function update_bubble(data_csv) {
 
 
 
@@ -170,7 +170,7 @@ var defs = svg3.append('svg:defs');
   function dragged(d) {
     d.fx = d3.event.x;
     d.fy = d3.event.y;
-    Tooltip
+    Tooltip_fixed
       .style("left", d3.mouse(this)[0] + "px")
       .style("top", d3.mouse(this)[1]-600+ "px")
   }
@@ -184,18 +184,18 @@ var defs = svg3.append('svg:defs');
 }
 
 
-    d3.select("#selectButtonCountry").on("change", function(d) {
+    d3.select("#selectButtonCountry_bubble").on("change", function(d) {
         // recover the option that has been chosen
         selectedCountry = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options_bubble())
+        update_bubble(concatenate_options_bubble())
     })
 
-        d3.select("#selectButtonCategory").on("change", function(d) {
+        d3.select("#selectButtonCategory_bubble").on("change", function(d) {
         // recover the option that has been chosen
         selectedCategory = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options_bubble())
+        update_bubble(concatenate_options_bubble())
     })
 
         //Initialize

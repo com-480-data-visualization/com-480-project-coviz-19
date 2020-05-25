@@ -1,4 +1,4 @@
-var svg = d3.select("#race").append("svg")
+var svg_race = d3.select("#race").append("svg")
   .attr("width", 960)
   .attr("height", 600);
   var optionsSelectButtonCountry=[["Italy","italy"],["Spain","spain"],["France","france"],["Germany","german"],["England", "england"]]
@@ -16,32 +16,31 @@ var top_n = 10;
 var height = 600;
 var width = 960;
 
-const margin = {
+const margin_race = {
   top: 80,
   right: 0,
   bottom: 5,
   left: 10
 };
 
-let barPadding = (height-(margin.bottom+margin.top))/(top_n*5);
+let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
 
-let title = svg.append('text')
+let title = svg_race.append('text')
  .attr('class', 'title')
  .attr('y', 24)
  .html('7 years of game points');
 
 
-function update(data_csv) {
+function update_race(data_csv) {
 
- svg.selectAll("*").remove();
+ svg_race.selectAll("*").remove();
  let year = 2013;
 
 
 
- d3.csv(data_csv).then(function(data) {
+ d3.csv(data_csv,function(data) {
      //if (error) throw error;
 
-       console.log(data);
 
         data.forEach(d => {
          d.value = +d.value,
@@ -51,7 +50,6 @@ function update(data_csv) {
          d.colour = d3.hsl(Math.random()*10000,0.75,0.75)
        });
 
-      console.log(data);
 
       let yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
        .sort((a,b) => b.value - a.value)
@@ -59,30 +57,29 @@ function update(data_csv) {
 
        yearSlice.forEach((d,i) => d.rank = i);
 
-      console.log('yearSlice: ', yearSlice)
 
       let x = d3.scaleLinear()
          .domain([0, d3.max(yearSlice, d => d.value)])
-         .range([margin.left, width-margin.right-65]);
+         .range([margin_race.left, width-margin_race.right-65]);
 
       let y = d3.scaleLinear()
          .domain([top_n, 0])
-         .range([height-margin.bottom, margin.top]);
+         .range([height-margin_race.bottom, margin_race.top]);
 
       let xAxis = d3.axisTop()
          .scale(x)
          .ticks(width > 500 ? 5:2)
-         .tickSize(-(height-margin.top-margin.bottom))
+         .tickSize(-(height-margin_race.top-margin_race.bottom))
          .tickFormat(d => d3.format(',')(d));
 
-      svg.append('g')
+      svg_race.append('g')
         .attr('class', 'axis xAxis')
-        .attr('transform', `translate(0, ${margin.top})`)
+        .attr('transform', `translate(0, ${margin_race.top})`)
         .call(xAxis)
         .selectAll('.tick line')
         .classed('origin', d => d == 0);
 
-      svg.selectAll('rect.bar')
+      svg_race.selectAll('rect.bar')
          .data(yearSlice, d => d.name)
          .enter()
          .append('rect')
@@ -93,7 +90,7 @@ function update(data_csv) {
          .attr('height', y(1)-y(0)-barPadding)
          .style('fill', d => d.colour);
 
-      svg.selectAll('text.label')
+      svg_race.selectAll('text.label')
          .data(yearSlice, d => d.name)
          .enter()
          .append('text')
@@ -103,7 +100,7 @@ function update(data_csv) {
          .style('text-anchor', 'end')
          .html(d => d.name);
 
-     svg.selectAll('text.valueLabel')
+     svg_race.selectAll('text.valueLabel')
        .data(yearSlice, d => d.name)
        .enter()
        .append('text')
@@ -112,9 +109,9 @@ function update(data_csv) {
        .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
        .text(d => d3.format(',.0f')(d.lastValue));
 
-     let yearText = svg.append('text')
+     let yearText = svg_race.append('text')
        .attr('class', 'yearText')
-       .attr('x', width-margin.right)
+       .attr('x', width-margin_race.right)
        .attr('y', height-25)
        .style('text-anchor', 'end')
        .html(~~year)
@@ -128,17 +125,16 @@ function update(data_csv) {
 
        yearSlice.forEach((d,i) => d.rank = i);
 
-       //console.log('IntervalYear: ', yearSlice);
 
        x.domain([0, d3.max(yearSlice, d => d.value)]);
 
-       svg.select('.xAxis')
+       svg_race.select('.xAxis')
          .transition()
          .duration(tickDuration)
          .ease(d3.easeLinear)
          .call(xAxis);
 
-        let bars = svg.selectAll('.bar').data(yearSlice, d => d.name);
+        let bars = svg_race.selectAll('.bar').data(yearSlice, d => d.name);
 
         bars
          .enter()
@@ -170,7 +166,7 @@ function update(data_csv) {
            .attr('y', d => y(top_n+1)+5)
            .remove();
 
-        let labels = svg.selectAll('.label')
+        let labels = svg_race.selectAll('.label')
            .data(yearSlice, d => d.name);
 
         labels
@@ -205,7 +201,7 @@ function update(data_csv) {
 
 
 
-        let valueLabels = svg.selectAll('.valueLabel').data(yearSlice, d => d.name);
+        let valueLabels = svg_race.selectAll('.valueLabel').data(yearSlice, d => d.name);
 
         valueLabels
            .enter()
@@ -265,7 +261,7 @@ d3.select("#selectButtonCountry_race").on("change", function(d) {
     // recover the option that has been chosen
     selectedCountry = d3.select(this).property("value")
     // run the updateChart function with this selected option
-    update(concatenate_options_race())
+    update_race(concatenate_options_race())
 })
     selectedCountry='italy'
 function concatenate_options_race(){
@@ -273,4 +269,4 @@ function concatenate_options_race(){
 
 
     }
-update(concatenate_options_race())
+update_race(concatenate_options_race())

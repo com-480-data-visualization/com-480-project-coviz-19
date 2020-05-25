@@ -1,5 +1,4 @@
 
-
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 100, bottom: 500, left: 50},
     width = 1000 - margin.left - margin.right,
@@ -63,9 +62,9 @@ var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","r
       .call(d3.axisBottom(x));
 
         // text label for the x axis
-  svg.append("text")             
+  svg.append("text")
       .attr("transform",
-            "translate(" + (width/2) + " ," + 
+            "translate(" + (width/2) + " ," +
                            (height + margin.top + 40) + ")")
       .style("text-anchor", "middle")
       .text("Week Number");
@@ -85,7 +84,7 @@ svg.append("g")
       .attr("x",0 - (height / 2))
       .attr("dy", "1em")
       .style("text-anchor", "middle")
-      .text("Return in CHF"); 
+      .text("Return in CHF");
 
 
  var bisect = d3.bisector(function(d) { return d.Week; }).left;
@@ -116,21 +115,21 @@ var zero_line = svg.append("line")
                      .attr("y2", y(0))
                      .attr("stroke-width", 2)
                      .attr("stroke", "red");
- 
+
 
 
 
     // Initialize line with group a
     var line = svg
       .append('g')
-      .append("path") 
+      .append("path")
         .style("stroke-width", 4)
         .style("fill", "none")
 
 
 
     // A function that update the chart
-    function update(selectedGroup) {
+    function update_accumulating(selectedGroup) {
 
 
       // Create new data with the selection
@@ -200,14 +199,14 @@ var zero_line = svg.append("line")
 
 
     //INITIALIZE
-    update(concatenate_options())
+    update_accumulating(concatenate_options())
 
     // When the button is changed, run the updateChart function
     d3.select("#selectButtonCountry_accumulating").on("change", function(d) {
         // recover the option that has been chosen
         selectedCountry = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options())
+        update_accumulating(concatenate_options())
     })
 
 
@@ -215,7 +214,7 @@ var zero_line = svg.append("line")
         // recover the option that has been chosen
         selectedRisky = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options())
+        update_accumulating(concatenate_options())
     })
 
             function concatenate_options(){

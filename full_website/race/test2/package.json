@@ -1,0 +1,14 @@
+{
+  "name": "@thirteenfoil8/untitled",
+  "main": "abf464ad77fcb302@3057.js",
+  "version": "3057.0.0",
+  "homepage": "https://observablehq.com/@thirteenfoil8/untitled",
+  "author": {
+    "name": "thirteenfoil8",
+    "url": "https://observablehq.com/@thirteenfoil8"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}

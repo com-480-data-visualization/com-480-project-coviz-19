@@ -7,6 +7,7 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
+
 <!-- BarChart -->
 <select id="barselectButtonLeague"></select>
 <select id="barselectButtonYear"></select>
@@ -28,8 +29,8 @@
 <!-- Bubble Chart -->
 
 Click here to change countries:
-<select id="selectButtonCountry"></select>
-<select id="selectButtonCategory"></select>
+<select id="selectButtonCountry_bubble"></select>
+<select id="selectButtonCategory_bubble"></select>
 
 <div id="bubble_info"></div>
 
@@ -47,26 +48,66 @@ Click here to change countries:
 <!-- Create a div where the graph will take place -->
 <div id="accumulating"></div>
 
+<hr>
 
-
-
-
-
-
-
-
+<!-- Race Graph -->
+Click here to change countries(please wait the end of the run before switching the championship):
+<select id="selectButtonCountry_race"></select>
+<div id = "race"> </div>
 
 <style>
 .node:hover{
   stroke-width: 7px !important;
   opacity: 1 !important;
 }
+text{
+  font-size: 16px;
+  font-family: Open Sans, sans-serif;
+}
+text.title{
+  font-size: 24px;
+  font-weight: 500;
+}
+  text.caption{
+    font-weight: 400;
+    font-size: 14px;
+    fill: #777777;
+  }
+  text.label{
+    font-weight: 600;
+  }
+
+  text.valueLabel{
+   font-weight: 300;
+   font-size: 0px;
+  }
+
+  text.yearText{
+    font-size: 64px;
+    font-weight: 700;
+    opacity: 0.25;
+  }
+  .tick text {
+    fill: #777777;
+  }
+  .xAxis .tick:nth-child(2) text {
+    text-anchor: start;
+  }
+  .tick line {
+    shape-rendering: CrispEdges;
+    stroke: #dddddd;
+  }
+  .tick line.origin{
+    stroke: #aaaaaa;
+  }
+  path.domain{
+    display: none;
+  }
 </style>
 
 
-
+<script src="race_script.js"></script>
 <script src="map_script.js"></script>
 <script src="barchart_script.js"></script>
 <script src="bubble_script.js"></script>
 <script src="accumulating_script.js"></script>
-
