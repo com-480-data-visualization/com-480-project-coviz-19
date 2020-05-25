@@ -3,7 +3,7 @@
 var width_bubble = 600
 var height_bubble = 650
 
-  var Tooltip_fixed = d3.select("#bubble_info")
+  var Tooltip_fixed_bubble = d3.select("#bubble_info")
     .append("div")
     .style("opacity", 1)
     .attr("class", "tooltip")
@@ -28,7 +28,7 @@ var svg3 = d3.select("#bubble")
     var optionsSelectButtonCountry=[["Italy 2018","I1_2018"],["Spain 2018","SP1_2018"],["France 2018","F1_2018"],["Spain 2018","E0_2018"],["Germany 2018", "D1_2018"]]
     var optionsSelectButtonCategory=[["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
     // add the options to the button
-    d3.select("#selectButtonCountry")
+    d3.select("#selectButtonCountry_bubble")
       .selectAll('myOptions')
       .data(optionsSelectButtonCountry)
       .enter()
@@ -36,7 +36,7 @@ var svg3 = d3.select("#bubble")
       .text(function (d) { return d[0]; }) // text showed in the menu
       .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
 
-      d3.select("#selectButtonCategory")
+      d3.select("#selectButtonCategory_bubble")
       .selectAll('myOptions')
       .data(optionsSelectButtonCategory)
       .enter()
@@ -72,7 +72,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
 
   // Three function that change the tooltip when user hover / move / leave a cell
  var mouseover = function(d) {
-    Tooltip_fixed
+    Tooltip_fixed_bubble
 
       .style("opacity", 1)
     d3.select(this)
@@ -81,14 +81,14 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
   }
   var mousemove = function(d) {
 
-    Tooltip_fixed
+    Tooltip_fixed_bubble
 
       .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
       .style("left", d3.mouse(this)[0]  + "px")
       .style("top", d3.mouse(this)[1] -600+ "px")
   }
   var mouseleave = function(d) {
-    Tooltip_fixed
+    Tooltip_fixed_bubble
 
       .html("Hover on a logo")
   }
@@ -184,30 +184,30 @@ var defs = svg3.append('svg:defs');
 }
 
 
-    d3.select("#selectButtonCountry").on("change", function(d) {
+    d3.select("#selectButtonCountry_bubble").on("change", function(d) {
         // recover the option that has been chosen
-        selectedCountry = d3.select(this).property("value")
+        selectedCountry_bubble= d3.select(this).property("value")
         // run the updateChart function with this selected option
         update(concatenate_options_bubble())
     })
 
-        d3.select("#selectButtonCategory").on("change", function(d) {
+        d3.select("#selectButtonCategory_bubble").on("change", function(d) {
         // recover the option that has been chosen
-        selectedCategory = d3.select(this).property("value")
+        selectedCategory_bubble= d3.select(this).property("value")
         // run the updateChart function with this selected option
         update(concatenate_options_bubble())
     })
 
         //Initialize
 
-        selectedCountry='I1_2018'
-        selectedCategory='YCards_'
+        selectedCountry_bubble='I1_2018'
+        selectedCategory_bubble='YCards_'
 
 
 
 
         function concatenate_options_bubble(){
-              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/bubble/"+selectedCategory+selectedCountry+".csv"
+              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/bubble/"+selectedCategory_bubble+selectedCountry_bubble+".csv"
 
             }
 
