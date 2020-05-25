@@ -20,7 +20,7 @@ var svg = d3.select("#accumulating")
     var selectedRisky="";
 
 //Read the data
-d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/data/Computed/AccumulatingChart/merged.csv", function(data) {
+d3.csv("https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/full_website/data/accumulating/merged.csv", function(data) {
 
     // List of groups (here I have one group per column)
     var allGroup = ["ReturnSP1_2018_1_risky","ReturnSP1_2018_10_risky","ReturnSP1_2018_1","ReturnSP1_2018_10","ReturnF1_2018_1_risky","ReturnF1_2018_10_risky","ReturnF1_2018_1","ReturnF1_2018_10","ReturnD1_2018_1_risky","ReturnD1_2018_10_risky","ReturnD1_2018_1","ReturnD1_2018_10","ReturnE0_2018_1_risky","ReturnE0_2018_10_risky","ReturnE0_2018_1","ReturnE0_2018_10"]
