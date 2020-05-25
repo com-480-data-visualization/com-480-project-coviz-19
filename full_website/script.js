@@ -61,9 +61,11 @@ d3.select("#selectButtonYear")
 
 function update(data_csv) {
 
+
+console.log(data_csv)
     // Load external data and boot
     d3.queue()
-      .defer(d3.json, "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/notebooks/map_viz/mymap.geojson")
+      .defer(d3.json, "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/mymap.geojson")
       .defer(d3.csv, data_csv, function(d) { data.set(d.country_name, parseFloat(d.accuracy_percentage).toFixed(2)); })
       .await(ready);
 
@@ -152,7 +154,7 @@ d3.select("#selectButtonYear").on("change", function(d) {
 
 function concatenate_options_bubble(){
   console.log("Called")
-  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/notebooks/map_viz/" + selectedProvider + "/" + selectedYear + ".csv"
+  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/" + selectedProvider + "/" + selectedYear + ".csv"
 
 }
 
