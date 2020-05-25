@@ -1,5 +1,5 @@
- var dataIT="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartI1.csv";
-  var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/barchartF1.csv";
+ var dataIT="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/barchart/barchartI1.csv";
+  var dataFR="https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/barchart/barchartF1.csv";
 
 // set the dimensions and marginBarcharts of the graph
 var marginBarchart = {top: 10, right: 30, bottom: 20, left: 50},

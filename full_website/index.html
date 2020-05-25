@@ -7,7 +7,14 @@
 <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
-<!-- Initialize a select button -->
+<!-- BarChart -->
+<button onclick="update(dataIT)">Variable 1</button>
+<button onclick="update(dataFR)">Variable 2</button>
+<div id="barchart"></div>
+
+<hr>
+
+<!-- Map -->
 <select id="selectButtonProvider"></select>
 <select id="selectButtonYear"></select>
 <div id="map_info"></div>
@@ -15,5 +22,27 @@
 <!-- Create an element where the map will take place -->
 <div id="map_viz" ></div>
 
+<hr>
 
-<script src="script.js"></script>
+<!-- Bubble Chart -->
+
+Click here to change countries:
+<select id="selectButtonCountry"></select>
+<select id="selectButtonCategory"></select>
+
+<div id="bubble_info"></div>
+
+<div id="bubble"></div>
+
+<style>
+.node:hover{
+  stroke-width: 7px !important;
+  opacity: 1 !important;
+}
+</style>
+
+
+
+<script src="map_script.js"></script>
+<script src="barchart_script.js"></script>
+<script src="bubble_script.js"></script>
