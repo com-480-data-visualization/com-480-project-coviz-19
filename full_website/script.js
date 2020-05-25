@@ -4,21 +4,19 @@ var width_map = 600
 var height_map = 650
 
 // The svg
-var svg = d3.select("#map_viz")
+var svg_map = d3.select("#map_viz")
   .append("svg")
  .attr("width", width_map)
   .attr("height", height_map)
 
 
-// Map and projection
-var path = d3.geoPath();
 var projection = d3.geoMercator()
   .scale(800)
   .center([10,50])
   .translate([width_map / 2, height_map / 2]);
 
 
-var Tooltip_fixed = d3.select("#map_info")
+var Tooltip_fixed_map = d3.select("#map_info")
 .append("div")
 .style("opacity", 1)
 .attr("class", "tooltip")
@@ -34,7 +32,7 @@ var Tooltip_fixed = d3.select("#map_info")
 .html("Hover over a country")
 
 // Data and color scale
-var data = d3.map();
+var data_map = d3.map();
 var colorScale = d3.scaleLinear()
   .domain([40,63])
   .range(["black", "green"]);
@@ -62,11 +60,11 @@ d3.select("#selectButtonYear")
 function update(data_csv) {
 
 
-console.log(data_csv)
+
     // Load external data and boot
     d3.queue()
       .defer(d3.json, "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/mymap.geojson")
-      .defer(d3.csv, data_csv, function(d) { data.set(d.country_name, parseFloat(d.accuracy_percentage).toFixed(2)); })
+      .defer(d3.csv, data_csv, function(d) { data_map.set(d.country_name, parseFloat(d.accuracy_percentage).toFixed(2)); })
       .await(ready);
 
     function ready(error, topo) {
@@ -81,13 +79,13 @@ console.log(data_csv)
           .duration(200)
           .style("opacity", 1)
           .style("stroke", "black")
-        Tooltip_fixed
+        Tooltip_fixed_map
         .style("opacity", 1)
     
       }
       let mousemove = function(d) {
         console.log(d)
-        Tooltip_fixed
+        Tooltip_fixed_map
         .html('<u>' + d.properties.name + '</u>' + "<br>" + d.total + "% accuracy")
         .style("left", d3.mouse(this)[0]  + "px")
         .style("top", d3.mouse(this)[1] -600+ "px")
@@ -101,12 +99,12 @@ console.log(data_csv)
           .transition()
           .duration(200)
           .style("stroke", "transparent")
-          Tooltip_fixed
+          Tooltip_fixed_map
           .html("Hover over a country")
       }
 
       // Draw the map
-      svg.append("g")
+      svg_map.append("g")
         .selectAll("path")
         .data(topo.features)
         .enter()
@@ -117,7 +115,7 @@ console.log(data_csv)
           )
           // set the color of each country
           .attr("fill", function (d) {
-            d.total = data.get(d.id) || 0;
+            d.total = data_map.get(d.id) || 0;
             return colorScale(d.total);
           })
           .style("stroke", "transparent")
@@ -134,14 +132,14 @@ d3.select("#selectButtonProvider").on("change", function(d) {
         // recover the option that has been chosen
         selectedProvider = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options_bubble())
+        update(concatenate_options_map())
       })
 
 d3.select("#selectButtonYear").on("change", function(d) {
         // recover the option that has been chosen
         selectedYear = d3.select(this).property("value")
         // run the updateChart function with this selected option
-        update(concatenate_options_bubble())
+        update(concatenate_options_map())
       })
 
         //Initialize
@@ -152,10 +150,10 @@ d3.select("#selectButtonYear").on("change", function(d) {
 
 
 
-function concatenate_options_bubble(){
+function concatenate_options_map(){
   console.log("Called")
   return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/" + selectedProvider + "/" + selectedYear + ".csv"
 
 }
 
-update(concatenate_options_bubble())
+update(concatenate_options_map())
