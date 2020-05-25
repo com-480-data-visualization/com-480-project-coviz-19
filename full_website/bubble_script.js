@@ -211,4 +211,4 @@ var defs = svg3.append('svg:defs');
 
             }
 
-       update(concatenate_options_bubble())
+       update_bubble(concatenate_options_bubble())

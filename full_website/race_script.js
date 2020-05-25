@@ -12,19 +12,6 @@ var svg_race = d3.select("#race").append("svg")
 
 var tickDuration = 500;
 
-var top_n = 10;
-var height = 600;
-var width = 960;
-
-const margin_race = {
-  top: 80,
-  right: 0,
-  bottom: 5,
-  left: 10
-};
-
-let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
-
 let title = svg_race.append('text')
  .attr('class', 'title')
  .attr('y', 24)
@@ -34,7 +21,19 @@ let title = svg_race.append('text')
 function update_race(data_csv) {
 
  svg_race.selectAll("*").remove();
+ var top_n = 10;
+ var height = 600;
+ var width = 960;
+ const margin_race = {
+   top: 80,
+   right: 0,
+   bottom: 5,
+   left: 10
+ };
+
  let year = 2013;
+ var top_n = 10;
+ let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
 
 
 
@@ -245,16 +244,17 @@ function update_race(data_csv) {
     },tickDuration);
 
   });
-}
-const halo = function(text, strokeWidth) {
-text.select(function() { return this.parentNode.insertBefore(this.cloneNode(true), this); })
-.style('fill', '#ffffff')
- .style( 'stroke','#ffffff')
- .style('stroke-width', strokeWidth)
- .style('stroke-linejoin', 'round')
- .style('opacity', 1);
+  const halo = function(text, strokeWidth) {
+  text.select(function() { return this.parentNode.insertBefore(this.cloneNode(true), this); })
+  .style('fill', '#ffffff')
+   .style( 'stroke','#ffffff')
+   .style('stroke-width', strokeWidth)
+   .style('stroke-linejoin', 'round')
+   .style('opacity', 1);
 
+  }
 }
+
 
 
 d3.select("#selectButtonCountry_race").on("change", function(d) {
