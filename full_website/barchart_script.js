@@ -62,6 +62,8 @@ var yAxis = svgBarchart.append("g")
   .call(d3.axisLeft(yBarchart));
 
 function update_barchart(data_csv) {
+
+   svgBarchart.selectAll("rect").remove();
   // Parse the Data
   d3.csv(data_csv, function (data) {
 
@@ -99,6 +101,8 @@ function update_barchart(data_csv) {
       for (i in subgroups) { name = subgroups[i]; d[name] = d[name] / tot * 100 }
     })
 
+    console.log(data)
+
 
     //stack the data? --> stack per subgroup
     var stackedData = d3.stack()
@@ -119,6 +123,11 @@ function update_barchart(data_csv) {
         return d;
       })
       .enter().append("rect")
+  .attr("transform", "translate("+widthBarchart/2+"," + heightBarchart + ")")
+      .transition()
+      .duration(500)
+      // .ease(d3.easeLinear,1,.3)
+      .attr('transform', 'translate(0, 0)') 
       .attr("x", function (d) { return xBarchart(d.data.name); })
       .attr("y", function (d) { return yBarchart(d[1]); })
       .attr("height", function (d) { return yBarchart(d[0]) - yBarchart(d[1]); })
