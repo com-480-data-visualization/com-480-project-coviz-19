@@ -101,8 +101,6 @@ function update_barchart(data_csv) {
       for (i in subgroups) { name = subgroups[i]; d[name] = d[name] / tot * 100 }
     })
 
-    console.log(data)
-
 
     //stack the data? --> stack per subgroup
     var stackedData = d3.stack()

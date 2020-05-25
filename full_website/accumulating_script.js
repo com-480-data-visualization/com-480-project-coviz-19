@@ -1,6 +1,6 @@
 
 // set the dimensions and margins of the graph
-var margin = {top: 10, right: 100, bottom: 500, left: 50},
+var margin = {top: 10, right: 100, bottom: 60, left: 50},
     width = 1000 - margin.left - margin.right,
     height = 500 - margin.top ;
 
@@ -17,6 +17,23 @@ var svg = d3.select("#accumulating")
     var selectedCountry="ReturnI1_2018";
     var selectedMoney="10";
     var selectedRisky="";
+
+      var Tooltip_fixed = d3.select("#accumulating_info")
+    .append("div")
+    .style("opacity", 1)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "2px")
+    .style("border-radius", "5px")
+    .style("padding", "5px")
+      .attr("y", 0)
+  .attr("x", 0)
+  .attr("transform","translate(500,50)")
+    .style("width",'200px')
+    .style("height",'50px')
+
+    .html("Total Invested: <br> Total Return: ")
 
 //Read the data
 d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/accumulating/merged.csv", function(data) {
@@ -160,6 +177,11 @@ var zero_line = svg.append("line")
             .y(function(d) { return y(d.value) })
           )
           .attr("stroke", function(d){ return myColor(selectedGroup) })
+
+
+console.log( dataFilter)
+      Tooltip_fixed
+      .html("Total Invested: "+dataFilter.length*100+" CHF"+" <br> Total Return: "+dataFilter[dataFilter.length-1].value+" CHF")
 
     svg
     .append('rect')
