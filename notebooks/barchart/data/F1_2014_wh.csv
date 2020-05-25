@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+Rennes,16,22
+Caen,16,22
+Bastia,17,21
+Nantes,17,21
+Nice,18,20
+Reims,19,19
+Bordeaux,19,19
+Montpellier,20,18
+Lorient,20,18
+Guingamp,20,18
+Monaco,21,17
+St Etienne,23,15
+Toulouse,23,15
+Lyon,23,15
+Metz,23,15
+Lens,24,14
+Paris SG,24,14
+Lille,24,14
+Evian Thonon Gaillard,25,13
+Marseille,26,12

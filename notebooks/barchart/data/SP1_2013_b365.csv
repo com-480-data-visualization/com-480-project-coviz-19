@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+Valladolid,16,22
+Celta,16,22
+Levante,16,22
+Granada,18,20
+Espanol,18,20
+Valencia,18,20
+Malaga,18,20
+Osasuna,18,20
+Sociedad,19,19
+Elche,19,19
+Almeria,20,18
+Villarreal,20,18
+Sevilla,22,16
+Ath Bilbao,22,16
+Getafe,22,16
+Vallecano,23,15
+Betis,24,14
+Barcelona,26,12
+Ath Madrid,27,11
+Real Madrid,28,10
