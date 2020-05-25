@@ -1,0 +1,22 @@
+name,correct_pred,wrong_pred
+,0,40
+Marseille,10,30
+Bordeaux,15,25
+Ajaccio GFCO,15,25
+Rennes,15,25
+Lille,16,24
+Guingamp,17,23
+Reims,17,23
+Angers,18,22
+Nantes,18,22
+Nice,18,22
+Montpellier,19,21
+Toulouse,19,21
+St Etienne,20,20
+Monaco,20,20
+Bastia,20,20
+Lorient,20,20
+Caen,20,20
+Lyon,21,19
+Troyes,24,16
+Paris SG,30,10

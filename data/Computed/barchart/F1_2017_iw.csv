@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+Montpellier,11,27
+Angers,15,23
+Nantes,16,22
+Rennes,16,22
+Strasbourg,16,22
+Bordeaux,16,22
+Nice,18,20
+Amiens,19,19
+Guingamp,19,19
+Metz,20,18
+St Etienne,21,17
+Toulouse,22,16
+Lille,22,16
+Lyon,23,15
+Marseille,24,14
+Caen,24,14
+Troyes,25,13
+Monaco,26,12
+Dijon,26,12
+Paris SG,29,9

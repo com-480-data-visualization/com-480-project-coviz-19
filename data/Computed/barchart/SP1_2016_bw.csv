@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+Alaves,14,24
+Villarreal,17,21
+La Coruna,19,19
+Leganes,19,19
+Espanol,19,19
+Betis,20,18
+Malaga,20,18
+Sociedad,21,17
+Eibar,21,17
+Sp Gijon,22,16
+Osasuna,23,15
+Sevilla,23,15
+Valencia,24,14
+Ath Madrid,24,14
+Celta,24,14
+Granada,26,12
+Las Palmas,26,12
+Ath Bilbao,27,11
+Barcelona,27,11
+Real Madrid,28,10

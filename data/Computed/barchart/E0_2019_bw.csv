@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+Man United,10,28
+Brighton,10,28
+Wolves,11,27
+Watford,12,26
+Arsenal,13,25
+Sheffield United,13,25
+Southampton,13,25
+Tottenham,13,25
+Everton,15,23
+Newcastle,15,23
+Bournemouth,15,23
+Burnley,15,23
+Chelsea,16,22
+West Ham,16,22
+Crystal Palace,16,22
+Aston Villa,18,20
+Man City,18,20
+Norwich,19,19
+Leicester,20,18
+Liverpool,26,12
