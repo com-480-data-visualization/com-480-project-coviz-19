@@ -25,7 +25,7 @@ var svg3 = d3.select("#bubble")
     .attr("width", width_bubble)
     .attr("height", height_bubble)
 
-    var optionsSelectButtonCountry=[["Italy 2018","I1_2018"],["Spain 2018","SP1_2018"],["France 2018","F1_2018"],["Spain 2018","E0_2018"],["Germany 2018", "D1_2018"]]
+    var optionsSelectButtonCountry=[["Italy 2018","I1_2018"],["Spain 2018","SP1_2018"],["France 2018","F1_2018"],["England 2018","E0_2018"],["Germany 2018", "D1_2018"]]
     var optionsSelectButtonCategory=[["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
     // add the options to the button
     d3.select("#selectButtonCountry_bubble")
@@ -147,7 +147,7 @@ var defs = svg3.append('svg:defs');
   // Features of the forces applied to the nodes:
   var simulation = d3.forceSimulation()
       .force("center", d3.forceCenter().x(0).y(0)) // Attraction to the center of the svg area
-      .force("charge", d3.forceManyBody().strength(.1)) // Nodes are attracted one each other of value is > 0
+      .force("charge", d3.forceManyBody().strength(50)) // Nodes are attracted one each other of value is > 0
       .force("collide", d3.forceCollide().strength(.2).radius(function(d){ return (z()(d.value)) }).iterations(1)) // Force that avoids circle overlapping
 
   // Apply these forces to the nodes and update their positions.
