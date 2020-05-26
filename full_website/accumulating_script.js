@@ -14,8 +14,7 @@ var svg = d3.select("#accumulating")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Inital data
-    var selectedCountry="ReturnI1";
-    var selectedYear="2018"
+    var selectedCountry="ReturnI1_2018";
     var selectedMoney="10";
     var selectedRisky="";
 
@@ -42,8 +41,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     // List of groups (here I have one group per column)
     var allGroup = ["ReturnSP1_2018_1_risky","ReturnSP1_2018_10_risky","ReturnSP1_2018_1","ReturnSP1_2018_10","ReturnF1_2018_1_risky","ReturnF1_2018_10_risky","ReturnF1_2018_1","ReturnF1_2018_10","ReturnD1_2018_1_risky","ReturnD1_2018_10_risky","ReturnD1_2018_1","ReturnD1_2018_10","ReturnE0_2018_1_risky","ReturnE0_2018_10_risky","ReturnE0_2018_1","ReturnE0_2018_10"]
 
-var optionsSelectButtonCountry=[["Italy","ReturnI1"],["Spain","ReturnSP1"],["France","ReturnF1"],["England","ReturnE0"],["Germany", "ReturnD1"]]
-var optionsSelectButtonYear_accumulating=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
+var optionsSelectButtonCountry=[["Italy 2018","ReturnI1_2018"],["Spain 2018","ReturnSP1_2018"],["France 2018","ReturnF1_2018"],["England 2018","ReturnE0_2018"],["Germany 2018", "ReturnD1_2018"]]
 var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","risky"]]
     // add the options to the button
     d3.select("#selectButtonCountry_accumulating")
@@ -54,13 +52,6 @@ var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","r
       .text(function (d) { return d[0]; }) // text showed in the menu
       .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
 
-    d3.select("#selectButtonYear_accumulating")
-      .selectAll('myOptions')
-      .data(optionsSelectButtonYear_accumulating)
-      .enter()
-      .append('option')
-      .text(function (d) { return d[0]; }) // text showed in the menu
-      .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
 
 
           d3.select("#selectButtonRisky_accumulating")
@@ -158,8 +149,6 @@ var zero_line = svg.append("line")
     function update_accumulating(selectedGroup) {
 
 
-      console.log(selectedGroup)
-
       // Create new data with the selection
       var dataFilter = data.map(function(d){return {Week: d.Week, value:d[selectedGroup]} })
 
@@ -242,13 +231,6 @@ console.log( dataFilter)
         update_accumulating(concatenate_options())
     })
 
-        d3.select("#selectButtonYear_accumulating").on("change", function(d) {
-        // recover the option that has been chosen
-        selectedYear = d3.select(this).property("value")
-        // run the updateChart function with this selected option
-        update_accumulating(concatenate_options())
-    })
-
 
             d3.select("#selectButtonRisky_accumulating").on("change", function(d) {
         // recover the option that has been chosen
@@ -258,14 +240,12 @@ console.log( dataFilter)
     })
 
             function concatenate_options(){
-
-
-              var res= selectedCountry+"_"+selectedYear+"_10_"+selectedRisky;
-              if(selectedRisky=="")
-              {
-                return selectedCountry+"_"+selectedYear+"_10"
-              }
-              else return res
+            	var res= selectedCountry+"_10_"+selectedRisky;
+            	if(selectedRisky=="")
+            	{
+            		return selectedCountry+"_10"
+            	}
+            	else return res
             }
 
 })
