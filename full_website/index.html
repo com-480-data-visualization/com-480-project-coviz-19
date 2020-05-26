@@ -91,18 +91,21 @@
                 <div class="post-preview">
                   <h2 class="post-title">BarChart
                   </h2>
+                  <div class = 'bars_1'>
                     <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="barselectButtonLeague"></select>
                     <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonYear"></select>
                     <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonProvider"></select>
-
+                  </div>
                   <div id="barchart"></div>
                 </div>
                 <hr>
                 <div class="post-preview">
                   <h2 class="post-title">Map
                   </h2>
-                  <select class="form-control" style= "width: 200px;background-color:transparent"  id="mapselectButtonProvider"></select>
-                  <select  class="form-control" style= "width: 200px;background-color:transparent" id="mapselectButtonYear"></select>
+                  <div class = 'bars_1'>
+                    <select class="form-control" style= "width: 200px;background-color:transparent"  id="mapselectButtonProvider"></select>
+                    <select  class="form-control" style= "width: 200px;background-color:transparent" id="mapselectButtonYear"></select>
+                  </div>
                   <div id="map_info"></div>
 
                   <!-- Create an element where the map will take place -->
@@ -113,10 +116,11 @@
                       <h2 class="post-title">Bubble graph
                       </h2>
                       Click here to change countries:
-                      <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_bubble"></select>
-                      <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background-color:transparent"  id="selectButtonYear_bubble"></select>
-                      <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonCategory_bubble"></select>
-
+                      <div class = 'bars_1'>
+                        <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_bubble"></select>
+                        <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background-color:transparent"  id="selectButtonYear_bubble"></select>
+                        <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonCategory_bubble"></select>
+                      </div>
                       <div id="bubble_info"></div>
 
                       <div id="bubble"></div>
@@ -129,17 +133,19 @@
                         <h2 class="post-title">
                             Accumulativing chart
                         </h2>
-                        <select class="form-control" style= "width: 200px;margin-top:10px;background:transparent" id="selectButtonCountry_accumulating"></select>
-
-                         <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background:transparent" id="selectButtonYear_accumulating"></select>
-
-                        <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonRisky_accumulating"></select>
-
+                        <div class = 'bars_1'>
+                          <select class="form-control" style= "width: 200px;margin-top:10px;background:transparent" id="selectButtonCountry_accumulating"></select>
+                          <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background:transparent" id="selectButtonYear_accumulating"></select>
+                          <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonRisky_accumulating"></select>
+                          <div id="accumulating_info"></div>
+                        </div>
                         <!-- Create a div where the graph will take place -->
+
                         <div id="accumulating"></div>
 
-                        <div id="accumulating_info"></div>
+
                 </div>
+
                 <div class="post-preview">
                         <h2 class="post-title">
                             Race Graph
@@ -185,7 +191,6 @@
     <!-- Contact Form JavaScript -->
     <script src="js/jqBootstrapValidation.js"></script>
     <script src="js/contact_me.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
 
     <!-- Theme JavaScript -->
     <script src="js/race_script.js"></script>
@@ -243,6 +248,21 @@
      path.domain{
         display: none;
       }
+
+      .bars_1 {
+          display: table;
+          width: 100%; /*Optional*/
+          table-layout: fixed; /*Optional*/
+          border-spacing: 10px; /*Optional*/
+      }
+      .bars_1 select {
+        display: table-cell;
+          margin-left: 10px;
+      }
+       #accumulating_info {
+         margin: 0px 0px 0px 700px ;
+       }
+
     </style>
 
 </body>
