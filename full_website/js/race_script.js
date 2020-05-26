@@ -14,32 +14,32 @@ var tickDuration = 500;
 
 let title = svg_race.append('text')
  .attr('class', 'title')
- .attr('y', 50)
+ .attr('y', 100)
+ .attr('x',100)
  .html('Select a Country to begin the race');
 
 
 function update_race(data_csv) {
 
- svg_race.selectAll("*").remove().transition();
- var top_n = 10;
- var height = 600;
- var width = 960;
- const margin_race = {
-   top: 80,
-   right: 0,
-   bottom: 5,
-   left: 10
- };
+   svg_race.selectAll("*").remove();
+   var top_n = 10;
+   var height = 600;
+   var width = 960;
+   const margin_race = {
+     top: 80,
+     right: 0,
+     bottom: 5,
+     left: 10
+   };
 
- let year = 2013;
- var top_n = 10;
- let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
+   let year = 2013;
+   var top_n = 10;
+   let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
 
 
 
- d3.csv(data_csv,function(data) {
+   d3.csv(data_csv,function(data) {
      //if (error) throw error;
-
 
         data.forEach(d => {
          d.value = +d.value,
@@ -246,15 +246,13 @@ function update_race(data_csv) {
 
 }
 
-
-
 d3.select("#selectButtonCountry_race").on("change", function(d) {
     // recover the option that has been chosen
     selectedCountry = d3.select(this).property("value")
-    // run the updateChart function with this selected option
+    // run the update_race function with this selected option
     update_race(concatenate_options_race())
+
 })
-    selectedCountry='italy'
 function concatenate_options_race(){
       return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/race/"+selectedCountry+".csv"
 
