@@ -33,7 +33,7 @@ d3.select("#barselectButtonLeague")
 
 // set the dimensions and marginBarcharts of the graph
 var marginBarchart = { top: 10, right: 30, bottom: 20, left: 50 },
-  widthBarchart = 1200 - marginBarchart.left - marginBarchart.right,
+  widthBarchart = 1450 - marginBarchart.left - marginBarchart.right,
   heightBarchart = 400 - marginBarchart.top - marginBarchart.bottom;
 
 // append the svgBarchart object to the body of the page
@@ -89,7 +89,7 @@ function update_barchart(data_csv) {
     // color palette = one color per subgroup
     var color = d3.scaleOrdinal()
       .domain(subgroups)
-      .range(['#008000', '#e41a1c'])
+      .range(['#add8e6', '#ff6966'])
 
     // Normalize the data -> sum of each group must be 100!
     dataNormalized = []
