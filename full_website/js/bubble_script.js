@@ -1,21 +1,24 @@
 
 // set the dimensions and margins of the graph
 var width_bubble = 1000
-var height_bubble = 800
+var height_bubble = 500
 
   var Tooltip_fixed_bubble = d3.select("#bubble_info")
     .append("div")
     .style("opacity", 1)
     .attr("class", "tooltip")
-    .style("background-color", "white")
+    .style("background-color", "transparent")
     .style("border", "solid")
-    .style("border-width", "2px")
-    .style("border-radius", "5px")
+    .style("border-color",'#ccc')
+    .style("border-width", "1px")
+    .style("border-radius", "16px")
     .style("padding", "5px")
+    .style("margin","300px 0px 0px 10px")
+    .style("font-size",'20px')
       .attr("y", 0)
   .attr("x", 0)
-    .style("width",'150px')
-    .style("height",'50px')
+  .style("width", '200px')
+  .style("height", '100px')
     .html("Hover on a logo")
 
 
@@ -62,7 +65,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
 
      return d3.scaleLinear()
     .domain([min_value, max_value])
-    .range([20,80])
+    .range([20,60])
 
 
   }

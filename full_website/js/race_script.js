@@ -14,8 +14,8 @@ var tickDuration = 500;
 
 let title = svg_race.append('text')
  .attr('class', 'title')
- .attr('y', 24)
- .html('7 years of game points');
+ .attr('y', 50)
+ .html('Select a Country to begin the race');
 
 
 function update_race(data_csv) {
@@ -113,7 +113,6 @@ function update_race(data_csv) {
        .attr('y', height-25)
        .style('text-anchor', 'end')
        .html(~~year)
-       .call(halo, 10);
 
     let ticker = d3.interval(e => {
 
@@ -244,15 +243,7 @@ function update_race(data_csv) {
     },tickDuration);
 
   });
-  const halo = function(text, strokeWidth) {
-  text.select(function() { return this.parentNode.insertBefore(this.cloneNode(true), this); })
-  .style('fill', '#ffffff')
-   .style( 'stroke','#ffffff')
-   .style('stroke-width', strokeWidth)
-   .style('stroke-linejoin', 'round')
-   .style('opacity', 1);
 
-  }
 }
 
 
@@ -265,8 +256,7 @@ d3.select("#selectButtonCountry_race").on("change", function(d) {
 })
     selectedCountry='italy'
 function concatenate_options_race(){
-      return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/skeleton/race/test/"+selectedCountry+".csv"
+      return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/race/"+selectedCountry+".csv"
 
 
     }
-update_race(concatenate_options_race())

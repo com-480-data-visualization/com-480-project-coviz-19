@@ -1,7 +1,7 @@
 
 // set the dimensions and margins of the graph
 var width_map = 600
-var height_map = 650
+var height_map = 600
 
 // The svg
 var svg_map = d3.select("#map_viz")
@@ -20,16 +20,19 @@ var Tooltip_fixed_map = d3.select("#map_info")
   .append("div")
   .style("opacity", 1)
   .attr("class", "tooltip")
-  .style("background-color", "white")
+  .style("background-color", "trasnparent")
   .style("border", "solid")
-  .style("border-width", "2px")
-  .style("border-radius", "5px")
+  .style("border-width", "1px")
+  .style("border-radius", "16px")
+  .style("border-color",'#ccc')
   .style("padding", "5px")
+  .style("font-size",'20px')
   .style("position", "absolute")
+  .style("margin","100px 0px 0px 500px")
   .attr("y", 0)
   .attr("x", 0)
-  .style("width", '150px')
-  .style("height", '50px')
+  .style("width", '200px')
+  .style("height", '100px')
   .html("Hover over a country")
 
 // Data and color scale
