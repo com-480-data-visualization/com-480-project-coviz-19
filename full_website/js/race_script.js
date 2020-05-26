@@ -20,7 +20,7 @@ let title = svg_race.append('text')
 
 function update_race(data_csv) {
 
- svg_race.selectAll("*").remove();
+ svg_race.selectAll("*").remove().transition();
  var top_n = 10;
  var height = 600;
  var width = 960;
@@ -48,7 +48,6 @@ function update_race(data_csv) {
          d.year = +d.year,
          d.colour = d3.hsl(Math.random()*10000,0.75,0.75)
        });
-
 
       let yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
        .sort((a,b) => b.value - a.value)
@@ -99,11 +98,11 @@ function update_race(data_csv) {
          .style('text-anchor', 'end')
          .html(d => d.name);
 
-     svg_race.selectAll('text.valueLabel')
+     svg_race.selectAll('text.valueLabel_race')
        .data(yearSlice, d => d.name)
        .enter()
        .append('text')
-       .attr('class', 'valueLabel')
+       .attr('class', 'valueLabel_race')
        .attr('x', d => x(d.value)+5)
        .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
        .text(d => d3.format(',.0f')(d.lastValue));
@@ -200,12 +199,12 @@ function update_race(data_csv) {
 
 
 
-        let valueLabels = svg_race.selectAll('.valueLabel').data(yearSlice, d => d.name);
+        let valueLabel_races = svg_race.selectAll('.valueLabel_race').data(yearSlice, d => d.name);
 
-        valueLabels
+        valueLabel_races
            .enter()
            .append('text')
-           .attr('class', 'valueLabel')
+           .attr('class', 'valueLabel_race')
            .attr('x', d => x(d.value)+5)
            .attr('y', d => y(top_n+1)+5)
            .text(d => d3.format(',.0f')(d.lastValue))
@@ -214,7 +213,7 @@ function update_race(data_csv) {
              .ease(d3.easeLinear)
              .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1);
 
-        valueLabels
+        valueLabel_races
            .transition()
              .duration(tickDuration)
              .ease(d3.easeLinear)
@@ -228,7 +227,8 @@ function update_race(data_csv) {
              });
 
 
-       valueLabels
+
+       valueLabel_races
          .exit()
          .transition()
            .duration(tickDuration)

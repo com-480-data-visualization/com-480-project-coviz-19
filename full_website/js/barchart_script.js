@@ -28,12 +28,12 @@ d3.select("#barselectButtonLeague")
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu
   .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
-  
+
 
 
 // set the dimensions and marginBarcharts of the graph
 var marginBarchart = { top: 10, right: 30, bottom: 20, left: 50 },
-  widthBarchart = 1450 - marginBarchart.left - marginBarchart.right,
+  widthBarchart = 1050 - marginBarchart.left - marginBarchart.right,
   heightBarchart = 400 - marginBarchart.top - marginBarchart.bottom;
 
 // append the svgBarchart object to the body of the page
@@ -125,7 +125,7 @@ function update_barchart(data_csv) {
       .transition()
       .duration(500)
       // .ease(d3.easeLinear,1,.3)
-      .attr('transform', 'translate(0, 0)') 
+      .attr('transform', 'translate(0, 0)')
       .attr("x", function (d) { return xBarchart(d.data.name); })
       .attr("y", function (d) { return yBarchart(d[1]); })
       .attr("height", function (d) { return yBarchart(d[0]) - yBarchart(d[1]); })

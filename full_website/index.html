@@ -1,112 +1,240 @@
-<!-- Code from d3-graph-gallery.com -->
 <!DOCTYPE html>
-<meta charset="utf-8">
+<html lang="en">
 
-<!-- Load d3.js -->
-<script src="https://d3js.org/d3.v4.js"></script>
-<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-<script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+<head>
 
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-<!-- BarChart -->
-<select id="barselectButtonLeague"></select>
-<select id="barselectButtonYear"></select>
-<select id="barselectButtonProvider"></select>
-<div id="barchart"></div>
+    <title>Clean Blog</title>
 
-<hr>
+    <!-- Bootstrap Core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-<!-- Map -->
-<select id="mapselectButtonProvider"></select>
-<select id="mapselectButtonYear"></select>
-<div id="map_info"></div>
+    <!-- Theme CSS -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
 
-<!-- Create an element where the map will take place -->
-<div id="map_viz" ></div>
+    <!-- Custom Fonts -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
-<hr>
-
-<!-- Bubble Chart -->
-
-Click here to change countries:
-<select id="selectButtonCountry_bubble"></select>
-<select id="selectButtonCategory_bubble"></select>
-
-<div id="bubble_info"></div>
-
-<div id="bubble"></div>
-
-<hr>
-
-<!-- Accumulating chart -->
-
-<!-- Initialize a select button -->
-<select id="selectButtonCountry_accumulating"></select>
-
-<select id="selectButtonRisky_accumulating"></select>
-
-<!-- Create a div where the graph will take place -->
-<div id="accumulating"></div>
-
-<hr>
-
-<!-- Race Graph -->
-Click here to change countries(please wait the end of the run before switching the championship):
-<select id="selectButtonCountry_race"></select>
-<div id = "race"> </div>
-
-<style>
-.node:hover{
-  stroke-width: 7px !important;
-  opacity: 1 !important;
-}
-.race text{
-  font-size: 16px;
-  font-family: Open Sans, sans-serif;
-}
- .race text.title{
-  font-size: 24px;
-  font-weight: 500;
-}
-.race text.caption{
-    font-weight: 400;
-    font-size: 14px;
-    fill: #777777;
-  }
-.race text.label{
-    font-weight: 600;
-  }
-
-text.valueLabel{
-   font-weight: 300;
-  }
-
-  text.yearText{
-    font-size: 64px;
-    font-weight: 700;
-    opacity: 0.25;
-  }
- .tick text {
-    fill: #777777;
-  }
- .xAxis .tick:nth-child(2) text {
-    text-anchor: start;
-  }
-  .tick line {
-    shape-rendering: CrispEdges;
-    stroke: #dddddd;
-  }
-  .tick line.origin{
-    stroke: #aaaaaa;
-  }
- path.domain{
-    display: none;
-  }
-</style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 
-<script src="race_script.js"></script>
-<script src="map_script.js"></script>
-<script src="barchart_script.js"></script>
-<script src="bubble_script.js"></script>
-<script src="accumulating_script.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('https://images.unsplash.com/photo-1556056504-5c7696c4c28d?ixlib=rb-1.2.1&auto=format&fit=crop&w=883&q=80 '); height: 910px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="site-heading">
+                        <h1>Clean Blog</h1>
+                        <hr class="small">
+                        <span class="subheading">A Clean Blog Theme by Start Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container-fluid">
+        <div class="row" >
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-preview">
+                  <h2 class="post-title">BarChart
+                  </h2>
+                  <select id="barselectButtonLeague"></select>
+                  <select id="barselectButtonYear"></select>
+                  <select id="barselectButtonProvider"></select>
+                  <div id="barchart"></div>
+                </div>
+                <hr>
+                <div class="post-preview">
+                  <h2 class="post-title">Map
+                  </h2>
+                  <select id="mapselectButtonProvider"></select>
+                  <select id="mapselectButtonYear"></select>
+                  <div id="map_info"></div>
+
+                  <!-- Create an element where the map will take place -->
+                  <div id="map_viz" ></div>
+                </div>
+                <hr>
+                <div class="post-preview">
+                      <h2 class="post-title">Bubble graph
+                      </h2>
+                      Click here to change countries:
+                      <select id="selectButtonCountry_bubble"></select>
+                      <select id="selectButtonCategory_bubble"></select>
+
+                      <div id="bubble_info"></div>
+
+                      <div id="bubble"></div>
+
+                      <!-- Create an element where the map will take place -->
+                      <div id="map_viz" ></div>
+                </div>
+                <hr>
+                <div class="post-preview">
+                        <h2 class="post-title">
+                            Accumulativing chart
+                        </h2>
+                        <select id="selectButtonCountry_accumulating"></select>
+
+                        <select id="selectButtonRisky_accumulating"></select>
+
+                        <!-- Create a div where the graph will take place -->
+                        <div id="accumulating"></div>
+                </div>
+                <div class="post-preview">
+                        <h2 class="post-title">
+                            Race Graph
+                        </h2>
+                        Click here to change countries(please wait the end of the run before switching the championship):
+                        <select id="selectButtonCountry_race"></select>
+                        <div id = "race" style = ""> </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                        <li>
+                            <a href="https://github.com/com-480-data-visualization/com-480-project-coviz-19">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Your Website 2016</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/race_script.js"></script>
+    <script src="js/map_script.js"></script>
+    <script src="js/barchart_script.js"></script>
+    <script src="js/bubble_script.js"></script>
+    <script src="js/accumulating_script.js"></script>
+    <script src="js/clean-blog.min.js"></script>
+    <!-- basic style-->
+    <style>
+    .node:hover{
+      stroke-width: 7px !important;
+      opacity: 1 !important;
+    }
+    .race text{
+      font-size: 16px;
+      font-family: Open Sans, sans-serif;
+    }
+     .race text.title{
+      font-size: 24px;
+      font-weight: 500;
+    }
+    .race text.caption{
+        font-weight: 400;
+        font-size: 14px;
+        fill: #777777;
+      }
+    .race text.label{
+        font-weight: 600;
+      }
+
+    text.valueLabel_race{
+       font-weight: 300;
+       font-size: 0px;
+      }
+
+      text.yearText{
+        font-size: 64px;
+        font-weight: 700;
+        opacity: 0.25;
+      }
+     .tick text {
+        fill: #777777;
+      }
+     .xAxis .tick:nth-child(2) text {
+        text-anchor: start;
+      }
+      .tick line {
+        shape-rendering: CrispEdges;
+        stroke: #dddddd;
+      }
+      .tick line.origin{
+        stroke: #aaaaaa;
+      }
+     path.domain{
+        display: none;
+      }
+    </style>
+
+</body>
+
+</html>

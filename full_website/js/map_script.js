@@ -25,6 +25,7 @@ var Tooltip_fixed_map = d3.select("#map_info")
   .style("border-width", "2px")
   .style("border-radius", "5px")
   .style("padding", "5px")
+  .style("position", "absolute")
   .attr("y", 0)
   .attr("x", 0)
   .style("width", '150px')
@@ -86,8 +87,8 @@ function mapupdate(data_csv) {
 
       Tooltip_fixed_map
         .html('<u>' + d.properties.name + '</u>' + "<br>" + d.total + "% accuracy")
-        .style("left", d3.mouse(this)[0] + "px")
-        .style("top", d3.mouse(this)[1] - 600 + "px")
+        //.style("left", d3.mouse(this)[0] + "px")
+        //.style("top", d3.mouse(this)[1]+ "px")
     }
     let mouseLeave = function (d) {
       d3.selectAll(".Country")

@@ -1,7 +1,7 @@
 
 // set the dimensions and margins of the graph
-var width_bubble = 600
-var height_bubble = 650
+var width_bubble = 1000
+var height_bubble = 800
 
   var Tooltip_fixed_bubble = d3.select("#bubble_info")
     .append("div")
@@ -62,7 +62,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
 
      return d3.scaleLinear()
     .domain([min_value, max_value])
-    .range([20,100])
+    .range([20,80])
 
 
   }
@@ -84,8 +84,8 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
     Tooltip_fixed_bubble
 
       .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
-      .style("left", d3.mouse(this)[0]  + "px")
-      .style("top", d3.mouse(this)[1] -600+ "px")
+      //.style("left", d3.mouse(this)[0]  + "px")
+      //.style("top", d3.mouse(this)[1] -600+ "px")
   }
   var mouseleave = function(d) {
     Tooltip_fixed_bubble
