@@ -28,12 +28,21 @@ var svg3 = d3.select("#bubble")
     .attr("width", width_bubble)
     .attr("height", height_bubble)
 
-    var optionsSelectButtonCountry=[["Italy 2018","I1_2018"],["Spain 2018","SP1_2018"],["France 2018","F1_2018"],["England 2018","E0_2018"],["Germany 2018", "D1_2018"]]
-    var optionsSelectButtonCategory=[["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
+    var optionsSelectButtonCountry=[["Italy","I1"],["Spain","SP1"],["France","F1"],["England","E0"],["Germany", "D1"]]
+    var optionsSelectButtonYear=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
+    var optionsSelectButtonCategory=[["Wins","wins_"],["Losses","losses_"],["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
     // add the options to the button
     d3.select("#selectButtonCountry_bubble")
       .selectAll('myOptions')
       .data(optionsSelectButtonCountry)
+      .enter()
+      .append('option')
+      .text(function (d) { return d[0]; }) // text showed in the menu
+      .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
+
+    d3.select("#selectButtonYear_bubble")
+      .selectAll('myOptions')
+      .data(optionsSelectButtonYear)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -194,6 +203,13 @@ var defs = svg3.append('svg:defs');
         update_bubble(concatenate_options_bubble())
     })
 
+        d3.select("#selectButtonYear_bubble").on("change", function(d) {
+        // recover the option that has been chosen
+        selectedYear_bubble= d3.select(this).property("value")
+        // run the updateChart function with this selected option
+        update_bubble(concatenate_options_bubble())
+    })
+
         d3.select("#selectButtonCategory_bubble").on("change", function(d) {
         // recover the option that has been chosen
         selectedCategory_bubble= d3.select(this).property("value")
@@ -203,14 +219,15 @@ var defs = svg3.append('svg:defs');
 
         //Initialize
 
-        selectedCountry_bubble='I1_2018'
-        selectedCategory_bubble='YCards_'
+        selectedCountry_bubble='I1'
+        selectedYear_bubble='2018'
+        selectedCategory_bubble='wins_'
 
 
 
 
         function concatenate_options_bubble(){
-              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/bubble/"+selectedCategory_bubble+selectedCountry_bubble+".csv"
+              return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/bubble/"+selectedCategory_bubble+selectedCountry_bubble+"_"+selectedYear_bubble+".csv"
 
             }
 
