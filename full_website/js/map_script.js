@@ -5,6 +5,7 @@ var height_map = 600
 
 // The svg
 var svg_map = d3.select("#map_viz")
+  .append("center")
   .append("svg")
   .attr("width", width_map)
   .attr("height", height_map)
@@ -28,7 +29,7 @@ var Tooltip_fixed_map = d3.select("#map_info")
   .style("padding", "5px")
   .style("font-size",'20px')
   .style("position", "absolute")
-  .style("margin","100px 0px 0px 500px")
+  .style("margin","100px 0px 0px 600px")
   .attr("y", 0)
   .attr("x", 0)
   .style("width", '200px')

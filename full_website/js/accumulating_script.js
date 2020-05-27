@@ -6,6 +6,7 @@ var margin = {top: 10, right: 100, bottom: 60, left: 50},
 
 // append the svg object to the body of the page
 var svg_accumulating = d3.select("#accumulating")
+  .append("center")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -29,7 +30,7 @@ var svg_accumulating = d3.select("#accumulating")
     .style("border-width", "1px")
     .style("border-radius", "16px")
     .style("padding", "5px")
-    //.style("margin","0px 0px 20px 500px")
+    .style("margin","0px 0px 0px 200px")
     .attr("y", 0)
     .attr("x", 0)
     .attr("transform","translate(500,50)")
