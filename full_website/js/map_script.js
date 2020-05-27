@@ -43,7 +43,7 @@ var colorScale = d3.scaleSequential()
 
 
 var optionsSelectButtonProvider = [["Bet365", "b365"], ["BWIN", "bw"], ["Interwetten", "iw"], ["Ladbrokes", "lb"], ["VC Bet", "vc"], ["William Hill", "wh"]]
-var optionsSelectButtonYear = [["2008/2009", "2008_2009"], ["2009/2010", "2009_2010"], ["2010/2011", "2010_2011"], ["2011/2012", "2011_2012"], ["2012/2013", "2012_2013"], ["2013/2014", "2013_2014"], ["2014/2015", "2014_2015"], ["2015/2016", "2015_2016"]]
+var optionsSelectButtonYear = [["2008", "2008_2009"], ["2009", "2009_2010"], ["2010", "2010_2011"], ["2011", "2011_2012"], ["2012", "2012_2013"], ["2013", "2013_2014"], ["2014", "2014_2015"], ["2015", "2015_2016"]]
 
 d3.select("#mapselectButtonProvider")
   .selectAll('myOptions')

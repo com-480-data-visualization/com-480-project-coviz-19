@@ -15,7 +15,7 @@ var svg = d3.select("#accumulating")
 
 //Inital data
     var selectedCountry="ReturnI1";
-    var selectedYear="2018"
+    var selectedYear="2013"
     var selectedMoney="10";
     var selectedRisky="";
 

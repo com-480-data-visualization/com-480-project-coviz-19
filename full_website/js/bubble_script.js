@@ -220,7 +220,7 @@ var defs = svg3.append('svg:defs');
         //Initialize
 
         selectedCountry_bubble='I1'
-        selectedYear_bubble='2018'
+        selectedYear_bubble='2013'
         selectedCategory_bubble='wins_'
 
 
