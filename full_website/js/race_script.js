@@ -1,10 +1,10 @@
 var svg_race = d3.select("#race").append("svg")
   .attr("width", 960)
   .attr("height", 600);
-  var optionsSelectButtonCountry=[["Italy","italy"],["Spain","spain"],["France","france"],["Germany","german"],["England", "england"]]
+  var optionsSelectButtonCountry_race=[["Italy","italy"],["Spain","spain"],["France","france"],["Germany","german"],["England", "england"]]
   d3.select("#selectButtonCountry_race")
     .selectAll('myOptions')
-    .data(optionsSelectButtonCountry)
+    .data(optionsSelectButtonCountry_race)
     .enter()
     .append('option')
     .text(function (d) { return d[0]; }) // text showed in the menu
@@ -248,13 +248,13 @@ function update_race(data_csv) {
 
 d3.select("#selectButtonCountry_race").on("change", function(d) {
     // recover the option that has been chosen
-    selectedCountry = d3.select(this).property("value")
+    selectedCountry_race = d3.select(this).property("value")
     // run the update_race function with this selected option
     update_race(concatenate_options_race())
 
 })
 function concatenate_options_race(){
-      return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/race/"+selectedCountry+".csv"
+      return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/race/"+selectedCountry_race+".csv"
 
 
     }
