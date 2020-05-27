@@ -5,7 +5,7 @@ var margin = {top: 10, right: 100, bottom: 60, left: 50},
     height = 500 - margin.top ;
 
 // append the svg object to the body of the page
-var svg = d3.select("#accumulating")
+var svg_accumulating = d3.select("#accumulating")
   .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
@@ -14,10 +14,10 @@ var svg = d3.select("#accumulating")
           "translate(" + margin.left + "," + margin.top + ")");
 
 //Inital data
-    var selectedCountry="ReturnI1";
-    var selectedYear="2013"
-    var selectedMoney="10";
-    var selectedRisky="";
+    var selectedCountry_accumulating="ReturnI1";
+    var selectedYear_accumulating="2013"
+    var selectedMoney_accumulating="10";
+    var selectedRisky_accumulating="";
 
     var Tooltip_fixed = d3.select("#accumulating_info")
     .append("div")
@@ -44,13 +44,13 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
     // List of groups (here I have one group per column)
     var allGroup = ["ReturnSP1_2018_1_risky","ReturnSP1_2018_10_risky","ReturnSP1_2018_1","ReturnSP1_2018_10","ReturnF1_2018_1_risky","ReturnF1_2018_10_risky","ReturnF1_2018_1","ReturnF1_2018_10","ReturnD1_2018_1_risky","ReturnD1_2018_10_risky","ReturnD1_2018_1","ReturnD1_2018_10","ReturnE0_2018_1_risky","ReturnE0_2018_10_risky","ReturnE0_2018_1","ReturnE0_2018_10"]
 
-var optionsSelectButtonCountry=[["Italy","ReturnI1"],["Spain","ReturnSP1"],["France","ReturnF1"],["England","ReturnE0"],["Germany", "ReturnD1"]]
+var optionsSelectButtonCountry_accumulating=[["Italy","ReturnI1"],["Spain","ReturnSP1"],["France","ReturnF1"],["England","ReturnE0"],["Germany", "ReturnD1"]]
 var optionsSelectButtonYear_accumulating=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
-var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","risky"]]
+var optionsSelectButtonRisky_accumulating=[["Follow bookies advice",""],["Do the opositie","risky"]]
     // add the options to the button
     d3.select("#selectButtonCountry_accumulating")
       .selectAll('myOptions')
-      .data(optionsSelectButtonCountry)
+      .data(optionsSelectButtonCountry_accumulating)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -67,7 +67,7 @@ var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","r
 
           d3.select("#selectButtonRisky_accumulating")
       .selectAll('myOptions')
-      .data(optionsSelectButtonRisky)
+      .data(optionsSelectButtonRisky_accumulating)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -85,12 +85,12 @@ var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","r
     var x = d3.scaleLinear()
       .domain([0,33])
       .range([ 0, width ]);
-    svg.append("g")
+    svg_accumulating.append("g")
       .attr("transform", "translate(0," + height + ")")
       .call(d3.axisBottom(x));
 
         // text label for the x axis
-  svg.append("text")
+  svg_accumulating.append("text")
       .attr("transform",
             "translate(" + (width/2) + " ," +
                            (height + margin.top + 40) + ")")
@@ -101,12 +101,12 @@ var optionsSelectButtonRisky=[["Follow bookies advice",""],["Do the opositie","r
 
     var y = d3.scaleLinear().domain( [-200,200]).range([height, 0]);
 var yAxis = d3.axisLeft().scale(y);
-svg.append("g")
+svg_accumulating.append("g")
   .attr("class","myYaxis")
 
 
 
-        svg.append("text")
+        svg_accumulating.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left)
       .attr("x",0 - (height / 2))
@@ -118,7 +118,7 @@ svg.append("g")
  var bisect = d3.bisector(function(d) { return d.Week; }).left;
 
   // Create the circle that travels along the curve of chart
-  var focus = svg
+  var focus = svg_accumulating
     .append('g')
     .append('circle')
       .style("fill", "none")
@@ -127,7 +127,7 @@ svg.append("g")
       .style("opacity", 0)
 
   // Create the text that travels along the curve of chart
-  var focusText = svg
+  var focusText = svg_accumulating
     .append('g')
     .append('text')
       .style("opacity", 0)
@@ -136,7 +136,7 @@ svg.append("g")
 
 
 
-var zero_line = svg.append("line")
+var zero_line = svg_accumulating.append("line")
                      .attr("x1", 0)
                      .attr("y1", y(0))
                      .attr("x2", width)
@@ -148,7 +148,7 @@ var zero_line = svg.append("line")
 
 
     // Initialize line with group a
-    var line = svg
+    var line = svg_accumulating
       .append('g')
       .append("path")
         .style("stroke-width", 4)
@@ -167,11 +167,11 @@ var zero_line = svg.append("line")
 
 
         y.domain([Math.min(0,d3.min(dataFilter.map(x=>parseInt(x.value)))),Math.max(0, d3.max(dataFilter.map(x=>parseInt(x.value))))]);
-        svg.selectAll(".myYaxis").transition()
+        svg_accumulating.selectAll(".myYaxis").transition()
           .duration(1000)
           .call(yAxis);
 
-          svg.selectAll(".myYaxis").transition()
+          svg_accumulating.selectAll(".myYaxis").transition()
           .duration(1000)
           .call(yAxis);
 
@@ -196,7 +196,7 @@ console.log( dataFilter)
       Tooltip_fixed
       .html("Total Invested: "+dataFilter.length*100+" CHF"+" <br> Total Return: "+(Math.round(dataFilter[dataFilter.length-1].value * 100)/100)+" CHF")
 
-    svg
+    svg_accumulating
     .append('rect')
     .style("fill", "none")
     .style("pointer-events", "all")
@@ -239,14 +239,14 @@ console.log( dataFilter)
     // When the button is changed, run the updateChart function
     d3.select("#selectButtonCountry_accumulating").on("change", function(d) {
         // recover the option that has been chosen
-        selectedCountry = d3.select(this).property("value")
+        selectedCountry_accumulating = d3.select(this).property("value")
         // run the updateChart function with this selected option
         update_accumulating(concatenate_options())
     })
 
         d3.select("#selectButtonYear_accumulating").on("change", function(d) {
         // recover the option that has been chosen
-        selectedYear = d3.select(this).property("value")
+        selectedYear_accumulating = d3.select(this).property("value")
         // run the updateChart function with this selected option
         update_accumulating(concatenate_options())
     })
@@ -254,7 +254,7 @@ console.log( dataFilter)
 
             d3.select("#selectButtonRisky_accumulating").on("change", function(d) {
         // recover the option that has been chosen
-        selectedRisky = d3.select(this).property("value")
+        selectedRisky_accumulating = d3.select(this).property("value")
         // run the updateChart function with this selected option
         update_accumulating(concatenate_options())
     })
@@ -262,10 +262,10 @@ console.log( dataFilter)
             function concatenate_options(){
 
 
-              var res= selectedCountry+"_"+selectedYear+"_10_"+selectedRisky;
-              if(selectedRisky=="")
+              var res= selectedCountry_accumulating+"_"+selectedYear_accumulating+"_10_"+selectedRisky_accumulating;
+              if(selectedRisky_accumulating=="")
               {
-                return selectedCountry+"_"+selectedYear+"_10"
+                return selectedCountry_accumulating+"_"+selectedYear_accumulating+"_10"
               }
               else return res
             }

@@ -1,13 +1,10 @@
-var dataIT = "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/barchart/barchartI1.csv";
-var dataFR = "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/barchart/barchartF1.csv";
-
-var optionsSelectButtonProvider = [["Bet365", "b365"], ["BWIN", "bw"], ["Interwetten", "iw"], ["Pinnacle", "ps"], ["VC Bet", "vc"], ["William Hill", "wh"]]
-var optionsSelectButtonYear = [["2013", "2013"], ["2014", "2014"], ["2015", "2015"], ["2016", "2016"], ["2017", "2017"], ["2018", "2018"], ["2019", "2019"]]
-var optionsSelectButtonCountry = [["Italy", "I1"], ["Germany", "D1"], ["Spain", "SP1"], ["England", "E0"], ["France", "F1"]]
+var optionsSelectButtonProvider_bar = [["Bet365", "b365"], ["BWIN", "bw"], ["Interwetten", "iw"], ["Pinnacle", "ps"], ["VC Bet", "vc"], ["William Hill", "wh"]]
+var optionsSelectButtonYear_bar = [["2013", "2013"], ["2014", "2014"], ["2015", "2015"], ["2016", "2016"], ["2017", "2017"], ["2018", "2018"], ["2019", "2019"]]
+var optionsSelectButtonCountry_bar = [["Italy", "I1"], ["Germany", "D1"], ["Spain", "SP1"], ["England", "E0"], ["France", "F1"]]
 
 d3.select("#barselectButtonProvider")
   .selectAll('myOptions')
-  .data(optionsSelectButtonProvider)
+  .data(optionsSelectButtonProvider_bar)
   .enter()
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu
@@ -15,7 +12,7 @@ d3.select("#barselectButtonProvider")
 
 d3.select("#barselectButtonYear")
   .selectAll('myOptions')
-  .data(optionsSelectButtonYear)
+  .data(optionsSelectButtonYear_bar)
   .enter()
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu
@@ -23,7 +20,7 @@ d3.select("#barselectButtonYear")
 
 d3.select("#barselectButtonLeague")
   .selectAll('myOptions')
-  .data(optionsSelectButtonCountry)
+  .data(optionsSelectButtonCountry_bar)
   .enter()
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu

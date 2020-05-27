@@ -42,12 +42,12 @@ var colorScale = d3.scaleSequential()
   .interpolator(d3.interpolateViridis);
 
 
-var optionsSelectButtonProvider = [["Bet365", "b365"], ["BWIN", "bw"], ["Interwetten", "iw"], ["Ladbrokes", "lb"], ["VC Bet", "vc"], ["William Hill", "wh"]]
-var optionsSelectButtonYear = [["2008", "2008_2009"], ["2009", "2009_2010"], ["2010", "2010_2011"], ["2011", "2011_2012"], ["2012", "2012_2013"], ["2013", "2013_2014"], ["2014", "2014_2015"], ["2015", "2015_2016"]]
+var optionsSelectButtonProvider_map = [["Bet365", "b365"], ["BWIN", "bw"], ["Interwetten", "iw"], ["Ladbrokes", "lb"], ["VC Bet", "vc"], ["William Hill", "wh"]]
+var optionsSelectButtonYear_map = [["2008", "2008_2009"], ["2009", "2009_2010"], ["2010", "2010_2011"], ["2011", "2011_2012"], ["2012", "2012_2013"], ["2013", "2013_2014"], ["2014", "2014_2015"], ["2015", "2015_2016"]]
 
 d3.select("#mapselectButtonProvider")
   .selectAll('myOptions')
-  .data(optionsSelectButtonProvider)
+  .data(optionsSelectButtonProvider_map)
   .enter()
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu
@@ -55,7 +55,7 @@ d3.select("#mapselectButtonProvider")
 
 d3.select("#mapselectButtonYear")
   .selectAll('myOptions')
-  .data(optionsSelectButtonYear)
+  .data(optionsSelectButtonYear_map)
   .enter()
   .append('option')
   .text(function (d) { return d[0]; }) // text showed in the menu
@@ -133,28 +133,28 @@ function mapupdate(data_csv) {
 
 d3.select("#mapselectButtonProvider").on("change", function (d) {
   // recover the option that has been chosen
-  selectedProvider = d3.select(this).property("value")
+  selectedProvider_map = d3.select(this).property("value")
   // run the updateChart function with this selected option
   mapupdate(concatenate_options_map())
 })
 
 d3.select("#mapselectButtonYear").on("change", function (d) {
   // recover the option that has been chosen
-  selectedYear = d3.select(this).property("value")
+  selectedYear_map = d3.select(this).property("value")
   // run the updateChart function with this selected option
   mapupdate(concatenate_options_map())
 })
 
 //Initialize
 
-selectedProvider = 'b365'
-selectedYear = '2008_2009'
+selectedProvider_map = 'b365'
+selectedYear_map = '2008_2009'
 
 
 
 
 function concatenate_options_map() {
-  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/" + selectedProvider + "/" + selectedYear + ".csv"
+  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/map/" + selectedProvider_map + "/" + selectedYear_map + ".csv"
 
 }
 

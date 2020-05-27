@@ -23,18 +23,18 @@ var height_bubble = 500
 
 
 // append the svg object to the body of the page
-var svg3 = d3.select("#bubble")
+var svg_bubble = d3.select("#bubble")
   .append("svg")
     .attr("width", width_bubble)
     .attr("height", height_bubble)
 
-    var optionsSelectButtonCountry=[["Italy","I1"],["Spain","SP1"],["France","F1"],["England","E0"],["Germany", "D1"]]
-    var optionsSelectButtonYear=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
-    var optionsSelectButtonCategory=[["Wins","wins_"],["Losses","losses_"],["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
+    var optionsSelectButtonCountry_bubble=[["Italy","I1"],["Spain","SP1"],["France","F1"],["England","E0"],["Germany", "D1"]]
+    var optionsSelectButtonYear_bubble=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
+    var optionsSelectButtonCategory_bubble=[["Wins","wins_"],["Losses","losses_"],["Yellow Cards","YCards_"],["Red Cards","RCards_"],["Corners","corners_"]]
     // add the options to the button
     d3.select("#selectButtonCountry_bubble")
       .selectAll('myOptions')
-      .data(optionsSelectButtonCountry)
+      .data(optionsSelectButtonCountry_bubble)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -42,7 +42,7 @@ var svg3 = d3.select("#bubble")
 
     d3.select("#selectButtonYear_bubble")
       .selectAll('myOptions')
-      .data(optionsSelectButtonYear)
+      .data(optionsSelectButtonYear_bubble)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -50,7 +50,7 @@ var svg3 = d3.select("#bubble")
 
       d3.select("#selectButtonCategory_bubble")
       .selectAll('myOptions')
-      .data(optionsSelectButtonCategory)
+      .data(optionsSelectButtonCategory_bubble)
       .enter()
       .append('option')
       .text(function (d) { return d[0]; }) // text showed in the menu
@@ -62,7 +62,7 @@ function update_bubble(data_csv) {
 
 
 //Clear all previous elements in the canvas
-  svg3.selectAll("*").remove();
+  svg_bubble.selectAll("*").remove();
 
 // Read data
 d3.csv(data_csv, function(data) {
@@ -86,6 +86,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
  var mouseover = function(d) {
     Tooltip_fixed_bubble
 
+
       .style("opacity", 1)
     d3.select(this)
       .style("stroke", "black")
@@ -95,9 +96,8 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
 
     Tooltip_fixed_bubble
 
-      .html('<u>' + d.team + '</u>' + "<br>" + d.value + " points")
-      //.style("left", d3.mouse(this)[0]  + "px")
-      //.style("top", d3.mouse(this)[1] -600+ "px")
+      .html('<u>' + d.team + '</u>' + "<br>" + d.value + " "+selectedCategory_bubble.substring(0, selectedCategory_bubble.length - 1))
+
   }
   var mouseleave = function(d) {
     Tooltip_fixed_bubble
@@ -109,7 +109,7 @@ var max_value=Math.max(...data.map(x=>parseInt(x.value)))
 
   // And when it is not hovered anymore
 
-var defs = svg3.append('svg:defs');
+var defs = svg_bubble.append('svg:defs');
 
   defs.selectAll(".patterns")
         .data(data)
@@ -128,7 +128,7 @@ var defs = svg3.append('svg:defs');
   .attr("x", 0)
 
   // Initialize the images: all located at the center of the svg area
-  var node = svg3.append("g")
+  var node = svg_bubble.append("g")
     .selectAll("circle")
     .data(data)
     .enter()
