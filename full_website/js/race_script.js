@@ -17,8 +17,8 @@ let title = svg_race.append('text')
  .attr('y', 100)
  .attr('x',100)
  .html('Select a Country to begin the race');
-
-
+var count= 0;
+var ticker;
 function update_race(data_csv) {
 
    svg_race.selectAll("*").remove();
@@ -34,7 +34,7 @@ function update_race(data_csv) {
 
    let year = 2013;
    var top_n = 10;
-   let barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
+   var barPadding = (height-(margin_race.bottom+margin_race.top))/(top_n*5);
 
 
 
@@ -114,7 +114,7 @@ function update_race(data_csv) {
        .style('text-anchor', 'end')
        .html(~~year)
 
-    let ticker = d3.interval(e => {
+      ticker = d3.interval(e => {
 
        yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
          .sort((a,b) => b.value - a.value)
@@ -198,7 +198,8 @@ function update_race(data_csv) {
 
 
 
-        let valueLabel_races = svg_race.selectAll('.valueLabel_race').data(yearSlice, d => d.name);
+        let valueLabel_races = svg_race.selectAll('.valueLabel_race')
+        .data(yearSlice, d => d.name);
 
         valueLabel_races
            .enter()
@@ -218,13 +219,7 @@ function update_race(data_csv) {
              .ease(d3.easeLinear)
              .attr('x', d => x(d.value)+5)
              .attr('y', d => y(d.rank)+5+((y(1)-y(0))/2)+1)
-             .tween("text", function(d) {
-                let i = d3.interpolateRound(d.lastValue, d.value);
-                return function(t) {
-                  this.textContent = d3.format(',')(i(t));
-               };
-             });
-
+             .text(d => d3.format(',.0f')(d.value))
 
 
        valueLabel_races
@@ -245,7 +240,11 @@ function update_race(data_csv) {
   });
 
 }
+d3.select("#selectButtonCountry_race").on("click", function(d) {
+  count= count+1
+  if (count >2 )  ticker.stop();
 
+})
 d3.select("#selectButtonCountry_race").on("change", function(d) {
     // recover the option that has been chosen
     selectedCountry = d3.select(this).property("value")
