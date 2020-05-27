@@ -245,6 +245,11 @@ d3.select("#selectButtonCountry_race").on("click", function(d) {
   if (count >2 )  ticker.stop();
 
 })
+d3.select("#restart").on("click", function(d) {
+ ticker.stop();
+ update_race(concatenate_options_race())
+})
+
 d3.select("#selectButtonCountry_race").on("change", function(d) {
     // recover the option that has been chosen
     selectedCountry_race = d3.select(this).property("value")
