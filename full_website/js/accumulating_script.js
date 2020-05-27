@@ -195,6 +195,15 @@ var zero_line = svg_accumulating.append("line")
 console.log( dataFilter)
       Tooltip_fixed
       .html("Total Invested: "+dataFilter.length*100+" CHF"+" <br> Total Return: "+(Math.round(dataFilter[dataFilter.length-1].value * 100)/100)+" CHF")
+          .style("color", function(){
+            if(dataFilter[dataFilter.length-1].value * 100>=0){
+              return "green"
+            }
+            else{
+            return "red"
+          }
+          }
+          )
 
     svg_accumulating
     .append('rect')
