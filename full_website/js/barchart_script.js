@@ -63,7 +63,9 @@ var yAxis = svgBarchart.append("g")
 var tooltip = d3.select("#barchart")
 .append("div")
 .style("opacity", 0)
-.attr("class", "tooltip")
+.style('position',"relative")
+.style("width","200px")
+.attr("class", "tooltip_barchart")
 .style("background-color", "white")
 .style("color", "black")
 .style("border-radius", "16px")
@@ -76,12 +78,12 @@ var showTooltip = function(d) {
   tooltip
   .html('Team : '+d.data.name+ "<br />Prediciton: " + d3.format(".1f")(d.data.correct_pred)+ " %")
   .style("left", (d3.mouse(this)[0]+50) + "px")
-  .style("top", (d3.mouse(this)[1]+200) + "px")
+  .style("top", (d3.mouse(this)[1]-400) + "px")
 }
 var moveTooltip = function(d) {
   tooltip
   .style("left", (d3.mouse(this)[0]+50) + "px")
-  .style("top", (d3.mouse(this)[1]+200) + "px")
+  .style("top", (d3.mouse(this)[1]-400) + "px")
 }
 // A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
 var hideTooltip = function(d) {
