@@ -78,3 +78,6 @@ title="Third source of inspiration" width="500" height="500">
 
 **80% of the final grade**
 
+- All of the code of the website and the data we use can be found in the [full_webite folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/full_website).
+- The main html file is [index.html](https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/full_website/index.html) and our javascript scripts are located in the [js folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/full_website/js).
+- Preprocessing of the data can be found in the [notebooks folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/notebooks)
