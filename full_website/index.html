@@ -90,7 +90,9 @@
                     <div class="site-heading">
                         <h1>Football Betting Data</h1>
                         <hr class="small">
-                        <span class="subheading">The purpose of this website is showing different statistics from the major European fotball leagues with regards to betting. We discuss potential betting strategies and insights we found analyzing years worth of data</span>
+                        <span class="subheading">We'll show you fun facts about football and explain why you can't make money from betting</span> 
+                        <span class="subheading"><b>DISCLAIMER: Betting can lead to addiction and we do not encourage any betting activities.</b></span>
+                        <span class="subheading">I bet you didn't read any of this (pun 100% intended)</span>
                     </div>
                 </div>
             </div>
@@ -103,7 +105,7 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
                   <h2 class="post-title">Team predictability</h2>
-                  <p>First we start of showing the most predictable teams in every country. The way we calculated this information, was by looking at the prediction the bookies had given to each match and comparing it with the final result. You can switch between country/year/betting provider.</p>
+                  <p>Here you can see how predictable your favorite team is. You can change between countries, leagues and bookies.</p>
                   <a name="barChart"></a>
 
 
@@ -114,13 +116,13 @@
                   </div>
                   <div id="barchart"></div>
                 </div>
-                <p style="font-size:20px"> <b>Insights:</b> You will notice that the most predictable teams are either the stronger teams or the weakest teams. The reason for this is that strong teams consitently win, and weak teams consinstently loose. So it is easier for bookies to predict the correct outcome in these situations </p>
+                <p style="font-size:20px"> <b>Insights:</b> Our research shows that the most predictable teams are either the strongest or the weakest ones as they perform consistently well or bad.</p>
                 <hr>
                 <div class="post-preview">
                   <a name="Map"></a>
                   <h2 class="post-title">Map of countries with predictability
                   </h2>
-                  <p>Similarly to the barchart above, we compute the percentage of times bookmakers predict the outcome of a match correctly, but this time we do it per country</p>
+                  <p>Not sure which country's league you should bet on? Countries on this map have a darker color if they are very unpredictable and a bright one otherwise. Naturally, the brighter a country is, the most predictable its league is.</p>
                   <div class = 'bars_1'>
                     <select class="form-control" style= "width: 200px;background-color:transparent"  id="mapselectButtonProvider"></select>
                     <select  class="form-control" style= "width: 200px;background-color:transparent" id="mapselectButtonYear"></select>
@@ -130,13 +132,14 @@
                   <!-- Create an element where the map will take place -->
                   <div id="map_viz" ></div>
                 </div>
-                <p style="font-size:20px"> <b>Insights:</b> As you will see inspecting the maps, on averege countries like England, Spain and especially Netherlands have the higher probability of being predicted correctly. There are however some exceptions, for example: In England in 2015 the percentage drops substantially due to the fact that Leicester City (a very averege team) managet to take home the championship </p>
+                <p style="font-size:20px"> <b>Insights:</b> As you might have observed, in most cases there's a 50/50 chance you'll lose. Imagine if you were betting on the English League on 2015, when Leicester won the league, you'd regret it instantly! So why waste your money on betting? Go drink a lemonade instead!🍋 
+                </p>
                 <hr>
                 <div class="post-preview">
                   <a name="bubble"></a>
-                      <h2 class="post-title">Bubble graph with miscellaneous statistics
+                      <h2 class="post-title">Bubble graph with various statistics
                       </h2>
-                      <p>In this visualizations we show an array of different statistics for every team in all the major leagues through the years. This data could be useful to sonsider before making a prediction, especially for the more niche betting schemes such as number of cards or corners</p>
+                      <p>Who doesn't love bubbles? We certainly do! Check these bad boys out!</p>
 
                       Click here to change countries:
                       <div class = 'bars_1'>
@@ -148,7 +151,7 @@
 
                       <div id="bubble"></div>
 
-                      <p style="font-size:20px"> <b>Easter egg  &#129370 :</b> As a nice little bonus minigame we added, you can drag the different bubbles around the screens if you want to compare the sizes more closely, or just want your favorite team to bump with all it's rivals :)</p>
+                      <p style="font-size:20px"> <b>Easter &#129370 :</b> As a little bonus we added a minigame! Drag the different bubbles around the screen if you want to compare the sizes more closely or help your favorite team bump all its rivals away! 😎</p>
                       <!-- Create an element where the map will take place -->
                       <div id="map_viz" ></div>
                 </div>
@@ -158,7 +161,9 @@
                         <h2 class="post-title">
                             Accumulating chart with betting strategies
                         </h2>
-                        <p>Now we will show some simulations of different betting strategions you could have followed through the years. The idea is the following: you decide that for an enire year, you will bet 10 CHF on each match of a footbal league, betting Win/Draw/Loose. You will have two strategies, either always bet on the least risky choice (which will probably help you win more often, but has a smaller coefficient of returns every time you win), or always go for the riskier choice (which will lead you to loose most of the time, but when you win, you win big).<br> Here you can try combinatins of different leagues/years.</p>
+                        <p>Wondering how your money would evolved if you betted every week? We've got you covered! This graph shows you what would happen if you betted 10CHF every week and followed a specific strategy!
+                        <br> 
+                        </p>
                         <div class = 'bars_1'>
                           <select class="form-control" style= "width: 200px;margin-top:10px;background:transparent" id="selectButtonCountry_accumulating"></select>
                           <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background:transparent" id="selectButtonYear_accumulating"></select>
@@ -169,9 +174,8 @@
 
                         <div id="accumulating"></div>
 
-                        <p style="font-size:20px"> <b>Insights: </b>Here is probably the most important point to take away from all the project. As you can see trying different combinations of the simulations, you will most of the time <b>loose money</b>. The bookies are experts at deriving perdictions and the coefficients thay set for every match are always carefully calculated that in the end, they get out as winners. <br>
-                        Even in the cases where you do win, you have to invest a really big amount of money for a fraction of the returns. The risk associated with this is really high. <br>
-                        <b>In a nutshell: Betting is not good for you (or something like this, help please)</b> </p>
+                        <p style="font-size:20px"> <b>Insights: </b> You can't beat the bank. Even if you do make a profit (and that's a big if), it never exceeds 10% of your investement. To put it simply: <b>if you bet 1000$ you'll never make more than 100$ of profit.</b>
+                        </p>
 
 
                 </div>
@@ -179,9 +183,14 @@
                 <div class="post-preview">
                   <a name="race"></a>
                         <h2 class="post-title">
-                            Race Graph
-                        </h2>
-                        Click here to change countries:
+                            Championship points Race Graph
+                        </h2> <p>And now the 🍒 on the 🎂
+                        <br> 
+                        Ever wondered which team has been consistently the best?
+                       <br>  
+                        <b>Choose your favorite country and let the games begin!</b>
+                        
+                        </p>
                         <div class = 'bars_1'>
                           <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_race" ></select>
                           <button type="button" id = 'restart' class="btn btn-secondary btn-sm" >Restart</button>
