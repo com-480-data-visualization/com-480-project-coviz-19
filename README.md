@@ -37,14 +37,8 @@ In this project we will focus on two things: first we will create visualizations
   2. Also here there data seems very clean and there’s no missing data 
   3. The structure of the data from one league to another is very consistent, which will make our jobs to merge the datasets much easier
   4. Looking (superficially) at the data, we can already see some very interesting results. In the following graphs we can see the precision of the different bookmakers per each of the 4 main european football leagues. It is clear to see that the bookmakers are more accurate on the German league and least accurate on the italian league. There is a lot of information similar to this in style we can find out. One other graph we are visualizing the correlation between the different statistics recorded on every single match of each season. Apart from some very obviously highly correlated statistics, there are other interesting dependencies such as corners and shots on target, or points obtained and shots on target on the away match, etc.
-
-    <img src="images/precision_mil_1.png" alt="Precision_mil_1"
-    title="Precision of the bookeh" width="300" height="500" />
-    <img src="images/heatmap_mil_1.png" alt="heatmap_mil_1"
-    title="correlation between the labels" width="500" height="500" />
-
+ 
   4. For more information you can look at the betting.ipynb notebook on the repository
-### Related work:
 
 #### What others have already done with the data?
 - Regarding the first dataset: [ this excel file](https://www.betgps.com/blog/betting-data/Betting-Data-2018-19_ver-5.01.xlsx) has sheets providing statistics based on the dataset.
@@ -56,12 +50,6 @@ It’s original because we couldn’t find any other previous work providing ext
 #### Source of inspiration:
 By looking at [this website](https://www.ruedesjoueurs.com/), it could be great to make tables with the difference between division, use the logo of each team, use a flat design, make some tab to select which championship we want to have information about, ...
 We found some good visualizations as well that we really want to use as models for our website (please look below).
-<img src="images/inspi_1.png" alt="inspi_1"
-title="First source of inspiration" width="450" height="450" />
-<img src="images/inspi_2.png" alt="inspi_2"
-title="Second source of inspiration" width="450" height="450" />
-<img src="images/inspi_3.png" alt="inspi_3" 
-title="Third source of inspiration" width="500" height="500">
 
 **10% of the final grade**
 
@@ -69,8 +57,6 @@ title="Third source of inspiration" width="500" height="500">
 ## Milestone 2 (Friday 1st May, 5pm)
 
 **10% of the final grade**
-
-#### Link to website skeleton: https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/skeleton/skeleton_demo/index.html
 
 #### For more information regarding Milestone 2, please refer to [Milestone2.pdf](https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/Milestone2.pdf)
 
