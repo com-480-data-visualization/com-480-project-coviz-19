@@ -59,6 +59,38 @@ var yBarchart = d3.scaleLinear()
 var yAxis = svgBarchart.append("g")
 .call(d3.axisLeft(yBarchart));
 
+//Tooltip
+var tooltip = d3.select("#barchart")
+.append("div")
+.style("opacity", 0)
+.attr("class", "tooltip")
+.style("background-color", "white")
+.style("color", "black")
+.style("border-radius", "16px")
+.style("padding", "10px")
+var showTooltip = function(d) {
+  tooltip
+  .transition()
+  .duration(100)
+  .style("opacity", 1)
+  tooltip
+  .html('Team : '+d.data.name+ "<br />Prediciton: " + d3.format(".1f")(d.data.correct_pred)+ " %")
+  .style("left", (d3.mouse(this)[0]+50) + "px")
+  .style("top", (d3.mouse(this)[1]+200) + "px")
+}
+var moveTooltip = function(d) {
+  tooltip
+  .style("left", (d3.mouse(this)[0]+50) + "px")
+  .style("top", (d3.mouse(this)[1]+200) + "px")
+}
+// A function that change this tooltip when the leaves a point: just need to set opacity to 0 again
+var hideTooltip = function(d) {
+  tooltip
+  .transition()
+  .duration(100)
+  .style("opacity", 0)
+}
+
 function update_barchart(data_csv) {
 
   svgBarchart.selectAll("rect").remove();
@@ -100,7 +132,6 @@ function update_barchart(data_csv) {
       for (i in subgroups) { name = subgroups[i]; d[name] = d[name] / tot * 100 }
     })
 
-
     //stack the data? --> stack per subgroup
     var stackedData = d3.stack()
     .keys(subgroups)
@@ -115,12 +146,16 @@ function update_barchart(data_csv) {
     .enter().append("g")
     .attr("fill", function (d) { return color(d.key); })
     .selectAll("rect")
+
     // enter a second time = loop subgroup per subgroup to add all rectangles
     .data(function (d) {
       return d;
     })
     .enter().append("rect")
     .attr("transform", "translate("+widthBarchart/2+"," + heightBarchart + ")")
+    .on("mouseover", showTooltip )
+    .on("mousemove", moveTooltip )
+    .on("mouseleave", hideTooltip )
     .transition()
     .duration(500)
     // .ease(d3.easeLinear,1,.3)
@@ -132,7 +167,6 @@ function update_barchart(data_csv) {
     svgBarchart.selectAll(".xAxis text")
     .style("text-anchor", "end")
     .attr("transform", "rotate(-25)");
-
   })
 }
 
