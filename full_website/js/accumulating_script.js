@@ -160,7 +160,6 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   function update_accumulating(selectedGroup) {
 
 
-    console.log(selectedGroup)
 
     // Create new data with the selection
     var dataFilter = data.map(function(d){return {Week: d.Week, value:d[selectedGroup]} })
