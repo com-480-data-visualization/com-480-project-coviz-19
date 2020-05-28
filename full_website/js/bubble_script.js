@@ -116,7 +116,7 @@ function update_bubble(data_csv) {
     .attr("height", 1)
 
     .append("svg:image")
-    .attr('xlink:href', function(d){ return 'images/'+d.team+'.png'} )
+    .attr('xlink:href', function(d){ return 'images/'+d.team.toLowerCase()+'.png'} )
     .attr("width", function(d){ return 2*z()(d.value)})
     .attr("height", function(d){ return 2*z()(d.value)})
     .attr("y", 0)
