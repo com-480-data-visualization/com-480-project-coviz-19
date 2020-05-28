@@ -1,6 +1,7 @@
 var svg_race = d3.select("#race").append("svg")
 .attr("width", 960)
 .attr("height", 600);
+// option in the select panel
 var optionsSelectButtonCountry_race=[["Italy","italy"],["Spain","spain"],["France","france"],["Germany","german"],["England", "england"]]
 d3.select("#selectButtonCountry_race")
 .selectAll('myOptions')
@@ -9,6 +10,7 @@ d3.select("#selectButtonCountry_race")
 .append('option')
 .text(function (d) { return d[0]; }) // text showed in the menu
 .attr("value", function (d) { return d[1]; }) // corresponding value returned by the button
+
 
 var tickDuration = 500;
 
@@ -19,6 +21,8 @@ let title = svg_race.append('text')
 .html('Number of points earned over seven Years');
 var count= 0;
 var ticker;
+
+// update the data every time the select box is changed
 function update_race(data_csv) {
 
   svg_race.selectAll("*").remove();
@@ -39,8 +43,8 @@ function update_race(data_csv) {
 
 
   d3.csv(data_csv,function(data) {
-    //if (error) throw error;
 
+    // format the data
     data.forEach(d => {
       d.value = +d.value,
       d.lastValue = +d.lastValue,
@@ -48,14 +52,14 @@ function update_race(data_csv) {
       d.year = +d.year,
       d.colour = d3.hsl(Math.random()*10000,0.75,0.75)
     });
-
+    // split the data in function of the year
     let yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
     .sort((a,b) => b.value - a.value)
     .slice(0, top_n);
 
     yearSlice.forEach((d,i) => d.rank = i);
 
-
+    // add the axis
     let x = d3.scaleLinear()
     .domain([0, d3.max(yearSlice, d => d.value)])
     .range([margin_race.left, width-margin_race.right-65]);
@@ -77,6 +81,7 @@ function update_race(data_csv) {
     .selectAll('.tick line')
     .classed('origin', d => d == 0);
 
+    // add the bars
     svg_race.selectAll('rect.bar')
     .data(yearSlice, d => d.name)
     .enter()
@@ -88,6 +93,7 @@ function update_race(data_csv) {
     .attr('height', y(1)-y(0)-barPadding)
     .style('fill', d => d.colour);
 
+    // add the labels
     svg_race.selectAll('text.label')
     .data(yearSlice, d => d.name)
     .enter()
@@ -98,6 +104,7 @@ function update_race(data_csv) {
     .style('text-anchor', 'end')
     .html(d => d.name);
 
+    // add the value of each bar
     svg_race.selectAll('text.valueLabel_race')
     .data(yearSlice, d => d.name)
     .enter()
@@ -114,6 +121,7 @@ function update_race(data_csv) {
     .style('text-anchor', 'end')
     .html(~~year)
 
+    // Loop in a timer until we reach the last row of the database
     ticker = d3.interval(e => {
 
       yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
@@ -122,9 +130,8 @@ function update_race(data_csv) {
 
       yearSlice.forEach((d,i) => d.rank = i);
 
-
+      // update the axis
       x.domain([0, d3.max(yearSlice, d => d.value)]);
-
       svg_race.select('.xAxis')
       .transition()
       .duration(tickDuration)
@@ -132,7 +139,7 @@ function update_race(data_csv) {
       .call(xAxis);
 
       let bars = svg_race.selectAll('.bar').data(yearSlice, d => d.name);
-
+      // update the bars
       bars
       .enter()
       .append('rect')
@@ -165,7 +172,7 @@ function update_race(data_csv) {
 
       let labels = svg_race.selectAll('.label')
       .data(yearSlice, d => d.name);
-
+      // update the labels
       labels
       .enter()
       .append('text')
@@ -200,7 +207,7 @@ function update_race(data_csv) {
 
       let valueLabel_races = svg_race.selectAll('.valueLabel_race')
       .data(yearSlice, d => d.name);
-
+      // update the value of each bar
       valueLabel_races
       .enter()
       .append('text')
@@ -230,9 +237,9 @@ function update_race(data_csv) {
       .attr('x', d => x(d.value)+5)
       .attr('y', d => y(top_n+1)+5)
       .remove();
-
+      // update the caption
       yearText.html(~~year);
-
+      // if we reach the end of the database, we stop the timer
       if(year == 2020) ticker.stop();
       year = d3.format('.1f')((+year) + 0.1);
     },tickDuration);
@@ -240,11 +247,13 @@ function update_race(data_csv) {
   });
 
 }
+// we need to stop the timer before load the data
 d3.select("#selectButtonCountry_race").on("click", function(d) {
   count= count+1
   if (count >2 )  ticker.stop();
 
 })
+// to restart the race, we stop the timer and rerun the function update_race
 d3.select("#restart").on("click", function(d) {
   ticker.stop();
   update_race(concatenate_options_race())

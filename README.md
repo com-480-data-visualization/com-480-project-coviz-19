@@ -64,6 +64,8 @@ We found some good visualizations as well that we really want to use as models f
 
 **80% of the final grade**
 
+- **link of the website : https://footstat.ml/**
+- **link of the video : https://www.youtube.com/watch?v=1zylSn3XF7Q&feature=youtu.be**
 - All of the code of the website and the data we use can be found in the [full_webite folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/full_website).
 - The main html file is [index.html](https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/full_website/index.html) and our javascript scripts are located in the [js folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/full_website/js).
 - Preprocessing of the data can be found in the [notebooks folder](https://github.com/com-480-data-visualization/com-480-project-coviz-19/tree/master/notebooks)
