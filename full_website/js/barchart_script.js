@@ -29,9 +29,9 @@ d3.select("#barselectButtonLeague")
 
 
 // set the dimensions and marginBarcharts of the graph
-var marginBarchart = { top: 10, right: 30, bottom: 20, left: 50 },
+var marginBarchart = { top: 10, right: 30, bottom: 50, left: 50 },
 widthBarchart = 1050 - marginBarchart.left - marginBarchart.right,
-heightBarchart = 400 - marginBarchart.top - marginBarchart.bottom;
+heightBarchart = 500 - marginBarchart.top - marginBarchart.bottom;
 
 // append the svgBarchart object to the body of the page
 var svgBarchart = d3.select("#barchart")
@@ -48,6 +48,7 @@ var xBarchart = d3.scaleBand()
 .padding([0.2])
 var xAxis = svgBarchart.append("g")
 .attr("transform", "translate(0," + heightBarchart + ")")
+.attr("class",'xAxis')
 .call(d3.axisBottom(xBarchart).tickSizeOuter(0));
 
 
@@ -67,6 +68,7 @@ function update_barchart(data_csv) {
     // Update the X axis
     xBarchart.domain(data.map(function (d) { return d.name; }))
     xAxis.call(d3.axisBottom(xBarchart))
+
 
     // Update the Y axis
     yBarchart.domain([0, 100])
@@ -127,6 +129,10 @@ function update_barchart(data_csv) {
     .attr("y", function (d) { return yBarchart(d[1]); })
     .attr("height", function (d) { return yBarchart(d[0]) - yBarchart(d[1]); })
     .attr("width", xBarchart.bandwidth())
+    svgBarchart.selectAll(".xAxis text")
+    .style("text-anchor", "end")
+    .attr("transform", "rotate(-25)");
+
   })
 }
 
