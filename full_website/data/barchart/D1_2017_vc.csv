@@ -1,0 +1,19 @@
+name,correct_pred,wrong_pred
+Hertha,12,22
+Wolfsburg,13,21
+RB Leipzig,14,20
+Freiburg,15,19
+Augsburg,15,19
+Hannover,15,19
+Leverkusen,16,18
+Hoffenheim,16,18
+Werder Bremen,16,18
+Mainz,17,17
+FC Koln,18,16
+M'gladbach,18,16
+Dortmund,19,15
+Ein Frankfurt,19,15
+Schalke 04,19,15
+Hamburg,20,14
+Stuttgart,21,13
+Bayern Munich,27,7

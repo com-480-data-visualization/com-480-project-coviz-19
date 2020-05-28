@@ -195,7 +195,7 @@ d3.select("#barselectButtonLeague").on("change", function (d) {
 
 function concatenate_options_bar() {
 
-  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/data/Computed/barchart/" + barselectedLeague + "_" + barselectedYear + "_" + barselectedProvider + ".csv"
+  return "https://raw.githubusercontent.com/com-480-data-visualization/com-480-project-coviz-19/master/full_website/data/barchart/" + barselectedLeague + "_" + barselectedYear + "_" + barselectedProvider + ".csv"
 
 }
 

@@ -1,0 +1,21 @@
+name,correct_pred,wrong_pred
+West Ham,9,29
+Chelsea,13,25
+Stoke,13,25
+Everton,15,23
+West Brom,16,22
+Tottenham,17,21
+Liverpool,17,21
+Southampton,18,20
+Bournemouth,18,20
+Swansea,18,20
+Man United,18,20
+Sunderland,19,19
+Crystal Palace,19,19
+Leicester,19,19
+Arsenal,20,18
+Watford,21,17
+Newcastle,22,16
+Man City,22,16
+Norwich,23,15
+Aston Villa,25,13
