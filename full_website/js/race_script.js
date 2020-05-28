@@ -15,8 +15,8 @@ var tickDuration = 500;
 let title = svg_race.append('text')
 .attr('class', 'title')
 .attr('y', 100)
-.attr('x',100)
-.html('Select a Country to begin the race');
+.attr('x',0)
+.html('Number of points earned over seven Years');
 var count= 0;
 var ticker;
 function update_race(data_csv) {

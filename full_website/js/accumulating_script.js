@@ -46,7 +46,7 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
 
   var optionsSelectButtonCountry_accumulating=[["Italy","ReturnI1"],["Spain","ReturnSP1"],["France","ReturnF1"],["England","ReturnE0"],["Germany", "ReturnD1"]]
   var optionsSelectButtonYear_accumulating=[["2013","2013"],["2014","2014"],["2015","2015"],["2016","2016"],["2017","2017"],["2018", "2018"]]
-  var optionsSelectButtonRisky_accumulating=[["Follow bookies advice",""],["Do the opositie","risky"]]
+  var optionsSelectButtonRisky_accumulating=[["Follow bookies advice",""],["Do the opposite","risky"]]
   // add the options to the button
   d3.select("#selectButtonCountry_accumulating")
   .selectAll('myOptions')
