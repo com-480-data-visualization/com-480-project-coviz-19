@@ -191,7 +191,6 @@ d3.csv("https://raw.githubusercontent.com/com-480-data-visualization/com-480-pro
   .attr("stroke", function(d){ return myColor(selectedGroup) })
 
 
-  console.log( dataFilter)
   Tooltip_fixed
   .html("Total Invested: "+dataFilter.length*100+" CHF"+" <br> Total Return: "+(Math.round(dataFilter[dataFilter.length-1].value * 100)/100)+" CHF")
   .style("color", function(){
