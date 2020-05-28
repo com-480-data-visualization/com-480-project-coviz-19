@@ -3,322 +3,333 @@
 
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/pastel-glyph/64/000000/football2.png">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="shortcut icon" type="image/png" href="https://img.icons8.com/pastel-glyph/64/000000/football2.png">
 
-    <title>Football Betting Data</title>
-
-
+  <title>Football Betting Data</title>
 
 
-    <!-- Bootstrap Core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Theme CSS -->
-    <link href="css/clean-blog.min.css" rel="stylesheet">
 
-    <!-- Custom Fonts -->
-    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <!-- Bootstrap Core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <!-- Theme CSS -->
+  <link href="css/clean-blog.min.css" rel="stylesheet">
 
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-    <script src="https://d3js.org/d3.v4.js"></script>
-    <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-    <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
+  <!-- Custom Fonts -->
+  <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
+  <script src="https://d3js.org/d3.v4.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="https://d3js.org/d3-geo-projection.v2.min.js"></script>
 
 
 </head>
 
 <body style='  background: linear-gradient(to bottom, #ffffff 0%, #777777 700%);'>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    Menu <i class="fa fa-bars"></i>
-                </button>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="index.html">Home</a>
-                    </li>
-                    <li>
-                        <a href="#barChart">BarChart</a>
-                    </li>
-                    <li>
-                        <a href="#Map">Map</a>
-                    </li>
-                    <li>
-                        <a href="#bubble">Bubble Graph</a>
-                    </li>
-                    <li>
-                        <a href="#accumulating">Accumulating Graph</a>
-                    </li>
-                    <li>
-                        <a href="#race">Race</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <header class="intro-header" style="background-image: url('https://cdn.wallpapersafari.com/5/95/UImtOi.png'); height: 800px">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <div class="site-heading">
-                        <h1>Football Betting Data</h1>
-                        <hr class="small">
-                        <span class="subheading">We'll show you fun facts about football and explain why you can't make money from betting</span>
-                        <span class="subheading"><b>DISCLAIMER: Betting can lead to addiction and we do not encourage any betting activities.</b></span>
-                        <span class="subheading">I bet you didn't read any of this (pun 100% intended)</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
     <div class="container-fluid">
-        <div class="row" >
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-preview">
-                  <h2 class="post-title">Team predictability</h2>
-                  <p>Here you can see how predictable your favorite team is. You can change between countries, leagues and bookies.</p>
-                  <a name="barChart"></a>
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header page-scroll">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          Menu <i class="fa fa-bars"></i>
+        </button>
+      </div>
 
-
-                  <div class = 'bars_1'>
-                    <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="barselectButtonLeague"></select>
-                    <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonYear"></select>
-                    <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonProvider"></select>
-                  </div>
-                  <div id="barchart"></div>
-                </div>
-                <p style="font-size:20px"> <b>Insights:</b> Our research shows that the most predictable teams are either the strongest or the weakest ones as they perform consistently well or bad.</p>
-                <hr>
-                <div class="post-preview">
-                  <a name="Map"></a>
-                  <h2 class="post-title">Map of countries with predictability
-                  </h2>
-                  <p>Not sure which country's league you should bet on? Countries on this map have a darker color if they are very unpredictable and a bright one otherwise. Naturally, the brighter a country is, the most predictable its league is.</p>
-                  <div class = 'bars_1'>
-                    <select class="form-control" style= "width: 200px;background-color:transparent"  id="mapselectButtonProvider"></select>
-                    <select  class="form-control" style= "width: 200px;background-color:transparent" id="mapselectButtonYear"></select>
-                  </div>
-                  <div id="map_info"></div>
-
-                  <!-- Create an element where the map will take place -->
-                  <div id="map_viz" ></div>
-                </div>
-                <p style="font-size:20px"> <b>Insights:</b> As you might have observed, in most cases there's a 50/50 chance you'll lose. Imagine if you were betting on the English League on 2015, when Leicester won the league, you'd regret it instantly! So why waste your money on betting? Go drink a lemonade instead!🍋
-                </p>
-                <hr>
-                <div class="post-preview">
-                  <a name="bubble"></a>
-                      <h2 class="post-title">Bubble graph with various statistics
-                      </h2>
-                      <p>Who doesn't love bubbles? We certainly do! Check these bad boys out!</p>
-
-                      Click here to change countries:
-                      <div class = 'bars_1'>
-                        <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_bubble"></select>
-                        <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background-color:transparent"  id="selectButtonYear_bubble"></select>
-                        <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonCategory_bubble"></select>
-                      </div>
-                      <div id="bubble_info"></div>
-
-                      <div id="bubble"></div>
-
-                      <p style="font-size:20px"> <b>Easter &#129370 :</b> As a little bonus we added a minigame! Drag the different bubbles around the screen if you want to compare the sizes more closely or help your favorite team bump all its rivals away! 😎</p>
-                      <!-- Create an element where the map will take place -->
-                      <div id="map_viz" ></div>
-                </div>
-                <hr>
-                <div class="post-preview">
-                  <a name="accumulating"></a>
-                        <h2 class="post-title">
-                            Accumulating chart with betting strategies
-                        </h2>
-                        <p>Wondering how your money would evolve if you betted every week? We've got you covered! This graph shows you what would happen if you betted 10CHF every week and followed a specific strategy!
-                        <br>
-                        </p>
-                        <div class = 'bars_1'>
-                          <select class="form-control" style= "width: 200px;margin-top:10px;background:transparent" id="selectButtonCountry_accumulating"></select>
-                          <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background:transparent" id="selectButtonYear_accumulating"></select>
-                          <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonRisky_accumulating"></select>
-                          <div id="accumulating_info"></div>
-                        </div>
-                        <!-- Create a div where the graph will take place -->
-
-                        <div id="accumulating"></div>
-
-                        <p style="font-size:20px"> <b>Insights: </b> You can't beat the bank. Even if you do make a profit (and that's a big if), it never exceeds 10% of your investement. To put it simply: <b>if you bet 1000$ you'll never make more than 100$ of profit.</b>
-                        </p>
-
-
-                </div>
-
-                <div class="post-preview">
-                  <a name="race"></a>
-                        <h2 class="post-title">
-                            Championship points Race Graph
-                        </h2> <p>And now the 🍒 on the 🎂
-                        <br>
-                        Ever wondered which team has been consistently the best?
-                       <br>
-                        <b>Choose your favorite country and let the games begin!</b>
-
-                        </p>
-                        <div class = 'bars_1'>
-                          <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_race" ></select>
-                          <button type="button" id = 'restart' class="btn btn-secondary btn-sm" >Restart</button>
-
-                          <div id = "race" style = ""> </div>
-                        </div>
-                </div>
-                <hr>
-            </div>
-        </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a href="index.html">Home</a>
+          </li>
+          <li>
+            <a href="#barChart">BarChart</a>
+          </li>
+          <li>
+            <a href="#Map">Map</a>
+          </li>
+          <li>
+            <a href="#bubble">Bubble Graph</a>
+          </li>
+          <li>
+            <a href="#accumulating">Accumulating Graph</a>
+          </li>
+          <li>
+            <a href="#race">Race</a>
+          </li>
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
     </div>
+    <!-- /.container -->
+  </nav>
 
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                        <li>
-                            <a href="https://github.com/com-480-data-visualization/com-480-project-coviz-19">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                          <p>ProcessBook:
-                            <a href="https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/ProcessBook.pdf">
-                              <span class="glyphicon glyphicon-file"></span>
-                            </a>
-                          </p>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Florian Genilloud, Georgios Fotiadis, Gerald Sula</p>
-                </div>
-            </div>
+  <!-- Page Header -->
+  <!-- Set your background image for this header on the line below. -->
+  <header class="intro-header" style="background-image: url('https://cdn.wallpapersafari.com/5/95/UImtOi.png'); height: 800px">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+            <h1>Football Betting Data</h1>
+            <hr class="small">
+            <span class="subheading">We'll show you fun facts about football and explain why you can't make money from betting</span>
+            <span class="subheading"><b>DISCLAIMER: Betting can lead to addiction and we do not encourage any betting activities.</b></span>
+            <span class="subheading">I bet you didn't read any of this (pun 100% intended)</span>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </header>
 
-    <!-- jQuery -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+  <!-- Main Content -->
+  <div class="container-fluid">
+    <div class="row" >
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <div class="post-preview">
+          <h2 class="post-title">Team predictability</h2>
+          <p>Here you can see how predictable your favorite team is. You can change between countries, leagues and bookies.</p>
+          <a name="barChart"></a>
 
-    <!-- Bootstrap Core JavaScript -->
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Contact Form JavaScript -->
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
+          <div class = 'bars_1'>
+            <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="barselectButtonLeague"></select>
+            <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonYear"></select>
+            <select class="form-control" style= "width: 200px;background-color:transparent"  id="barselectButtonProvider"></select>
+          </div>
+          <div id="barchart"></div>
+        </div>
+        <p style="font-size:20px"> <b>Insights:</b> Our research shows that the most predictable teams are either the strongest or the weakest ones as they perform consistently well or bad.</p>
+        <hr>
+        <div class="post-preview">
+          <a name="Map"></a>
+          <h2 class="post-title">Map of countries with predictability
+          </h2>
+          <p>Not sure which country's league you should bet on? Countries on this map have a darker color if they are very unpredictable and a bright one otherwise. Naturally, the brighter a country is, the most predictable its league is.</p>
+          <div class = 'bars_1'>
+            <select class="form-control" style= "width: 200px;background-color:transparent"  id="mapselectButtonProvider"></select>
+            <select  class="form-control" style= "width: 200px;background-color:transparent" id="mapselectButtonYear"></select>
+          </div>
+          <div id="map_info"></div>
 
-    <!-- Theme JavaScript -->
-    <script src="js/race_script.js"></script>
-    <script src="js/map_script.js"></script>
-    <script src="js/barchart_script.js"></script>
-    <script src="js/bubble_script.js"></script>
-    <script src="js/accumulating_script.js"></script>
-    <script src="js/clean-blog.min.js"></script>
-    <!-- basic style-->
-    <style>
-    .node:hover{
-      stroke-width: 7px !important;
-      opacity: 1 !important;
-    }
-    #race text{
-      font-size: 16px;
-      font-family: Open Sans, sans-serif;
-    }
-    #race text.title{
-      font-size: 24px;
-      font-weight: 500;
-    }
-    #race text.caption{
-        font-weight: 400;
-        font-size: 14px;
-        fill: #777777;
-      }
-    text.label{
-        font-weight: 600;
-      }
+          <!-- Create an element where the map will take place -->
+          <div id="map_viz" ></div>
+        </div>
+        <p style="font-size:20px"> <b>Insights:</b> As you might have observed, in most cases there's a 50/50 chance you'll lose. Imagine if you were betting on the English League on 2015, when Leicester won the league, you'd regret it instantly! So why waste your money on betting? Go drink a lemonade instead!🍋
+        </p>
+        <hr>
+        <div class="post-preview">
+          <a name="bubble"></a>
+          <h2 class="post-title">Bubble graph with various statistics
+          </h2>
+          <p>Who doesn't love bubbles? We certainly do! Check these bad boys out!</p>
 
-    #race text.valueLabel_race{
-       font-weight: 300;
+          Click here to change countries:
+          <div class = 'bars_1'>
+            <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_bubble"></select>
+            <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background-color:transparent"  id="selectButtonYear_bubble"></select>
+            <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonCategory_bubble"></select>
+          </div>
+          <div id="bubble_info"></div>
 
-      }
+          <div id="bubble"></div>
 
-    #race text.yearText{
-        font-size: 64px;
-        font-weight: 700;
-        opacity: 0.25;
-      }
-    #race .tick text {
-        fill: #777777;
-      }
-    .xAxis .tick:nth-child(2) text {
-        text-anchor: start;
-      }
-    #race  .tick line {
-        shape-rendering: CrispEdges;
-        stroke: #dddddd;
-      }
-    #race  .tick line.origin{
-        stroke: #aaaaaa;
-      }
-    #race path.domain{
-        display: none;
-      }
+          <p style="font-size:20px"> <b>Easter &#129370 :</b> As a little bonus we added a minigame! Drag the different bubbles around the screen if you want to compare the sizes more closely or help your favorite team bump all its rivals away! 😎</p>
+          <!-- Create an element where the map will take place -->
+          <div id="map_viz" ></div>
+        </div>
+        <hr>
+        <div class="post-preview">
+          <a name="accumulating"></a>
+          <h2 class="post-title">
+            Accumulating chart with betting strategies
+          </h2>
+          <p>Wondering how your money would evolve if you betted every week? We've got you covered! This graph shows you what would happen if you betted 10CHF every week and followed a specific strategy!
+            <br>
+          </p>
+          <div class = 'bars_1'>
+            <select class="form-control" style= "width: 200px;margin-top:10px;background:transparent" id="selectButtonCountry_accumulating"></select>
+            <select class="form-control" style= "width: 200px;margin-top:10px;margin-bottom:10px;background:transparent" id="selectButtonYear_accumulating"></select>
+            <select class="form-control" style= "width: 200px;background-color:transparent"  id="selectButtonRisky_accumulating"></select>
+            <div id="accumulating_info"></div>
+          </div>
+          <!-- Create a div where the graph will take place -->
 
-      .bars_1 {
-          display: table;
-          width: 100%; /*Optional*/
-          table-layout: fixed; /*Optional*/
-          border-spacing: 10px; /*Optional*/
-      }
-      .bars_1 select {
-        display: table-cell;
-          margin-left: 10px;
-      }
-      .bars_1 button {
-        display: table-cell;
-          margin-left: 10px;
-      }
-       #accumulating_info {
-         margin: 0px 0px 0px 700px ;
-       }
+          <div id="accumulating"></div>
 
-    </style>
+          <p style="font-size:20px"> <b>Insights: </b> You can't beat the bank. Even if you do make a profit (and that's a big if), it never exceeds 10% of your investement. To put it simply: <b>if you bet 1000$ you'll never make more than 100$ of profit.</b>
+          </p>
+
+
+        </div>
+
+        <div class="post-preview">
+          <a name="race"></a>
+          <h2 class="post-title">
+            Championship points Race Graph
+          </h2> <p>And now the 🍒 on the 🎂
+            <br>
+            Ever wondered which team has been consistently the best?
+            <br>
+            <b>Choose your favorite country and let the games begin!</b>
+
+          </p>
+          <div class = 'bars_1'>
+            <select class="form-control" style= "width: 200px;margin-top:10px;background-color:transparent"  id="selectButtonCountry_race" ></select>
+            <button type="button" id = 'restart' class="btn btn-secondary btn-sm" >Restart</button>
+
+            <div id = "race" style = ""> </div>
+          </div>
+        </div>
+        <hr>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <ul class="list-inline text-center">
+            <li>
+              <p> Repository:
+                <a href="https://github.com/com-480-data-visualization/com-480-project-coviz-19">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>Screencast:
+                <a href="https://youtube.com">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </p>
+            </li>
+            <li>
+              <p>ProcessBook:
+                <a href="https://github.com/com-480-data-visualization/com-480-project-coviz-19/blob/master/ProcessBook.pdf">
+                  <span class="glyphicon glyphicon-file"></span>
+                </a>
+              </p>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Florian Genilloud, Georgios Fotiadis, Gerald Sula</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- jQuery -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Contact Form JavaScript -->
+  <script src="js/jqBootstrapValidation.js"></script>
+  <script src="js/contact_me.js"></script>
+
+  <!-- Theme JavaScript -->
+  <script src="js/race_script.js"></script>
+  <script src="js/map_script.js"></script>
+  <script src="js/barchart_script.js"></script>
+  <script src="js/bubble_script.js"></script>
+  <script src="js/accumulating_script.js"></script>
+  <script src="js/clean-blog.min.js"></script>
+  <!-- basic style-->
+  <style>
+  .node:hover{
+    stroke-width: 7px !important;
+    opacity: 1 !important;
+  }
+  #race text{
+    font-size: 16px;
+    font-family: Open Sans, sans-serif;
+  }
+  #race text.title{
+    font-size: 24px;
+    font-weight: 500;
+  }
+  #race text.caption{
+    font-weight: 400;
+    font-size: 14px;
+    fill: #777777;
+  }
+  text.label{
+    font-weight: 600;
+  }
+
+  #race text.valueLabel_race{
+    font-weight: 300;
+
+  }
+
+  #race text.yearText{
+    font-size: 64px;
+    font-weight: 700;
+    opacity: 0.25;
+  }
+  #race .tick text {
+    fill: #777777;
+  }
+  .xAxis .tick:nth-child(2) text {
+    text-anchor: start;
+  }
+  #race  .tick line {
+    shape-rendering: CrispEdges;
+    stroke: #dddddd;
+  }
+  #race  .tick line.origin{
+    stroke: #aaaaaa;
+  }
+  #race path.domain{
+    display: none;
+  }
+
+  .bars_1 {
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+  }
+  .bars_1 select {
+    display: table-cell;
+    margin-left: 10px;
+  }
+  .bars_1 button {
+    display: table-cell;
+    margin-left: 10px;
+  }
+  #accumulating_info {
+    margin: 0px 0px 0px 700px ;
+  }
+
+  </style>
 
 </body>
 
